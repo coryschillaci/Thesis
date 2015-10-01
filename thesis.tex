@@ -5,11 +5,24 @@
 % The Current Maintainer of this work is Paul Vojta.
 
 \documentclass{ucbthesis}
-\usepackage{amsmath} % Standard math typesetting environments
+\usepackage{amsmath,amssymb,mathtools}  % Better maths support & more symbols
 \usepackage{biblatex}
 \usepackage{graphicx}% Include figure files
 \usepackage{bm} % bold math
 \usepackage{braket} % Allows for Dirac notation
+
+
+% New commands for LocalExpansion
+\newcommand{\eps}{\epsilon}
+
+% Left acting gradients
+\newcommand{\lvec}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
+
+% \vecrp
+%\newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}}
+%\newcommand{\vecrp}{\vec{r}\mkern2mu\vphantom{r}}
+\newcommand{\vecrp}{\vec{r}\mkern2mu'}
+\newcommand{\hatrp}{\hat{r}\mkern2mu'}
 
 % New commands for SOCoupling
 \newcommand{\veff}{\hat{V}_{12,\text{eff}}}
@@ -26,7 +39,7 @@
 \newcommand{\taudot}{\vec{\tau}_1\cdot\vec{\tau}_2}
 \newcommand{\sigmadot}{\vec{\sigma}_1\cdot\vec{\sigma}_2}
 
-\newcommand{\lvec}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
+%\newcommand{\lvec}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
 
 \newcommand{\threej}[6]{ \begin{pmatrix}
   #1 & #2 & #3 \\
@@ -59,10 +72,9 @@
 
 \newtheorem{theorem}{Jibberish}
 
-\bibliography{references,SOC/SOCoupling.bib}
+\bibliography{LocalExpansion/LocalExpansion.bib,SOC/SOCoupling.bib}
 
 \hyphenation{mar-gin-al-ia}
-\hyphenation{bra-va-do}
 
 \begin{document}
 
@@ -131,11 +143,12 @@ Acknowledgements go here.
 
 % (Optional) \part{First Part}
 
-\include{chap1}
+%\include{chap1}
+\include{LocalExpansion/LocalExpansion}
 \include{SOC/SOCoupling}
 
-% \appendix
-% \chapter{More Monticello Candidates}
+\appendix
+\include{SOC/SOCAppendix}
 
 \printbibliography
 
