@@ -1,0 +1,142 @@
+%% thesis.tex 2014/04/11
+%
+% Based on sample files of unknown authorship.
+%
+% The Current Maintainer of this work is Paul Vojta.
+
+\documentclass{ucbthesis}
+\usepackage{amsmath} % Standard math typesetting environments
+\usepackage{biblatex}
+\usepackage{graphicx}% Include figure files
+\usepackage{bm} % bold math
+\usepackage{braket} % Allows for Dirac notation
+
+% New commands for SOCoupling
+\newcommand{\veff}{\hat{V}_{12,\text{eff}}}
+\newcommand{\rhozero}{\rho_{\text{I}=0}}
+\newcommand{\rhoone}{\rho_{\text{I}=1}}
+
+\newcommand{\yukawa}[1]{\frac{e^{-m_\pi |#1|}}{4\pi |#1|}}
+\newcommand{\yukawadimless}[1]{\frac{e^{-m_\pi #1}}{m_\pi #1}}
+\newcommand{\yukawanoabs}[1]{\frac{e^{-m_\pi #1}}{4\pi #1}}
+
+\newcommand{\rot}{\vec{r}_{12}}
+\newcommand{\rotp}{\vec{r}_{12}\!\!'}
+
+\newcommand{\taudot}{\vec{\tau}_1\cdot\vec{\tau}_2}
+\newcommand{\sigmadot}{\vec{\sigma}_1\cdot\vec{\sigma}_2}
+
+\newcommand{\lvec}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
+
+\newcommand{\threej}[6]{ \begin{pmatrix}
+  #1 & #2 & #3 \\
+  #4 & #5 & #6 
+ \end{pmatrix}}
+
+\newcommand{\sixj}[6]{ \begin{Bmatrix}
+  #1 & #2 & #3 \\
+  #4 & #5 & #6 
+ \end{Bmatrix}}
+
+\newcommand{\ninej}[9]{ \begin{Bmatrix}
+  #1 & #2 & #3 \\
+  #4 & #5 & #6 \\
+  #7 & #8 & #9
+ \end{Bmatrix}}
+
+
+% To compile this file, run "latex thesis", then "biber thesis"
+% (or "bibtex thesis", if the output from latex asks for that instead),
+% and then "latex thesis" (without the quotes in each case).
+
+% Double spacing, if you want it.  Do not use for the final copy.
+% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
+% \dsp
+
+% If the Grad. Division insists that the first paragraph of a section
+% be indented (like the others), then include this line:
+% \usepackage{indentfirst}
+
+\newtheorem{theorem}{Jibberish}
+
+\bibliography{references,SOC/SOCoupling.bib}
+
+\hyphenation{mar-gin-al-ia}
+\hyphenation{bra-va-do}
+
+\begin{document}
+
+% Declarations for Front Matter
+
+\title{Effective Theories in Few-Body Physics}
+\author{Cory Schillaci}
+\degreesemester{Fall}
+\degreeyear{2015}
+\degree{Doctor of Philosophy}
+\chair{Professor Wick Haxton}
+\othermembers{Professor Joel Moore \\
+  Professor Karl van Bibber}
+\numberofmembers{3}
+% Previous degrees are no longer to be listed on the title page.
+% \prevdegrees{B.A. (University of Northern South Dakota at Hoople) 1978 \\
+%   M.S. (Ed's School of Quantum Mechanics and Muffler Repair) 1989}
+\field{Physics}
+% Designated Emphasis -- this is optional, and rare
+% \emphasis{Colloidal Telemetry}
+% This is optional, and rare
+% \jointinstitution{University of Western Maryland}
+% This is optional
+\campus{Berkeley}
+
+% For a masters thesis, replace the above \documentclass line with
+% \documentclass[masters]{ucbthesis}
+% This affects the title and approval pages, which by default calls this
+% document a "dissertation", not a "thesis".
+
+\maketitle
+% Delete (or comment out) the \approvalpage line for the final version.
+\approvalpage
+\copyrightpage
+
+\include{abstract}
+
+\begin{frontmatter}
+
+\begin{dedication}
+\null\vfil
+\begin{center}
+To Ossie Bernosky\\\vspace{12pt}
+Dedication goes here.
+\end{center}
+\vfil\null
+\end{dedication}
+
+% You can delete the \clearpage lines if you don't want these to start on
+% separate pages.
+
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+
+\begin{acknowledgements}
+Acknowledgements go here.
+
+\end{acknowledgements}
+
+\end{frontmatter}
+
+\pagestyle{headings}
+
+% (Optional) \part{First Part}
+
+\include{chap1}
+\include{SOC/SOCoupling}
+
+% \appendix
+% \chapter{More Monticello Candidates}
+
+\printbibliography
+
+\end{document}

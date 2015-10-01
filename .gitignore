@@ -1,0 +1,16 @@
+*.bbl
+*.bcf
+*.toc
+*.aux
+*.blg
+*.log
+*.out
+*.lof
+*.lot
+*.run.xml
+thesis.pdf
+thesis.dvi
+*converted-to.pdf
+*.synctex.gz
+.DS_Store
+*~
