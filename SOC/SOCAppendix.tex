@@ -1,0 +1,17 @@
+\chapter{Derivation of the normalization factor for Busch wave functions}
+In the original paper by Busch \textit{et al.} \cite{Busch}, the normalization factor of the wave functions is not given. The closed form expression for this normalization does not seem to be widely known. It was originally presented in \cite{PhysRevA.85.053614} without derivation, which we provide here. To find the norm of the wave function~\eqref{eq:BuschWF}, one must integrate (using a change of variables to $z=r^2$)
+\begin{equation}\label{eq:NormIntegral}
+A^{-2}=\frac{\Gamma(-n)^2}{8\pi^3}  \int_0^\infty \frac{1}{z}\left[U(-n,3/2,z)e^{-z/2} z^{3/4} \right]^2  dz.
+\end{equation}
+The term in brackets is equal to a Whittaker function \cite{DLMF} and so this can be rewritten,
+\begin{equation}
+A^{-2}=\frac{\Gamma(-n)^2}{8\pi^3}  \int_0^\infty \frac{1}{z}\left[W_{n+3/4,1/4}(z) \right]^2  dz.
+\end{equation}
+This integral can be found in \cite{GradshteynRyzhik}
+\begin{equation}
+\int_0^\infty \frac{1}{z}\left[W_{\kappa,\mu}(z) \right]^2  dz=\frac{\pi}{\sin (2\pi \mu)}\frac{\psi_0(\frac{1}{2}+\mu-\kappa)-\psi_0(\frac{1}{2}+\mu-\kappa)}{\Gamma(\frac{1}{2}+\mu-\kappa)\Gamma(\frac{1}{2}-\mu-\kappa)}.
+\end{equation}
+Applying this to~\eqref{eq:NormIntegral} with $\kappa=n+3/4$ and $\mu=1/4$ gives the desired result,
+\begin{equation}
+A^{-2}=\frac{1}{8\pi^3}  \frac{\Gamma (-n)}{\Gamma(-n-1/2)}\left[\psi_0(-n)-\psi_0(-n-1/2)\right].
+\end{equation}
