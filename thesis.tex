@@ -11,6 +11,24 @@
 \usepackage{bm} % bold math
 \usepackage{braket} % Allows for Dirac notation
 
+% New commands for ChiralPotential
+
+\newcommand{\veff}{\hat{V}_{12,\text{eff}}}
+\newcommand{\rhozero}{\rho_{\text{I}=0}}
+\newcommand{\rhoone}{\rho_{\text{I}=1}}
+
+\newcommand{\yukawa}[1]{\frac{e^{-m_\pi |#1|}}{4\pi |#1|}}
+\newcommand{\yukawadimless}[1]{\frac{e^{-m_\pi #1}}{m_\pi #1}}
+\newcommand{\yukawanoabs}[1]{\frac{e^{-m_\pi #1}}{4\pi #1}}
+
+\newcommand{\rot}{\vec{r}_{12}}
+\newcommand{\rotp}{\vec{r}_{12}\!\!\!'\;}
+
+\newcommand{\taudot}{\vec{\tau}_1\cdot\vec{\tau}_2}
+\newcommand{\taucrossthree}{\left[\vec{\tau}_1\times\vec{\tau}_2\right]_3}
+\newcommand{\sigmadot}{\vec{\sigma}_1\cdot\vec{\sigma}_2}
+\newcommand{\sigmatwo}{[\vec{\sigma}_1\otimes\vec{\sigma}_2]_2}
+
 
 % New commands for LocalExpansion
 \newcommand{\eps}{\epsilon}
@@ -25,21 +43,6 @@
 \newcommand{\hatrp}{\hat{r}\mkern2mu'}
 
 % New commands for SOCoupling
-\newcommand{\veff}{\hat{V}_{12,\text{eff}}}
-\newcommand{\rhozero}{\rho_{\text{I}=0}}
-\newcommand{\rhoone}{\rho_{\text{I}=1}}
-
-\newcommand{\yukawa}[1]{\frac{e^{-m_\pi |#1|}}{4\pi |#1|}}
-\newcommand{\yukawadimless}[1]{\frac{e^{-m_\pi #1}}{m_\pi #1}}
-\newcommand{\yukawanoabs}[1]{\frac{e^{-m_\pi #1}}{4\pi #1}}
-
-\newcommand{\rot}{\vec{r}_{12}}
-\newcommand{\rotp}{\vec{r}_{12}\!\!'}
-
-\newcommand{\taudot}{\vec{\tau}_1\cdot\vec{\tau}_2}
-\newcommand{\sigmadot}{\vec{\sigma}_1\cdot\vec{\sigma}_2}
-
-%\newcommand{\lvec}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
 
 \newcommand{\threej}[6]{ \begin{pmatrix}
   #1 & #2 & #3 \\
@@ -72,7 +75,7 @@
 
 \newtheorem{theorem}{Jibberish}
 
-\bibliography{LocalExpansion/LocalExpansion.bib,SOC/SOCoupling.bib}
+\bibliography{Introduction/Introduction.bib,ChiralPotential/ChiralPotential.bib,LocalExpansion/LocalExpansion.bib,SOC/SOCoupling.bib}
 
 \hyphenation{mar-gin-al-ia}
 
@@ -117,10 +120,10 @@
 \begin{dedication}
 \null\vfil
 \begin{center}
-To Ossie Bernosky\\\vspace{12pt}
+To Someone O. Other\\\vspace{12pt}
 Dedication goes here.
 \end{center}
-\vfil\null
+\vfil\null	
 \end{dedication}
 
 % You can delete the \clearpage lines if you don't want these to start on
@@ -129,7 +132,7 @@ Dedication goes here.
 \tableofcontents
 \clearpage
 \listoffigures
-\clearpage
+%\clearpage
 \listoftables
 
 \begin{acknowledgements}
@@ -143,11 +146,18 @@ Acknowledgements go here.
 
 % (Optional) \part{First Part}
 
-%\include{chap1}
+\include{Introduction/Introduction}
+
+\include{ChiralPotential/ChiralPotential}
+
 \include{LocalExpansion/LocalExpansion}
+
 \include{SOC/SOCoupling}
 
 \appendix
+
+\include{ChiralPotential/CPAppendix}
+
 \include{SOC/SOCAppendix}
 
 \printbibliography
