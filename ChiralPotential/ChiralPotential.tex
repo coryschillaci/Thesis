@@ -1,0 +1,318 @@
+
+\chapter{\label{chap:3to2}An Analytic Reduction of the Chiral Three-Nucleon Potential to an In-Medium Two-Nucleon Form}
+
+Three-nucleon (3N) interactions first appear in the chiral lagrangian at order N$^2$LO. Numerous studies have shown that inclusion of the 3N forces is essential for correctly modeling nuclear physics in all regimes, from light and medium nuclei \cite{PhysRevLett.99.042501,0954-3899-39-8-085111} to nuclear matter \cite{PhysRevC.82.014314,PhysRevC.83.031301}.
+
+However, in modern numerical approaches such as the ab initio no core shell model, including 3N forces exactly in calculations requires the use of basis spaces which are orders of magnitude larger than the two-nucleon (2N) case. The increased demands on memory and computing hours rapidly become prohibitive even for light nuclei \cite{Barrett2013131}. 
+
+Because we have a highly accurate but computationally intensive theory, this suggests an effective theory approach. Here, we analytically reduce the chiral three-body interaction to an average two-body interaction which depends on the local nucleon density. This approach has been successfuly applied in the reduction of two-body interactions to single particle potentials \cite{PhysRev.133.B329,AdelbergerHaxton}. 
+
+Early efforts to develop a two-body effective interaction for the 3N part of the chiral potential focussed  on cases with specific isospin constraints. Explicit expressions for  the effective potential in momentum space have been derived for pure neutron matter \cite{PhysRevC.82.014314} and for isospin symmetric nuclei \cite{PhysRevC.81.024002}. These results have been applied succesfully in calculations of nuclear pairing energies using nuclear energy density functionals \cite{0954-3899-39-1-015108}. The momentum space potential for arbitrary isospins was recently derived using \texttt{MATHEMATICA} for asymmetric isospins, although no explicit expressions were given\cite{Drischler:2015eba}. An alternate approach to deriving density-dependent effective potential using correlated basis functions was also proposed in \cite{PhysRevC.83.054003}.
+
+Here, we derive and state expressions for the effective potential valid for arbitrary isospin composition and without neglecting any contributions. The averaging procedure to derive the effective potential is described in Section~\ref{sec:averaging}. Expressions for the effective potential are given in both momentum and coordinate space (Sections~\ref{sec:momentum} and \ref{sec:coord}, respectively). All coordinate space potentials are written fully in terms of spherical tensors in order to facilitate their use. In Section~\ref{sec:local}, we perform an expansion to obtain a local approximation for the full effective potential, which otherwise contains nonlocal terms.
+
+\section{\label{sec:averaging}Averaging over a Fermi Gas core}
+
+We can imagine a nucleus such as $^{18}$F or $^{42}$Ca in which there are two particles outside an inert core. These particles interact via the 3N force with all of the core nucleons as well. If we model the core as a spin-symmetric Fermi gas, then summation over the interactions with the core nucleons gives a dependence on the Fermi momentum, which is analytically related to the density of the core. 
+
+The Fermi gas states are momentum eigenstates of the form
+\begin{equation}
+\ket{\alpha}=\ket{\vec{k}_\alpha;m_{s_\alpha},m_{t_\alpha}}
+\end{equation}
+where $m_s$ and $m_t$ are the spin and isospin projections, respectively. %We normalize the momentum eigenstates such that $\braket{\vec{k} | \vec{k}'}=(2\pi)^3\delta^{(3)}(\vec{k}-\vec{k}')$. 
+Because nucleons obey Fermi statistics, the nuclear Hamiltonian must commute with the antisymmetrization operator $\mathcal{A}_{123}$. Alternately, we can instead obtain the same matrix elements by evaluating the potential between antisymmetric states, e.g.
+\begin{equation}
+\begin{split}
+\ket{\alpha_1\:\alpha_2\:\alpha_3}_{\text{assym}} = \sqrt{\frac{1}{6}} \left( \ket{\alpha_1\:\alpha_2\:\alpha_3}\right. & - \ket{\alpha_1\:\alpha_3\:\alpha_2} - \ket{\alpha_2\:\alpha_1\:\alpha_3}   \\
+&\hspace{.5cm}\left. +\ket{\alpha_2\:\alpha_3\:\alpha_1} - \ket{\alpha_3\:\alpha_2\:\alpha_1} + \ket{\alpha_3\:\alpha_1\:\alpha_2} \right)
+\end{split}
+\end{equation}
+Throughout this paper we will, for brevity, generally write the potential in a form which is not fully antisymmetrized\footnote{In practice, we choose $i=1,j=2,k=3$ in equations \eqref{eq:V_E}-\eqref{eq:V_C}.} but which is equivalent to the correct potential when evaluated between antisymmetric states.
+
+We can then sum over interactions with one core nucleon to generate an effective two-body potential $V_{12,\text{eff}}$ such that
+%\begin{equation}
+%\bra{\alpha_1,\alpha_2}\overline{V}_{3N}\ket{\beta_1,\beta_2}=\sum_{\gamma}\braket{\alpha_1,\alpha_2,\gamma | V_{3N} | \beta_1,\beta_2,\gamma}
+%\end{equation}
+\begin{equation}
+\frac{1}{2} \bra{\alpha_1\:\alpha_2}_{\text{assym}}  V_{12,\text{eff}}\ket{\beta_1 \:\beta_2 }_{\text{assym}}=\frac{1}{6} \sum_{\gamma} \bra{\alpha_1\:\alpha_2 \: \gamma}_{\text{assym}} V_{123}  \ket{\beta_1 \:\beta_2 \gamma}_{\text{assym}}
+\end{equation}
+where the the Fermi gas is assumed to be spin symmetric but not necessarily isospin symmetric, so that the sum can be expanded as
+\begin{equation}
+\sum_\gamma=\sum_{m_{s_\gamma}=\pm 1/2}\int \frac{d^3k_\gamma}{(2\pi)^3} \Big[\delta_{m_{t_\gamma},+1/2} n_p(k_\gamma) +\delta_{m_{t_\gamma,-1/2}} n_n(k_\gamma) \Big]
+\end{equation}
+with $n_p(k)$ and $n_n(k)$ the density of states for the protons and neutrons in the Fermi gas, respectively. We will derive specific results for the $T=0$ Fermi-Dirac distribution, $n_p(k)=\theta(k_{F,p}-k)$ and $n_n(k)=\theta(k_{F,n}-k)$, however any density of states may be substituted at the cost of increasing the complexity when performing the spectator momentum sums.
+
+Density dependence arises from the momentum integrals. The standard relationship for a homogeneous Fermi gas with two internal spin degrees of freedom is 
+\begin{equation}\label{eq:kF}
+\rho=\frac{1}{V}\sum_{m_{s}=\pm 1/2}\int \frac{d^3\vec{k}}{(2\pi)^3}\:n(k)
+=\frac{1}{V}\sum_{m_{s}=\pm 1/2}\int^{k<k_F}\frac{d^3\vec{k}}{(2\pi)^3}=\frac{k_F^3}{3\pi^2}
+\end{equation}
+As the Fermi gas is not assumed to be isospin symmetric, the densities for proton and neutron components are not necessarily equal and will be denoted by $\rho_p$, $\rho_n$. These are naturally related to the respective Fermi momenta. As they will arise repeatedly in our calculations, we define dimensionless isoscalar and isovector combinations of the densities:
+\begin{equation}\label{eq:densities}
+\rho_{I=0,1}=\frac{\rho_p\pm\rho_n}{m_\pi^3}
+\end{equation}
+
+
+\section{\label{sec:momentum} The effective potential in momentum space}
+
+\begin{figure}
+\centering
+\includegraphics[page=4]{ChiralPotential/Figures/3NFDiagrams}
+\includegraphics[page=3]{ChiralPotential/Figures/3NFDiagrams}
+\includegraphics[page=2]{ChiralPotential/Figures/3NFDiagrams}
+\caption{\label{fig:3NF}Diagrams for the 3N interactions at NNLO.}
+\end{figure}
+
+There are three three-body terms in the chiral potential at NNLO \cite{PhysRevC.66.064001}. 
+\begin{align}
+V_E&=\frac{1}{2}\frac{c_E }{F_\pi^4\Lambda_\chi}\sum_{i\neq j} \vec{\tau}_i\cdot\vec{\tau}_j \label{eq:V_E} \\
+V_D&=-\frac{ g_A}{8F_\pi^2}\frac{c_D}{\Lambda_\chi F_\pi^2}\sum_{i\neq j } \frac{ \vec{\sigma}_i\cdot\vec{q}_j\:\vec{\sigma}_j\cdot\vec{q}_j }{q^2_j+m_\pi^2} \vec{\tau}_i\cdot\vec{\tau}_j \label{eq:V_D}\\
+V_{C} &= \frac{1}{2}\left(\frac{g_A}{2F_\pi}\right)^2\sum_{i\neq j \neq k} \frac{ \vec{\sigma}_i\cdot\vec{q}_i}{q_i^2+m_\pi^2}\frac{\vec{\sigma}_j\cdot\vec{q}_j }{q^2_j+m_\pi^2} F_{ijk}^{\alpha\beta}\tau_i^{\alpha}\tau_j^\beta \label{eq:V_C}
+\end{align}
+
+where 
+\begin{equation}
+F_{ijk}^{\alpha\beta}=\delta^{\alpha \beta}\left[-\frac{4c_1m_\pi^2}{F_\pi^2}+\frac{2c_3}{F_\pi^2}\vec{q}_i\cdot\vec{q}_j\right]+\sum_\gamma\frac{c_4}{F_\pi^2}\epsilon^{\alpha\beta\gamma}\tau^\gamma_k\vec{\sigma}_k\cdot\left(\vec{q}_i\times\vec{q}_j\right)
+\end{equation}
+and $\vec{q}_i=\vec{k}_i' - \vec{k}$ is the difference in the final and initial state momenta for particle $i \in \{1,2,3\}$. COMMENT ON SUPERSCRIPT VS SUBSCRIPT?
+
+These represent a three-body contact potential, a one-pion exchange plus contact interaction (1PE), and a two-pion exchange (2PE) interaction as shown in Figure \ref{fig:3NF}. Note that the 2PE term can be split into parts proportional to $c_1, c_3$ and $c_4$ as $V_C=V_1+V_2+V_4$. Analytically summing over the Fermi gas particles to find an effective potential corresponds to the summations shown in Figure \ref{fig:eff-diagram}. Note that $c_D$ and $c_E$ are unitless, while $c_1, c_3$ and $c_4$ have units of inverse energy. 
+
+\begin{figure}
+\includegraphics[scale=0.6,page=1]{ChiralPotential/Figures/InMediumDiagrams2}
+\caption{\label{fig:eff-diagram} Diagrammatic representation of $V_{12,\text{eff}}$.}
+\end{figure}
+
+For a standard two-body interaction, the matrix elements may depend only on the quantities
+ \begin{equation}
+ \vec{k}=\frac{\vec{k}_1-\vec{k}_2}{2},\quad \vec{k}'=\frac{\vec{k}'_1-\vec{k}'_2}{2}
+ \end{equation}
+ in order for the Hamiltonian to be Galilean invariant. However, the original three-body interaction may also depend on the total momentum of the two particles,
+ \begin{equation}
+ \vec{P}=\vec{k}_1+\vec{k}_2, \quad  \vec{P}'=\vec{k}'_1+\vec{k}'_2
+ \end{equation}
+ through the relative Jacobi momenta 
+ \begin{equation}
+ \vec{\pi}_1=\frac{1}{\sqrt{2}}\left(\vec{k}_1-\vec{k}_2\right), \quad  \vec{\pi}_2=\frac{1}{\sqrt{6}}\left(\vec{k}_1+\vec{k}_2-2\vec{k}_3\right).
+ \end{equation}
+ 
+We will make the approximation that the net momentum of the two valence particles is zero, and therefore so is the net momentum of the Fermi gas particles. Although this makes sense in the context of a nucleus with an inert core, for full many-body calculations it cannot be true that all pairs of particles have zero total momentum in a given reference frame. For a Fermi gas, the average net momentum of two particles scales as 
+$\overline{|k_1+k_2|} \sim V^2 k_F^7 
+%\sim N^2 k_F 
+\sim N^2 \rho^{1/3}$. 
+We therefore expect that the $P=0$ approximation is valid for many-body calculations when the density is low. This density-dependence is confirmed for nuclear matter by \cite{Drischler:2015eba}, where the authors also note that it seems to be a better approximation when the system is very isospin asymmetric. 
+ 
+ The effective interactions for \eqref{eq:V_E} and \eqref{eq:V_D} are given in momentum space by
+ \begin{align}
+ \veff^E=-\frac{3c_Em_\pi^3}{2F_\pi^4 \Lambda_\chi}&\left(\rhozero-\rhoone\tauplusthree\right)\\
+ \begin{split}
+ \veff^D=-\frac{c_Dg_A m_\pi^3}{8 F_\pi^4\Lambda_\chi}&\left[\rhozero\taudot \frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2}  - \rhoone \tauplusthree\frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2} \right. \\
+&+ \left(3 -\taudot\vec{\sigma}_1\cdot\hat{k}\:\vec{\sigma}_2\cdot\hat{k}\, \right) \Big[\Gamma_{0,I=0}(k)-2 \Gamma_{1,I=0}(k)\Big] \\
+&+  \left(3 -\taudot\frac{\sigmadot}{3} \right) \,\Gamma_{2,I=0}(k) \\
+ &-\tauplusthree \left(1 +\taudot\vec{\sigma}_1\cdot\hat{k}\:\vec{\sigma}_2\cdot\hat{k} \right) \Big[\Gamma_{0,I=1}(k)-2 \Gamma_{1,I=1}(k)\Big] \\
+ &-\tauplusthree  \left(1+\taudot\frac{\sigmadot}{3} \right) \Gamma_{2,I=1}(k)
++ \vec{k}\leftrightarrow\vec{k}'\left.\fracphantom\right]
+ \end{split} 
+ \end{align}
+Here, $\vec{q}=\vec{k}'-\vec{k}$ is the momentum transfer during the interaction. Conservation of energy requires that $|\vec{k}|=|\vec{k}'|$. Note that neither of these terms contribute for systems of pure neutrons or protons due to the antisymmetrization, consistent with the behavior of the original 3N interactions which also vanish. The functions $\Gamma_{\alpha,I=0,1}(k)=\Gamma_{\alpha,p}(k)\pm\Gamma_{\alpha,n}(k)$ are momentum dependent analogues of the densities \eqref{eq:densities} which arise from integrating over the spectator momentum, e.g. for 
+\begin{equation}
+\Gamma_{\alpha,p}(k) = \frac{k^{2-\alpha}}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{p}(k_\gamma) \frac{\left\{1,k_\gamma\cos\theta,k_\gamma^2\right\}_\alpha}{(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2}
+\end{equation}
+Explicit expressions for these sums with the Fermi-Dirac density of states are given in appendix~\ref{app:momSums}.
+
+The three parts of the two-pion exchange potential are 
+\begin{equation}\begin{split}
+ \veff^1 = - \frac{c_1 m_\pi^5}{2} \left(\frac{g_A}{F_\pi^2}\right)^2
+ \Bigg\{& -\rhozero \taudot \; \frac{\vec{\sigma}_1\cdot\vec{q}\;\vec{\sigma}_2\cdot\vec{q}}{(q^2+m_\pi^2)^2} \\
+ &+ \taudot \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot \vec{q}}{q^2+m_\pi^2}\Big[\frac{1}{k^2}\Gam{0}{0}{k}-\frac{1}{k}\Gam{1}{0}{k}\Big] \\
+ & +3 \Big[ G_{0,I=0}(\vec{k},\vec{k}')+G_{1,I=0}(\vec{k},\vec{k}')) \Big] \\
+ &+\tauplusthree \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot \vec{q}}{q^2+m_\pi^2}\Big[\frac{1}{k^2}\Gam{0}{1}{k}-\frac{1}{k}\Gam{1}{1}{k}\Big] \\
+ &- i \taucrossthree  \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot (\vec{k}+\vec{k}')/2}{q^2+m_\pi^2}\Big[\frac{1}{k^2}\Gam{0}{1}{k}-\frac{1}{k}\Gam{1}{1}{k}\Big]  \\
+ & -\tau_1^3 \Big[ G_{0,I=1}(\vec{k},\vec{k}')+G_{1,I=1}(\vec{k},\vec{k}')) \Big] \Bigg\}
+ \end{split}
+ \end{equation}
+Where
+\begin{align}
+G_{0,p}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{p}(k_\gamma) \frac{(\vec{k}-\vec{k}_\gamma)\cdot(\vec{k}'-\vec{k}_\gamma) }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]} \\
+%
+G_{1,p}(k,k') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{p}(k_\gamma) \frac{i\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right] }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}
+\end{align}
+Next is the $V_3$ contribution:
+\begin{equation}\begin{split}
+ \veff^3 = \frac{c_3 m_\pi^3}{4}& \left(\frac{g_A}{F_\pi^2}\right)^2
+ \Bigg\{ \rhozero \taudot \; \frac{\vec{\sigma}_1\cdot\vec{q}\;\vec{\sigma}_2\cdot\vec{q}}{(q^2+m_\pi^2)^2}q^2 \\
+& - \taudot \frac{\vec{\sigma}_1 \cdot \vec{q}}{q^2+m_\pi^2}\frac{\vec{\sigma}_2\cdot\vec{k'}\vec{q}\cdot\vec{k}'+\vec{\sigma}_2\cdot\vec{k}\vec{q}\cdot\vec{k}}{k^2}\Big[\Gam{0}{0}{k}-2\Gam{1}{0}{k}\Big] \\
+& -\taudot\frac{2}{3}\frac{\vec{\sigma}_1 \cdot \vec{q}\;\vec{\sigma}_2 \cdot \vec{q}}{q^2+m_\pi^2}\Gam{2}{0}{k} \\
+& - \tau_1^3 \frac{\vec{\sigma}_1 \cdot \vec{q}}{q^2+m_\pi^2}\frac{\vec{\sigma}_2\cdot\vec{k'}\vec{q}\cdot\vec{k}'+\vec{\sigma}_2\cdot\vec{k}\vec{q}\cdot\vec{k}}{k^2}\Big[\Gam{0}{1}{k}-2\Gam{1}{1}{k}\Big] \\
+& -\tau_1^3\frac{2}{3}\frac{\vec{\sigma}_1 \cdot \vec{q}\;\vec{\sigma}_2 \cdot \vec{q}}{q^2+m_\pi^2}\Gam{2}{1}{k} \\
+& + i\taucrossthree \frac{\vec{\sigma}_1 \cdot \vec{q}}{q^2+m_\pi^2}\frac{\vec{\sigma}_2\cdot\vec{k'}\vec{q}\cdot\vec{k}'-\vec{\sigma}_2\cdot\vec{k}\vec{q}\cdot\vec{k}}{k^2}\Big[\Gam{0}{1}{k}-2\Gam{1}{1}{k}\Big] \\
+& -3 \Big[ G_{2,I=0}(\vec{k},\vec{k}')+G_{3,I=0}(\vec{k},\vec{k}')) \Big]\\
+& +\tau_1^3\Big[ G_{2,I=1}(\vec{k},\vec{k}')+G_{3,I=1}(\vec{k},\vec{k}')) \Big]\Bigg\}
+\end{split}
+ \end{equation}
+ 
+ Where
+\begin{align}
+G_{3,N}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{N,P}(k_\gamma) \frac{\left[(\vec{k}-\vec{k}_\gamma)\cdot(\vec{k}'-\vec{k}_\gamma) \right]^2}{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]} \\
+%
+G_{4,N}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{N,P}(k_\gamma) \frac{i\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right]\;(\vec{k}-\vec{k}_\gamma)\cdot(\vec{k}'-\vec{k}_\gamma) }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}
+\end{align}
+
+ And finally $V_4$
+ 
+ \begin{equation}\begin{split}
+ \veff^4 = -\frac{c_4 m_\pi^3}{4} \left(\frac{g_A}{F_\pi^2}\right)^2
+ \Bigg\{ &\taudot \frac{\vec{\sigma}_1 \cdot \vec{q}}{q^2+m_\pi^2}\frac{\vec{\sigma}_2\cdot\vec{k'}\vec{q}\cdot\vec{k}'+\vec{\sigma}_2\cdot\vec{k}\vec{q}\cdot\vec{k}}{k^2}\Big[\Gam{0}{0}{k}-2\Gam{1}{0}{k}\Big] \\
+& - 2\,\taudot\frac{\vec{\sigma}_1 \cdot \vec{q}\;\vec{\sigma}_2 \cdot \vec{q}}{q^2+m_\pi^2}\Big[\Gam{0}{0}{k}-2\Gam{1}{0}{k} +\frac{2}{3}\Gam{2}{0}{k}\Big] \\
+& + \taudot\Big[G_{4,I=0}(k_1,k_1')-G_{5,I=0}(k_1,k_1')\Big]\\
+%
+&-\tau_1^3 \frac{\vec{\sigma}_1 \cdot \vec{q}}{q^2+m_\pi^2}\frac{\vec{\sigma}_2\cdot\vec{k'}\vec{q}\cdot\vec{k}'+\vec{\sigma}_2\cdot\vec{k}\vec{q}\cdot\vec{k}}{k^2}\Big[\Gam{0}{1}{k}-2\Gam{1}{1}{k}\Big] \\
+& + 2\,\tau_1^3\frac{\vec{\sigma}_1 \cdot \vec{q}\;\vec{\sigma}_2 \cdot \vec{q}}{q^2+m_\pi^2}\Big[\Gam{0}{1}{k}-2\Gam{1}{1}{k} +\frac{2}{3}\Gam{2}{!}{k}\Big] \\
+& - \tau_1^3\Big[G_{4,I=1}(\vec{k}_1,\vec{k}_1')-G_{5,I=1}(\vec{k}_1,\vec{k}_1')\Big]
+\Bigg\}
+\end{split}
+ \end{equation}
+ where the final $G$ function is 
+ \begin{equation}
+ G_{5,N}(\vec{k},\vec{k}')  = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{N,P}(k_\gamma) \frac{\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right]\;\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right] }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}
+ \end{equation}
+
+DISCUSS: In \cite{PhysRevC.81.024002}, an argument is made that for the interaction in isospin symmetric matter, the effective terms generated from the 3N interaction are partially corrections to 2N 1PE. In particular, $c_D$ term reduces (eqn 24) and $c_E$ enhances (eqn 11) 
+ 
+\section{\label{sec:coord}The effective potential in coordinate space}
+
+By evaluating the Fourier transforms of the momentum space effective potential, we obtain the potential in coordinate space. Each term in the full potential contains couplings of varying numbers of vector operators operating on spatial and spin quantum numbers. Throughout, we give the potentials by first coupling any coordinate operators with one another (e.g. forming the spherical harmonics $Y_l(\hat{r}_{12})$ and $Y_l(\rotphat)$), then coupling these operators together before finally coupling with the spin operators.
+
+The simplest of the three-body interactions at N$^2$LO is the contact term. Evaluation of the diagram and summation over the core particles gives the two-body effective potential,
+\begin{equation}
+V_{12,\text{eff}}(\vec{r}_{12})=\frac{c_E }{2F_\pi^4\Lambda_\chi}\frac{m_\pi^6}{4\pi}\:3\w{0}{0}{0}{m_\pi r_{12}}\left[-\rho_{I=0}+ \rho_{I=1}\tauplusthree \right]
+\end{equation}
+which is spin-independent.
+%where the dimensionless isoscalar and isovector spectator nucleon densities are given by,
+%\begin{equation}\label{eq:densities}
+%\rho_{I=0,1}=\frac{\rho_P\pm\rho_N}{m_\pi^3}
+%\end{equation}
+
+The three-body one pion exchange term (the middle diagram in Figure \ref{fig:3NF}) generates a richer effective interaction. The momentum dependence generates both a purely local interaction
+\begin{multline}
+V^{D}_{12,\text{eff}}(\rot)=
+%&\frac{c_D g_Am_\pi^6}{8 F_\pi^4 \Lambda_\chi}\: \left[\rho_{I=0}\left(\taudot W^{\text{LR}}_{1PE}(\rot)  +3\frac{\delta^{(3)}(\rot)}{m_\pi^3}\right) \right. \\
+%&-\left. \rho_{I=1} \left(W^{\text{LR}}_{1PE}(\rot)+(1-2\sigmadot/3)\frac{\delta^{(3)}(\rot)}{m_\pi^3}\right) \frac{\tau_3(1)+\tau_3(2)}{2} \right]
+\frac{c_D g_A}{8 F_\pi^4 \Lambda_\chi} \frac{m_\pi^6}{4\pi}\: \left[\rho_{I=0}\left(\fracphantom\taudot\; W^{\text{LR}}_{1PE}(\rot)  +3\;\w{0}{0}{0}{m_\pi r}\right) \right. \\
+-\left. \rho_{I=1}\;\tauplusthree \;\left(\fracphantom W^{\text{LR}}_{1PE}(\rot)+(1-2\sigmadot/3)\;\w{0}{0}{0}{m_\pi r}\right) \right]
+\end{multline}
+and a nonlocal potential arising from the exchange terms 
+\begin{multline}\label{eq:1PENonlocal}
+V^{D}_{12,\text{eff}}(\rot,\rotp)=\frac{-c_D g_A }{8 F_\pi^4 \Lambda_\chi} \frac{m_\pi^6}{32\pi^2}\:  \left[ \w{0}{0}{0}{m_\pi r_{12}} \left\{\fracphantom \rhohat{0}{r_{12}}\left(\taudot W^{\text{LR}}_{1PE}(\rotp)+3\:\w{0}{1}{0}{m_\pi \rotpr}\right) \right.\right. \\
+\left.\left.+\hat{\rho}_{I=1}(r'_{12}) \tauplusthree \left( W^{\text{LR}}_{1PE}(\rotp)-\w{0}{1}{0}{m_\pi \rotpr}\right) \right\} + \rot \leftrightarrow \rotp \vphantom{\left(\yukawa{r}^2\right)} \right]
+\end{multline}
+In order to highlight the physical meaning of this expression, we have written part of this result using a dimensionless scalar function proportional to the long range terms in the two-body one pion exchange potential, defined as
+\begin{equation}\begin{split}
+W^{\text{LR}}_{1PE}(\vec{r})&=\frac{e^{-m_\pi r}}{m_\pi r}\left[\left(\vec{\sigma}_1\cdot\hat{r}\:\vec{\sigma}_2\cdot\hat{r}-\sigmadot\right)\left(1+\frac{3}{m_\pi r}+\frac{3}{(m_\pi r)^2}\right)+\frac{\sigmadot}{3}\right] \\
+%&=\frac{1}{4 \pi}\frac{e^{-m_\pi r}}{m_\pi r}\left[\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo\left(1+\frac{3}{m_\pi r}+\frac{3}{(m_\pi r)^2}\right)+\frac{\sigmadot}{3}\right] \\
+&=\left[\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo\w{2}{1}{2}{m_\pi r}+\frac{\sigmadot}{3}\w{0}{1}{0}{m_\pi r}\right]
+\end{split}
+\end{equation}
+
+The density dependence is now also mixed with spatial dependence, which we define in analogy with \eqref{eq:densities} as 
+\begin{equation}\label{eq:hatdensities}
+\hat{\rho}_{I=0,1}(r)=%\frac{\rho_P}{m_\pi^3}\:\frac{3 j_1(k^P_F r)}{k_F^P r}\pm\frac{\rho_N}{m_\pi^3}\:\frac{3 j_1(k^N_F r)}{k_F^N r}=
+\frac{1}{m_\pi^3}\left[ \left(\frac{3 \rho_P}{\pi}\right)^{2/3} \frac{ j_1( [3\pi^2 \rho_P]^{1/3}  r)}{ r} \pm \left(\frac{3 \rho_N}{\pi}\right)^{2/3} \frac{ j_1( [3\pi^2 \rho_N]^{1/3}  r)}{ r} \right].
+\end{equation}
+
+For all pieces of the N$^2$LO 3N interaction besides the purely short range contact $V_E$, nonlocal effective interactions like \eqref{eq:1PENonlocal} are generated from summing over terms which are not diagonal in the spectator particle. Coordinate space potentials are generally nonlocal when there is a momentum dependence of the interaction. In this case, the $\Gamma$ terms with complicated momentum dependence in Section \ref{sec:momentum} are the source.
+
+From the 2PE term, a large number of unique terms are generated for the effective interaction. The $V_1$ piece again produces both a local part 
+\begin{multline}
+V^{1}_{12,\text{eff}}(\rot)=-\frac{c_1 m_\pi^6}{8\pi}\left(\frac{g_A}{F_\pi^2}\right)^2 \rho_{I=0}\taudot\:\\
+ \times\left(\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo \w{2}{2}{2}{m_\pi r} -\frac{\sigmadot}{3}  \w{2}{2}{0}{m_\pi r} \right)
+\end{multline}
+and a nonlocal part 
+
+\begin{multline}
+V^{1}_{12,\text{eff}}(\rot,\rotp)=-\frac{c_1 m_\pi^9}{48\pi} \left(\frac{g_A}{F_\pi^2}\right)^2 
+\left\{ \fracphantom \right. \\
+\left[ \taudot \: \rhohat{0}{|\rot-\rotp|} + \tau_1^3 \rhohat{1}{|\rot-\rotp|} \right] \w{1}{1}{1}{ m_\pi r_{12}}\w{1}{1}{1}{ m_\pi | \rot-\rotp | } \\
+\times \left( \sigmatwo \cdot [ Y_1 (\hat{r}_{12}) \otimes Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_2
+ )  
+ +\frac{\sigmadot}{3} Y_1 (\hat{r}_{12}) \cdot Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)
++\rot\leftrightarrow\rotp\right) \\
+%
++ \tau_1^3 \rhohat{1}{|\rot-\rotp|} \: \w{1}{1}{1}{m_\pi r_{12}} \w{1}{1}{1}{m_\pi | \rot-\rotp | } \\ 
+\times \left(\fracphantom
+\frac{1}{2}(\sigmacross)\cdot (Y_1 (\hat{r}_{12}) \times Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) )+\rot\leftrightarrow\rotp\right) \\ 
+%
+- i \taucrossthree\: \rhohat{1}{|\rot-\rotp|} \: \w{1}{1}{1}{ m_\pi r_{12}}\w{1}{1}{1}{m_\pi | \rot-\rotp | }  \\
+\times\left(\fracphantom
+\frac{1}{2}(\sigmacross)\cdot (Y_1 (\hat{r}_{12}) \times Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right))-\rot\leftrightarrow\rotp\right) \\
+%
++\left[3\rhohat{0}{|\rot-\rotp|}-\tau_1^3\rhohat{1}{|\rot-\rotp|}\right]\w{1}{1}{1}{ m_\pi r_{12}}\w{1}{1}{1}{m_\pi \rotpr} \\
+\times\left.\left(i\vec{\sigma}_1 \cdot (Y_1 (\hat{r}_{12}) \times Y_1(\rotphat)) + Y_1 (\hat{r}_{12}) \cdot Y_1(\rotphat) \fracphantom \right)
+\right\}
+\end{multline}
+
+% 
+
+For $V_3$ the spin and isospin structure of the 3N interaction is identical to that of $V_1$ so the result is similar. Again we find one term which is purely local,
+
+\begin{multline}
+V^{3}_{12,\text{eff}}(\rot)=\frac{c_3 }{4}\frac{m_\pi^6}{4\pi}\left(\frac{g_A}{F_\pi^2}\right)^2 \rho_{I=0}\;\taudot\:\\
+ \times\left(-\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo\: \w{4}{2}{2}{m_\pi r} + \frac{\sigmadot}{3}\:  \w{4}{2}{0}{m_\pi r} \right)
+\end{multline}
+
+as well as a nonlocal part,
+\begin{multline}
+V^{3}_{12,\text{eff}}(\rot,\rotp)=\frac{c_3 }{4}\frac{m_\pi^9}{32\pi^2}\left(\frac{g_A}{F_\pi^2}\right)^2 \left\{\fracphantom\left[\taudot \:\rhohat{0}{|\rot-\rotp|} +\tauplusthree \rhohat{1}{|\rot-\rotp|} \right]\right. \\
+%
+\times\left(\sqrt{\frac{7}{12}}\frac{8\pi}{15}\sigmatwo\cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_2 \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} 
+\right.\\ 
+%
++\frac{1}{3}\frac{8\pi}{15}\sigmadot Y_2(\hat{r}_{12})\cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
+%
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2(\hat{r}_{12}) \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |\rot-\rotp|} \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
+\left.+\frac{1}{9}\sigmadot  \w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |\rot-\rotp|}+\; \rot \leftrightarrow \rotp \fracphantom\right) \\
+%
+%
++\tau_1^3 \rhohat{1}{|\rot-\rotp|} \\
+\times\frac{\sqrt{5}}{2}\left(\fracphantom  \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot - \rotp|} + \; \rot \leftrightarrow \rotp \fracphantom\right)\\
+%
+-i\taucrossthree \rhohat{1}{|\rot-\rotp|} \\
+\times\frac{\sqrt{5}}{2}\left(\fracphantom \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} - \; \rot \leftrightarrow \rotp \fracphantom\right) \\
+%
+%
++\left[3\rhohat{0}{|\rot-\rotp|}-\tau_1^3 \rhohat{1}{|\rot-\rotp|}\right]\left( \fracphantom\right. \\
+\sqrt{\frac{5}{2}}\frac{8\pi}{15}  \vec{\sigma}_1 \cdot [Y_2 (\hat{r}_{12}) \otimes Y_2(\rotphat)]_1 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi\rotpr}  \\
+-\frac{8\pi}{15}\;Y_2 (\hat{r}_{12}) \cdot Y_2(\rotphat) \;\w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi\rotpr} \\
+%
+-\frac{1}{3} \w{2}{1}{0}{m_\pi r_{12}} \w{2}{1}{0}{m_\pi\rotpr} \left. \left.\fracphantom\right)\right\}
+\end{multline}
+
+The $V_4$ term generates only a nonlocal term because the terms diagonal in the spectator particle all sum to zero. The nonlocal terms are
+
+\begin{multline}
+V^{4}_{12,\text{eff}}(\rot,\rotp) = \frac{c_4}{4}\frac{g_A^2}{F_\pi^2}\frac{m_\pi^9}{16\pi^2}\left\{ \fracphantom \right. 
+\left(\rhohat{0}{|\rot-\rotp|}\taudot-\rhohat{1}{|\rot-\rotp|}\tauplusthree\right)
+\\
+\times\left( -\frac{4}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2(\rotphat)\w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{0}{m_\pi |\rot-\rotp|} \right. \\
++\frac{2}{9}\sigmadot\; \w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{0}{m_\pi |\rot-\rotp|} \\
++\sqrt{\frac{7}{12}}\frac{8\pi}{15}\sigmatwo\cdot \left[ Y_2(\rotphat)\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \right]_2 \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
+-\frac{1}{3}\frac{8\pi}{15}\sigmadot \; Y_2(\rotphat)\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)\w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
+\left.+\; \rot \leftrightarrow \rotp \fracphantom\right) \\
++\left(\rhohat{0}{|\rot-\rotp|}\taudot-\rhohat{1}{|\rot-\rotp|}\tauplusthree\right) \\
+\times \left( 
+-\frac{\sqrt{21}}{3}\frac{8\pi}{15}\sigmatwo \cdot \left[Y_2(\hat{r}_{12})\otimes Y_2(\rotphat)\right]_2 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \right. \\
+-\frac{1}{3}\frac{8\pi}{15}\sigmadot\; Y_2(\hat{r}_{12}) \cdot Y_2(\rotphat)\w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \\
++\frac{2}{9}\sigmadot \;\w{2}{1}{0}{m_\pi r_{12}} \w{2}{1}{0}{m_\pi \rotpr} \\
++\frac{1}{3}\sqrt{\frac{8\pi}{15}} \sigmatwo \cdot Y_2(\hat{r}_{12}) \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{0}{m_\pi \rotpr} \\
++\frac{1}{3}\sqrt{\frac{8\pi}{15}} \sigmatwo \cdot Y_2(\rotphat) \w{2}{1}{0}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \left.\fracphantom\right) \\
+%
+-\left(\rhohat{0}{|\rot-\rotp|}\taudot-\rhohat{1}{|\rot-\rotp|}\tau_1^3 \right) \\
+\times\sqrt{\frac{5}{2}} \frac{8\pi}{15} \vec{\sigma}_1\cdot\left[Y_2(\hat{r}_{12})\otimes Y_2(\rotphat)\right]_1 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \left.\fracphantom\right\}
+\end{multline}
+
+
+
+%
+% ****** End of file apssamp.tex ******
