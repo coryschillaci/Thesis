@@ -5,11 +5,9 @@ Three-nucleon (3N) interactions first appear in the chiral lagrangian at order N
 
 However, in modern numerical approaches such as the ab initio no core shell model, including 3N forces exactly in calculations requires the use of basis spaces which are orders of magnitude larger than the two-nucleon (2N) case. The increased demands on memory and computing hours rapidly become prohibitive even for light nuclei \cite{Barrett2013131}. 
 
-Because we have a highly accurate but computationally intensive theory, this suggests an effective theory approach. Here, we analytically reduce the chiral three-body interaction to an average two-body interaction which depends on the local nucleon density. This approach has been successfuly applied in the reduction of two-body interactions to single particle potentials \cite{PhysRev.133.B329,AdelbergerHaxton}. 
+Here, we analytically reduce the chiral three-body interaction to an average two-body interaction which depends on the local nucleon density. Early efforts to develop a two-body effective interaction for the 3N part of the chiral potential focussed  on cases with specific isospin constraints. Explicit expressions for  the effective potential in momentum space have been derived for pure neutron matter \cite{PhysRevC.82.014314} and for isospin symmetric nuclei \cite{PhysRevC.81.024002}. These results have been applied succesfully in calculations of nuclear pairing energies using nuclear energy density functionals \cite{0954-3899-39-1-015108}. The momentum space potential for arbitrary isospins was recently derived using \texttt{MATHEMATICA} for asymmetric isospins, although no explicit expressions were given\cite{Drischler:2015eba}. An alternate approach to deriving density-dependent effective potential using correlated basis functions was also proposed in \cite{PhysRevC.83.054003}. This approach has also been successfuly applied in the reduction of two-body interactions to single particle potentials \cite{PhysRev.133.B329,AdelbergerHaxton}. 
 
-Early efforts to develop a two-body effective interaction for the 3N part of the chiral potential focussed  on cases with specific isospin constraints. Explicit expressions for  the effective potential in momentum space have been derived for pure neutron matter \cite{PhysRevC.82.014314} and for isospin symmetric nuclei \cite{PhysRevC.81.024002}. These results have been applied succesfully in calculations of nuclear pairing energies using nuclear energy density functionals \cite{0954-3899-39-1-015108}. The momentum space potential for arbitrary isospins was recently derived using \texttt{MATHEMATICA} for asymmetric isospins, although no explicit expressions were given\cite{Drischler:2015eba}. An alternate approach to deriving density-dependent effective potential using correlated basis functions was also proposed in \cite{PhysRevC.83.054003}.
-
-Here, we derive and state expressions for the effective potential valid for arbitrary isospin composition and without neglecting any contributions. The averaging procedure to derive the effective potential is described in Section~\ref{sec:averaging}. Expressions for the effective potential are given in both momentum and coordinate space (Sections~\ref{sec:momentum} and \ref{sec:coord}, respectively). All coordinate space potentials are written fully in terms of spherical tensors in order to facilitate their use. In Section~\ref{sec:local}, we perform an expansion to obtain a local approximation for the full effective potential, which otherwise contains nonlocal terms.
+Here, we derive and state expressions for the effective potential valid for arbitrary isospin composition and without neglecting any contributions. The averaging procedure to derive the effective potential is described in Section~\ref{sec:averaging}. Expressions for the effective potential are given in both momentum and coordinate space (Sections~\ref{sec:momentum} and \ref{sec:coord}, respectively). All coordinate space potentials are written fully in terms of spherical tensors in order to facilitate their use. 
 
 \section{\label{sec:averaging}Averaging over a Fermi Gas core}
 
@@ -40,20 +38,20 @@ where the the Fermi gas is assumed to be spin symmetric but not necessarily isos
 \begin{equation}
 \sum_\gamma=\sum_{m_{s_\gamma}=\pm 1/2}\int \frac{d^3k_\gamma}{(2\pi)^3} \Big[\delta_{m_{t_\gamma},+1/2} n_p(k_\gamma) +\delta_{m_{t_\gamma,-1/2}} n_n(k_\gamma) \Big]
 \end{equation}
-with $n_p(k)$ and $n_n(k)$ the density of states for the protons and neutrons in the Fermi gas, respectively. We will derive specific results for the $T=0$ Fermi-Dirac distribution, $n_p(k)=\theta(k_{F,p}-k)$ and $n_n(k)=\theta(k_{F,n}-k)$, however any density of states may be substituted at the cost of increasing the complexity when performing the spectator momentum sums.
+with $n_p(k)$ and $n_n(k)$ the density of states for the protons and neutrons in the Fermi gas, respectively. We will derive specific results for the $T=0$ Fermi-Dirac distribution, $n_p(k)=\theta(k_{F}^{p}-k)$ and $n_n(k)=\theta(k_{F}^{n}-k)$, however any density of states may be substituted at the cost of increasing the complexity when performing the spectator momentum sums.
 
 Density dependence arises from the momentum integrals. The standard relationship for a homogeneous Fermi gas with two internal spin degrees of freedom is 
 \begin{equation}\label{eq:kF}
 \rho=\frac{1}{V}\sum_{m_{s}=\pm 1/2}\int \frac{d^3\vec{k}}{(2\pi)^3}\:n(k)
 =\frac{1}{V}\sum_{m_{s}=\pm 1/2}\int^{k<k_F}\frac{d^3\vec{k}}{(2\pi)^3}=\frac{k_F^3}{3\pi^2}
 \end{equation}
-As the Fermi gas is not assumed to be isospin symmetric, the densities for proton and neutron components are not necessarily equal and will be denoted by $\rho_p$, $\rho_n$. These are naturally related to the respective Fermi momenta. As they will arise repeatedly in our calculations, we define dimensionless isoscalar and isovector combinations of the densities:
+As the Fermi gas is not assumed to be isospin symmetric, the densities for proton and neutron components are not necessarily equal and will be denoted by $\rho_p$, $\rho_n$. These are naturally related to the respective Fermi momenta. We define dimensionless isoscalar and isovector combinations of the densities, 
 \begin{equation}\label{eq:densities}
-\rho_{I=0,1}=\frac{\rho_p\pm\rho_n}{m_\pi^3}
+\rho_{I=0,1}=\frac{\rho_p\pm\rho_n}{m_\pi^3},
 \end{equation}
+which appear throughout our results.
 
-
-\section{\label{sec:momentum} The effective potential in momentum space}
+\section{\label{sec:momentum}The effective potential in momentum space}
 
 \begin{figure}
 \centering
@@ -74,7 +72,7 @@ where
 \begin{equation}
 F_{ijk}^{\alpha\beta}=\delta^{\alpha \beta}\left[-\frac{4c_1m_\pi^2}{F_\pi^2}+\frac{2c_3}{F_\pi^2}\vec{q}_i\cdot\vec{q}_j\right]+\sum_\gamma\frac{c_4}{F_\pi^2}\epsilon^{\alpha\beta\gamma}\tau^\gamma_k\vec{\sigma}_k\cdot\left(\vec{q}_i\times\vec{q}_j\right)
 \end{equation}
-and $\vec{q}_i=\vec{k}_i' - \vec{k}$ is the difference in the final and initial state momenta for particle $i \in \{1,2,3\}$. COMMENT ON SUPERSCRIPT VS SUBSCRIPT?
+and $\vec{q}_i=\vec{k}_i' - \vec{k}$ is the difference in the final and initial state momenta for particle $i \in \{1,2,3\}$ and the greek indices refer to Cartesian vector components.
 
 These represent a three-body contact potential, a one-pion exchange plus contact interaction (1PE), and a two-pion exchange (2PE) interaction as shown in Figure \ref{fig:3NF}. Note that the 2PE term can be split into parts proportional to $c_1, c_3$ and $c_4$ as $V_C=V_1+V_2+V_4$. Analytically summing over the Fermi gas particles to find an effective potential corresponds to the summations shown in Figure \ref{fig:eff-diagram}. Note that $c_D$ and $c_E$ are unitless, while $c_1, c_3$ and $c_4$ have units of inverse energy. 
 
@@ -89,7 +87,7 @@ For a standard two-body interaction, the matrix elements may depend only on the 
  \end{equation}
  in order for the Hamiltonian to be Galilean invariant. However, the original three-body interaction may also depend on the total momentum of the two particles,
  \begin{equation}
- \vec{P}=\vec{k}_1+\vec{k}_2, \quad  \vec{P}'=\vec{k}'_1+\vec{k}'_2
+ \vec{P}=\vec{k}_1+\vec{k}_2, \quad  \vec{P}'=\vec{k}'_1+\vec{k}'_2,
  \end{equation}
  through the relative Jacobi momenta 
  \begin{equation}
@@ -104,7 +102,7 @@ We therefore expect that the $P=0$ approximation is valid for many-body calculat
  
  The effective interactions for \eqref{eq:V_E} and \eqref{eq:V_D} are given in momentum space by
  \begin{align}
- \veff^E=-\frac{3c_Em_\pi^3}{2F_\pi^4 \Lambda_\chi}&\left(\rhozero-\rhoone\tauplusthree\right)\\
+ \veff^E=-\frac{3c_Em_\pi^3}{2F_\pi^4 \Lambda_\chi}&\left(\rhozero-\rhoone\tauplusthree\right),\\
  \begin{split}
  \veff^D=-\frac{c_Dg_A m_\pi^3}{8 F_\pi^4\Lambda_\chi}&\left[\rhozero\taudot \frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2}  - \rhoone \tauplusthree\frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2} \right. \\
 &+ \left(3 -\taudot\vec{\sigma}_1\cdot\hat{k}\:\vec{\sigma}_2\cdot\hat{k}\, \right) \Big[\Gamma_{0,I=0}(k)-2 \Gamma_{1,I=0}(k)\Big] \\
@@ -114,30 +112,30 @@ We therefore expect that the $P=0$ approximation is valid for many-body calculat
 + \vec{k}\leftrightarrow\vec{k}'\left.\fracphantom\right]
  \end{split} 
  \end{align}
-Here, $\vec{q}=\vec{k}'-\vec{k}$ is the momentum transfer during the interaction. Conservation of energy requires that $|\vec{k}|=|\vec{k}'|$. Note that neither of these terms contribute for systems of pure neutrons or protons due to the antisymmetrization, consistent with the behavior of the original 3N interactions which also vanish. The functions $\Gamma_{\alpha,I=0,1}(k)=\Gamma_{\alpha,p}(k)\pm\Gamma_{\alpha,n}(k)$ are momentum dependent analogues of the densities \eqref{eq:densities} which arise from integrating over the spectator momentum, e.g. for 
+Here, $\vec{q}=\vec{k}'-\vec{k}$ is the momentum transfer during the interaction. Conservation of energy requires that $|\vec{k}|=|\vec{k}'|$. Note that neither of these terms contribute for systems of pure neutrons or protons due to the antisymmetrization, consistent with the behavior of the original 3N interactions which also vanish. The functions $\Gamma_{\alpha,I=0,1}(k)=\Gamma_{\alpha,p}(k)\pm\Gamma_{\alpha,n}(k)$ are momentum dependent analogues of the densities \eqref{eq:densities} which arise from integrating over the spectator momentum, e.g. 
 \begin{equation}
 \Gamma_{\alpha,p}(k) = \frac{k^{2-\alpha}}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{p}(k_\gamma) \frac{\left\{1,k_\gamma\cos\theta,k_\gamma^2\right\}_\alpha}{(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2}
 \end{equation}
-Explicit expressions for these sums with the Fermi-Dirac density of states are given in appendix~\ref{app:momSums}.
+and the corresponding expression for the $m_\tau=-1/2$ component of the Fermi gas. Explicit expressions for these sums with the Fermi-Dirac density of states are given in appendix~\ref{app:momSums}.
 
-The three parts of the two-pion exchange potential are 
+The two-pion exchange potential has three components as described above. Summing the spectator quantum numbers for the term proportional to $c_1$ gives a contribution to the effective two-body potential of
 \begin{equation}\begin{split}
  \veff^1 = - \frac{c_1 m_\pi^5}{2} \left(\frac{g_A}{F_\pi^2}\right)^2
  \Bigg\{& -\rhozero \taudot \; \frac{\vec{\sigma}_1\cdot\vec{q}\;\vec{\sigma}_2\cdot\vec{q}}{(q^2+m_\pi^2)^2} \\
  &+ \taudot \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot \vec{q}}{q^2+m_\pi^2}\Big[\frac{1}{k^2}\Gam{0}{0}{k}-\frac{1}{k}\Gam{1}{0}{k}\Big] \\
  & +3 \Big[ G_{0,I=0}(\vec{k},\vec{k}')+G_{1,I=0}(\vec{k},\vec{k}')) \Big] \\
  &+\tauplusthree \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot \vec{q}}{q^2+m_\pi^2}\Big[\frac{1}{k^2}\Gam{0}{1}{k}-\frac{1}{k}\Gam{1}{1}{k}\Big] \\
- &- i \taucrossthree  \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot (\vec{k}+\vec{k}')/2}{q^2+m_\pi^2}\Big[\frac{1}{k^2}\Gam{0}{1}{k}-\frac{1}{k}\Gam{1}{1}{k}\Big]  \\
- & -\tau_1^3 \Big[ G_{0,I=1}(\vec{k},\vec{k}')+G_{1,I=1}(\vec{k},\vec{k}')) \Big] \Bigg\}
+ &- i \taucrossthree  \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot (\vec{k}+\vec{k}')}{q^2+m_\pi^2}\Big[\frac{1}{k^2}\Gam{0}{1}{k}-\frac{1}{k}\Gam{1}{1}{k}\Big]  \\
+ & -\tau_1^3 \Big[ G_{0,I=1}(\vec{k},\vec{k}')+G_{1,I=1}(\vec{k},\vec{k}')) \Big] \Bigg\}.
  \end{split}
  \end{equation}
-Where
+The scalar functions $G_\alpha(\vec{k},\vec{k}')$ result from momentum summation when both pion propagators depend on $k_\gamma$. The functions appearing in $V_1$ are defined as
 \begin{align}
-G_{0,p}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{p}(k_\gamma) \frac{(\vec{k}-\vec{k}_\gamma)\cdot(\vec{k}'-\vec{k}_\gamma) }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]} \\
+G_{0,p}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{p}(k_\gamma) \frac{(\vec{k}-\vec{k}_\gamma)\cdot(\vec{k}'-\vec{k}_\gamma) }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}, \\
 %
-G_{1,p}(k,k') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{p}(k_\gamma) \frac{i\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right] }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}
+G_{1,p}(k,k') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{p}(k_\gamma) \frac{i\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right] }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}.
 \end{align}
-Next is the $V_3$ contribution:
+Next is the fully summed $V_3$ contribution,
 \begin{equation}\begin{split}
  \veff^3 = \frac{c_3 m_\pi^3}{4}& \left(\frac{g_A}{F_\pi^2}\right)^2
  \Bigg\{ \rhozero \taudot \; \frac{\vec{\sigma}_1\cdot\vec{q}\;\vec{\sigma}_2\cdot\vec{q}}{(q^2+m_\pi^2)^2}q^2 \\
@@ -147,19 +145,17 @@ Next is the $V_3$ contribution:
 & -\tau_1^3\frac{2}{3}\frac{\vec{\sigma}_1 \cdot \vec{q}\;\vec{\sigma}_2 \cdot \vec{q}}{q^2+m_\pi^2}\Gam{2}{1}{k} \\
 & + i\taucrossthree \frac{\vec{\sigma}_1 \cdot \vec{q}}{q^2+m_\pi^2}\frac{\vec{\sigma}_2\cdot\vec{k'}\vec{q}\cdot\vec{k}'-\vec{\sigma}_2\cdot\vec{k}\vec{q}\cdot\vec{k}}{k^2}\Big[\Gam{0}{1}{k}-2\Gam{1}{1}{k}\Big] \\
 & -3 \Big[ G_{2,I=0}(\vec{k},\vec{k}')+G_{3,I=0}(\vec{k},\vec{k}')) \Big]\\
-& +\tau_1^3\Big[ G_{2,I=1}(\vec{k},\vec{k}')+G_{3,I=1}(\vec{k},\vec{k}')) \Big]\Bigg\}
+& +\tau_1^3\Big[ G_{2,I=1}(\vec{k},\vec{k}')+G_{3,I=1}(\vec{k},\vec{k}')) \Big]\Bigg\},
 \end{split}
  \end{equation}
- 
- Where
+where
 \begin{align}
-G_{3,N}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{N,P}(k_\gamma) \frac{\left[(\vec{k}-\vec{k}_\gamma)\cdot(\vec{k}'-\vec{k}_\gamma) \right]^2}{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]} \\
+G_{3,N}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{N,P}(k_\gamma) \frac{\left[(\vec{k}-\vec{k}_\gamma)\cdot(\vec{k}'-\vec{k}_\gamma) \right]^2}{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}, \\
 %
-G_{4,N}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{N,P}(k_\gamma) \frac{i\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right]\;(\vec{k}-\vec{k}_\gamma)\cdot(\vec{k}'-\vec{k}_\gamma) }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}
+G_{4,N}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{N,P}(k_\gamma) \frac{i\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right]\;(\vec{k}-\vec{k}_\gamma)\cdot(\vec{k}'-\vec{k}_\gamma) }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}.
 \end{align}
 
- And finally $V_4$
- 
+ Finally the 3N $V_4$ interaction sums to,
  \begin{equation}\begin{split}
  \veff^4 = -\frac{c_4 m_\pi^3}{4} \left(\frac{g_A}{F_\pi^2}\right)^2
  \Bigg\{ &\taudot \frac{\vec{\sigma}_1 \cdot \vec{q}}{q^2+m_\pi^2}\frac{\vec{\sigma}_2\cdot\vec{k'}\vec{q}\cdot\vec{k}'+\vec{\sigma}_2\cdot\vec{k}\vec{q}\cdot\vec{k}}{k^2}\Big[\Gam{0}{0}{k}-2\Gam{1}{0}{k}\Big] \\
@@ -169,15 +165,15 @@ G_{4,N}(\vec{k},\vec{k}') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\p
 &-\tau_1^3 \frac{\vec{\sigma}_1 \cdot \vec{q}}{q^2+m_\pi^2}\frac{\vec{\sigma}_2\cdot\vec{k'}\vec{q}\cdot\vec{k}'+\vec{\sigma}_2\cdot\vec{k}\vec{q}\cdot\vec{k}}{k^2}\Big[\Gam{0}{1}{k}-2\Gam{1}{1}{k}\Big] \\
 & + 2\,\tau_1^3\frac{\vec{\sigma}_1 \cdot \vec{q}\;\vec{\sigma}_2 \cdot \vec{q}}{q^2+m_\pi^2}\Big[\Gam{0}{1}{k}-2\Gam{1}{1}{k} +\frac{2}{3}\Gam{2}{!}{k}\Big] \\
 & - \tau_1^3\Big[G_{4,I=1}(\vec{k}_1,\vec{k}_1')-G_{5,I=1}(\vec{k}_1,\vec{k}_1')\Big]
-\Bigg\}
+\Bigg\},
 \end{split}
  \end{equation}
  where the final $G$ function is 
  \begin{equation}
- G_{5,N}(\vec{k},\vec{k}')  = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{N,P}(k_\gamma) \frac{\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right]\;\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right] }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}
+ G_{5,N}(\vec{k},\vec{k}')  = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\gamma}{(2\pi)^3} n_{N,P}(k_\gamma) \frac{\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right]\;\vec{\sigma}_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\gamma)\right] }{[(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2][(\vec{k'}-\vec{k}_\gamma)^2+m_\pi^2]}.
  \end{equation}
 
-DISCUSS: In \cite{PhysRevC.81.024002}, an argument is made that for the interaction in isospin symmetric matter, the effective terms generated from the 3N interaction are partially corrections to 2N 1PE. In particular, $c_D$ term reduces (eqn 24) and $c_E$ enhances (eqn 11) 
+%DISCUSS: In \cite{PhysRevC.81.024002}, an argument is made that for the interaction in isospin symmetric matter, the effective terms generated from the 3N interaction are partially corrections to 2N 1PE. In particular, $c_D$ term reduces (eqn 24) and $c_E$ enhances (eqn 11) 
  
 \section{\label{sec:coord}The effective potential in coordinate space}
 
