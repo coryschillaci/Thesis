@@ -112,9 +112,41 @@ Text here
 
 \end{subsection}
 
-\begin{subsection}{Potential of the form $V(\vec{r},\vecrp)=f(r)g(|\vec{r}-\vecrp |)+g(r)f(|\vec{r}-\vecrp |)$.}
+\begin{subsection}{Other terms from the chiral effective potential}
 
-Text here
+A majority of the nonlocal terms seen in Section ??? are of the form
+
+\begin{equation}
+V(\rot,\rotp)=f(r)g(|\rot-\rotp |) \left[Y_{l}(\hat{r})\otimes Y_{l'}\left(\frac{\rot-\rotp}{|\rot-\rotp |}\right)\right]_{L M}\pm \rot\leftrightarrow \rotp.
+\end{equation}
+After substituting the new variables \eqref{eqn:nonlocaldef}, this becomes
+\begin{equation}\label{eq:r1r2Form1}
+V(\vec{r}_1,\vec{r}_2)=f(|\vec{r}_1+\vec{r}_2/2|)g(r_2) \left[Y_{l}\left(\frac{\vec{r}_1+\vec{r}_2/2}{|\vec{r}_1+\vec{r}_2/2|}\right)\otimes Y_{l'}\left(\hat{r}_2\right)\right]_{L M} \pm \vec{r}_2\rightarrow -\vec{r}_2
+\end{equation} 
+We can rewrite the second spherical harmonic using a formula from \cite{varshalovich1988},
+\begin{multline}
+Y_{l'm'}\left(\frac{\rot-\rotp}{|\rot-\rotp |}\right) = \sum_{l=0}^{l'}(-1)^{l'+l}\sqrt{\frac{4\pi(2l+1)(2l'-2l+1)}{2l'+1}} \\
+\times \rotpr^{l'-l} r_{12}^l |\rot-\rotp|^{-l'}\left[Y_{l}(\hat{r}_{12})\otimes Y_{l'-l}(\rotphat))\right]_{l'm'}
+\end{multline}
+With this substitution, \eqref{eq:r1r2Form1} becomes
+\begin{multline}
+V(\vec{r}_1,\vec{r}_2)=f(|\vec{r}_1+\vec{r}_2/2|)g(r_2) \\
+\sum_{l''=0}^{l} \sqrt{\frac{4\pi(2l''+1)(2l-2l''+1)}{2l+1}} \;r_1^{l''} \left(\frac{r_2}{2}\right)^{l-l''}|\vec{r}_1+\vec{r}_2/2|^{-l} \\
+ \Big[\big[Y_{l''}(\hat{r}_1) \otimes Y_{l-l''}(\hat{r}_2) \big]_l \otimes Y_{l'}\left(\hat{r}_2\right)\Big]_{L M} \pm \vec{r}_2 \rightarrow -\vec{r}_2
+\end{multline}
+Next, we can use the Wigner 6-$j$ symbol to recouple the three spherical harmonics, 
+\begin{multline}
+V(\vec{r}_1,\vec{r}_2)=f(|\vec{r}_1+\vec{r}_2/2|)g(r_2) 
+\sum_{l''=0}^{l} \sqrt{4\pi(2l''+1)(2l-2l''+1)} \;r_1^{l''} \left(\frac{r_2}{2}\right)^{l-l''}|\vec{r}_1+\vec{r}_2/2|^{-l} \\
+\sum_{l'''} (-1)^{l+l'+L} \sqrt{(2l'''+1)} \sixj{l''}{l-l''}{l}{l'}{L}{l'''} \Big[\big[Y_{l'}(\hat{r}_2) \otimes Y_{l-l''}(\hat{r}_2) \big]_{l'''} \otimes Y_{l''}\left(\hat{r}_1\right)\Big]_{L M} \\
+\pm \vec{r}_2 \rightarrow -\vec{r}_2
+\end{multline}
+where the sum over $l'''$ includes all values for which the 6-$j$ symbol is nonzero. Finally we combine the coupled $r_2$ spherical harmonics\footnote{$\sqrt{4\pi(2l+1)}[Y_{l_1}(\hat{r})\otimes Y_{l_2}(\hat{r})]_{lm}=\sqrt{(2l_1+1)(2l_2+1)}\braket{l_1\,0,l_2\,0|l_1\,l_2\,l\,0}Y_{lm}(\hat{r})$} and use the parity of the spherical harmonics to simplify the expression 
+\begin{multline}
+V(\vec{r}_1,\vec{r}_2)=(-1)^{l+l'+L}\sqrt{2l'+1}\;g(r_2) \sum_{l''=0}^{l} \sqrt{(2l''+1)}(2l-2l''+1)  \\
+  r_1^{l''} \left(\frac{r_2}{2}\right)^{l-l''} \left(\frac{f(|\vec{r}_1+\vec{r}_2/2|)}{|\vec{r}_1+\vec{r}_2/2|^{l} } \pm (-1)^{l+l'-l''} \frac{f(|\vec{r}_1-\vec{r}_2/2|)}{|\vec{r}_1-\vec{r}_2/2|^{l} }\right) \\
+\sum_{l'''} \braket{l'\,0,\,l-l''\,0 | l'\,l-l''\,l'''\,0} \sixj{l''}{l-l''}{l}{l'}{L}{l'''} \Big[Y_{l''}\left(\hat{r}_1\right) \otimes Y_{l'''}(\hat{r}_2) \Big]_{L M} 
+\end{multline}
 
 \end{subsection}
 

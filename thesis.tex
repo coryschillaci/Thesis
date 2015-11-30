@@ -9,7 +9,7 @@
 \usepackage{biblatex}
 \usepackage{graphicx}% Include figure files
 \usepackage{bm} % bold math
-\usepackage{braket} % Allows for Dirac notation
+\usepackage{braket} % Allows for Dirac notation'
 
 % New commands for ChiralPotential
 
@@ -17,18 +17,35 @@
 \newcommand{\rhozero}{\rho_{\text{I}=0}}
 \newcommand{\rhoone}{\rho_{\text{I}=1}}
 
+\newcommand{\rhohat}[2]{\hat{\rho}_{\text{I}=#1}\left( #2 \right)}
+
 \newcommand{\yukawa}[1]{\frac{e^{-m_\pi |#1|}}{4\pi |#1|}}
 \newcommand{\yukawadimless}[1]{\frac{e^{-m_\pi #1}}{m_\pi #1}}
 \newcommand{\yukawanoabs}[1]{\frac{e^{-m_\pi #1}}{4\pi #1}}
 
 \newcommand{\rot}{\vec{r}_{12}}
-\newcommand{\rotp}{\vec{r}_{12}\!\!\!'\;}
+\newcommand{\rotp}{\vec{r}_{12}\!\!\!'\,\,}
+
+\newcommand{\rotpr}{r_{12}\!\!\!\!'\,\,\,}
+\newcommand{\rotphat}{\hat{r}_{12}\!\!\!\!'\,\,\,}
 
 \newcommand{\taudot}{\vec{\tau}_1\cdot\vec{\tau}_2}
 \newcommand{\taucrossthree}{\left[\vec{\tau}_1\times\vec{\tau}_2\right]_3}
-\newcommand{\sigmadot}{\vec{\sigma}_1\cdot\vec{\sigma}_2}
-\newcommand{\sigmatwo}{[\vec{\sigma}_1\otimes\vec{\sigma}_2]_2}
+\newcommand{\tauplusthree}{\frac{\tau_1^3+\tau_2^3}{2}}
+\newcommand{\tauminusthree}{\frac{\tau_1^3+\tau_2^3}{2}}
 
+\newcommand{\sigmadot}{\vec{\sigma}_1\cdot\vec{\sigma}_2}
+\newcommand{\sigmaplus}{\vec{\sigma}_1+\vec{\sigma}_2}
+\newcommand{\sigmaminus}{\vec{\sigma}_1-\vec{\sigma}_2}
+\newcommand{\sigmatwo}{[\vec{\sigma}_1\otimes\vec{\sigma}_2]_2}
+\newcommand{\sigmaone}{[\vec{\sigma}_1\otimes\vec{\sigma}_2]_1}
+\newcommand{\sigmacross}{\vec{\sigma}_1\times\vec{\sigma}_2}
+
+\newcommand{\Gam}[3]{\Gamma_{#1, I=#2}\left(#3\right)}
+
+\newcommand{\fracphantom}{\vphantom{\frac{1}{1}}}
+
+\newcommand{\w}[4]{w_{#1,#2,#3}(#4)}
 
 % New commands for LocalExpansion
 \newcommand{\eps}{\epsilon}
@@ -117,14 +134,14 @@
 
 \begin{frontmatter}
 
-\begin{dedication}
-\null\vfil
-\begin{center}
-To Someone O. Other\\\vspace{12pt}
-Dedication goes here.
-\end{center}
-\vfil\null	
-\end{dedication}
+%\begin{dedication}
+%\null\vfil
+%\begin{center}
+%To Someone O. Other\\\vspace{12pt}
+%Dedication goes here.
+%\end{center}
+%\vfil\null	
+%\end{dedication}
 
 % You can delete the \clearpage lines if you don't want these to start on
 % separate pages.
