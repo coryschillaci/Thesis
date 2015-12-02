@@ -106,24 +106,24 @@ Note that the integrals in eqns. (\ref{eq:V0},\ref{eq:V1},\ref{eq:V2})  are equi
 
 \end{subsection}
 
-\begin{subsection}{Potential separable in $\vec{r}$, $\vecrp$.}
+\begin{subsection}{Terms from the chiral effective potential}
 
-Text here
+The easiest term in the density-dependent two-body effective potential to expand is $\veff^D$, due to the delta functions $\w{0}{0}{0}(\rot)$. We apply the Cartesian form of the expansion \eqref{eq:expansionCartesian}.
 
-\end{subsection}
-
-\begin{subsection}{Other terms from the chiral effective potential}
-
-A majority of the nonlocal terms seen in Section ??? are of the form
-
+A majority of the nonlocal terms seen in Section~\ref{sec:coord} are of the form
+%
 \begin{equation}
-V(\rot,\rotp)=f(r)g(|\rot-\rotp |) \left[Y_{l}(\hat{r})\otimes Y_{l'}\left(\frac{\rot-\rotp}{|\rot-\rotp |}\right)\right]_{L M}\pm \rot\leftrightarrow \rotp.
+V(\rot,\rotp)=f(r_{12})g(|\rot-\rotp |) \left[Y_{l}(\hat{r})\otimes Y_{l'}\left(\frac{\rot-\rotp}{|\rot-\rotp |}\right)\right]_{L M}\pm \rot\leftrightarrow \rotp.
 \end{equation}
+%
 After substituting the new variables \eqref{eqn:nonlocaldef}, this becomes
+%
 \begin{equation}\label{eq:r1r2Form1}
 V(\vec{r}_1,\vec{r}_2)=f(|\vec{r}_1+\vec{r}_2/2|)g(r_2) \left[Y_{l}\left(\frac{\vec{r}_1+\vec{r}_2/2}{|\vec{r}_1+\vec{r}_2/2|}\right)\otimes Y_{l'}\left(\hat{r}_2\right)\right]_{L M} \pm \vec{r}_2\rightarrow -\vec{r}_2
 \end{equation} 
+%
 We can rewrite the second spherical harmonic using a formula from \cite{varshalovich1988},
+%
 \begin{multline}
 Y_{l'm'}\left(\frac{\rot-\rotp}{|\rot-\rotp |}\right) = \sum_{l=0}^{l'}(-1)^{l'+l}\sqrt{\frac{4\pi(2l+1)(2l'-2l+1)}{2l'+1}} \\
 \times \rotpr^{l'-l} r_{12}^l |\rot-\rotp|^{-l'}\left[Y_{l}(\hat{r}_{12})\otimes Y_{l'-l}(\rotphat))\right]_{l'm'}
@@ -147,6 +147,23 @@ V(\vec{r}_1,\vec{r}_2)=(-1)^{l+l'+L}\sqrt{2l'+1}\;g(r_2) \sum_{l''=0}^{l} \sqrt{
   r_1^{l''} \left(\frac{r_2}{2}\right)^{l-l''} \left(\frac{f(|\vec{r}_1+\vec{r}_2/2|)}{|\vec{r}_1+\vec{r}_2/2|^{l} } \pm (-1)^{l+l'-l''} \frac{f(|\vec{r}_1-\vec{r}_2/2|)}{|\vec{r}_1-\vec{r}_2/2|^{l} }\right) \\
 \sum_{l'''} \braket{l'\,0,\,l-l''\,0 | l'\,l-l''\,l'''\,0} \sixj{l''}{l-l''}{l}{l'}{L}{l'''} \Big[Y_{l''}\left(\hat{r}_1\right) \otimes Y_{l'''}(\hat{r}_2) \Big]_{L M} 
 \end{multline}
+
+The remaining nonlocal terms in the effective potential take the general form
+\begin{equation}
+V(\rot,\rotp)=f(r_{12})f(\rotpr) \left[Y_{l}(\hat{r}_{12})\otimes Y_{l'}\left(\rotphat \right)\right]_{L M}.
+\end{equation}
+This makes both terms functions of $\vec{r}_1\pm\vec{r}_2/2$:
+\begin{equation}\label{eq:r1r2Form1}
+V(\vec{r}_1,\vec{r}_2)=f(|\vec{r}_1+\vec{r}_2/2|)f(|\vec{r}_1-\vec{r}_2/2|) \left[Y_{l}\left(\frac{\vec{r}_1+\vec{r}_2/2}{|\vec{r}_1+\vec{r}_2/2|}\right)\otimes Y_{l}\left(\frac{\vec{r}_1-\vec{r}_2/2}{|\vec{r}_1+\vec{r}_2/2|}\right) \right]_{L M}.
+\end{equation} 
+Following the same procedure as for the previous form, we arrive at a final answer involving the 9-$j$ symbol
+\begin{multline}
+V(\vec{r}_1,\vec{r}_2)=\frac{f(|\vec{r}_1+\vec{r}_2/2|)}{|\vec{r}_1+\vec{r}_2/2|}\frac{f(|\vec{r}_1-\vec{r}_2/2|)}{|\vec{r}_1-\vec{r}_2/2|} \\
+(-1)^{l} \sum_{l_1,l'_1=0}^{l} (-1)^{l'_1}(2l_1+1)(2l'_1+1)(2l-2l_1+1)(2l-2l'_1+1) r_1^{l+l'_1} \left(\frac{r_2}{2}\right)^{l_1+l'_1}  \\
+\sum_{l_2,l'_2} \braket{l_1\,0,\,l'_1\,0 | l_1\,l'_1\,l_2\,0}\braket{(l-l_1)\,0,\,(l-l'_1)\,0 | (l-l_1)\,(l-l'_1)\,l'_2\,0} \\
+\times\ninej{l_1}{l-l_1}{l}{l'_1}{l-l'_1}{l}{l_2}{l'_2}{L} \Big[Y_{l''}\left(\hat{r}_1\right) \otimes Y_{l'''}(\hat{r}_2) \Big]_{L M} 
+\end{multline}
+
 
 \end{subsection}
 
