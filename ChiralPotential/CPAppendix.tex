@@ -1,0 +1,118 @@
+\chapter{Summation over spectator momentum}
+
+\section{\label{app:momSums}Momentum space}
+
+In this section we give explicit expressions for the sum over spectator momentum $\vec{k}_\gamma$ in the momentum space expressions of Section~\ref{sec:momentum} assuming the zero-temperature Fermi-Dirac density of states. For terms where only a single pion's momentum transfer depends on $\vec{k}_\gamma$ we have three distinct integrals of the form 
+\begin{equation}
+\Gamma_{\alpha}(k) = \frac{k^{2-\alpha}}{m_\pi^3}\int^{k_\gamma<k_F}\frac{d^3\vec{k}_\gamma}{(2\pi)^3}  \frac{\left\{1,\vec{k}_\gamma\cdot\hat{k},k_\gamma^2\right\}_\alpha}{(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2}
+\end{equation}
+where $\left\{1,k_\gamma\cos\theta,k_\gamma^2\right\}_\alpha$ indicates that the numerator is $1$ for $\alpha=0$, $k_\gamma\cos\theta$ when $\alpha=1$, etc. We have suppressed the $n,p$ index on the Fermi momenta in this appendix, but remind the reader that these integrals appear in linear combinations of the isospin components.
+
+The results of analytically integrating over the Fermi sphere are 
+ \begin{align}
+ \begin{split}
+ \Gamma_{0}(k)&=\frac{k^2}{m_\pi^3}\int^{k_\gamma<k_F}\frac{d^3\vec{k}_\gamma}{(2\pi)^3} \frac{1}{(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2} \\
+ &=\frac{3}{4}\frac{\rho}{m_\pi^3}\left[  \tilde{k}^2 -\tilde{m}_\pi\tilde{k}^2\left(\arctan\frac{1-\tilde{k}}{\tilde{m}_\pi}+\arctan\frac{1+\tilde{k}}{\tilde{m}_\pi}\right)\right. \\
+ &\left.\qquad\qquad\qquad\qquad\qquad+\frac{1}{4}\left(1-\tilde{k}^2+\tilde{m}_\pi^2\right)\log\frac{\tilde{m}_\pi^2+(\tilde{k}+1)^2}{\tilde{m}_\pi^2+(\tilde{k}-1)^2} \right],
+ \end{split} \\
+ %
+  \begin{split}
+ \Gamma_{1}(k)&=\frac{k}{m_\pi^3}\int^{k_\gamma<k_F}\frac{d^3\vec{k}_\gamma}{(2\pi)^3} \frac{\vec{k}_\gamma\cdot\hat{k}}{(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2} \\
+ &=\frac{3}{4}\frac{\rho}{m_\pi^3}\left[  (3\tilde{k}^2-\tilde{m}_\pi^2-1)-4\tilde{k}^2\tilde{m}_\pi\left(\arctan\frac{1-\tilde{k}}{\tilde{m}_\pi}+\arctan\frac{1+\tilde{k}}{\tilde{m}_\pi}\right)\right. \\
+ &\left.\qquad\qquad\qquad\qquad\qquad+\frac{(1+\tilde{m}_\pi^2)^2-3\tilde{k}^4+2\tilde{k}^2(1+3\tilde{m}_\pi^2)}{4\tilde{k}}\log\frac{\tilde{m}_\pi^2+(\tilde{k}+1)^2}{\tilde{m}_\pi^2+(\tilde{k}-1)^2} \right],
+ \end{split} \\
+ %
+  \begin{split}
+ \Gamma_{2}(k)&=\frac{k}{m_\pi^3}\int^{k_\gamma<k_F}\frac{d^3\vec{k}_\gamma}{(2\pi)^3} \frac{k_\gamma^2}{(\vec{k}-\vec{k}_\gamma)^2+m_\pi^2} \\
+ &=\frac{1}{2}\frac{\rho}{m_\pi^3}\left[  (3\tilde{k}^2-9\tilde{m}_\pi^2-1)-6\tilde{m}_\pi(\tilde{k}^2-\tilde{m}_\pi^2)\left(\arctan\frac{1-\tilde{k}}{\tilde{m}_\pi}+\arctan\frac{1+\tilde{k}}{\tilde{m}_\pi}\right)\right. \\
+ &\left.\qquad\qquad\qquad\qquad\qquad+\frac{3\left(\tilde{k}^4+\tilde{m}_\pi^4-6\tilde{k}^2\tilde{m}_\pi^2-1\right)}{4\tilde{k}}\log\frac{\tilde{m}_\pi^2+(\tilde{k}+1)^2}{\tilde{m}_\pi^2+(\tilde{k}-1)^2} \right].
+ \end{split} 
+  \end{align}
+All variables appear in the dimensionless combinations $\tilde{m}_\pi=m_\pi/k_F^{n,p}$ and $\tilde{k}=k/k_F^{n,p}$. For actual calculations, one can replace $k_F$ with the observable densities using \eqref{eq:kF}.
+
+\section{\label{app:rhohat}Coordinate space}
+
+Dealing with the Fermi gas momentum is much simpler in coordinate space. After Fourier transforming the summed diagrams back into a configuration space potential, in all cases the dependence on the spectator momentum appears through the integral
+\begin{equation}
+\hat{\rho}(|\rot-\rotp|) = \frac{1}{m_\pi^3}\int \frac{d^3k_\gamma}{(2\pi)^3}n(k_\gamma)e^{i\vec{k}_\gamma \cdot(\rot-\rotp)}
+\end{equation}
+Using our standard choice $n(k_\gamma)=\theta(k_\gamma-k_F)$ this integral can be performed analytically,
+\begin{equation}\begin{split}
+\hat{\rho}(r) &= \frac{1}{(2\pi)^2}\frac{1}{m_\pi^3}\int_{-1}^{-1}du \int_0^{k_F} k_\gamma^2dk_\gamma \;e^{i \vec{k}_\gamma r u} \\
+&= \frac{1}{(2\pi)^2}\frac{1}{m_\pi^3} \int_0^{k_F} k_\gamma^2 dk_\gamma \;\frac{e^{i\vec{k}_\gamma r}-e^{-i\vec{k}_\gamma r}}{ik_\gamma r} \\
+&= \frac{1}{(2\pi)^2}\frac{1}{m_\pi^3} \int_0^{k_F} k_\gamma^2 dk_\gamma \;\frac{2 \sin(k_\gamma r)}{k_\gamma r} \\
+&= \frac{k_F^2}{2\pi^2}\frac{1}{m_\pi^3} \frac{j_1(k_\gamma r)}{r}.
+\end{split}
+\end{equation}
+We can replace the Fermi momentum with the density using \eqref{eq:kF} to obtain
+\begin{equation}
+\hat{\rho}(r) = \frac{1}{2}\left(\frac{3\rho}{\pi^2 m_\pi^3}\right)^{2/3} \frac{j_1( [3\pi^2\rho]^{1/3} r)}{m_\pi r}.
+\end{equation}
+Note that the factor of $1/2$ is not included in \eqref{eq:hatdensities} which means that
+\begin{equation}
+\int \frac{d^3k_\gamma}{(2\pi)^3}\big[ n(k_\gamma)\pm n(k_\gamma)\big]e^{i\vec{k}_\gamma \cdot(\rot-\rotp)} =m_\pi^3 \frac{ \rhohat{0,1}{|\rot-\rotp)|}}{2}.
+\end{equation}
+
+\chapter{\label{app:wNotation} Fourier integrals}
+
+In an attempt at organizing the terms in the coordinate space effective potential, we introduce the following notation for the dimensionless radial functions $\w{\alpha}{\beta}{\ell}{ m r }$:
+
+\begin{align}
+i^\ell \, Y_\ell(\hat{r}) \, \w{\alpha}{\beta}{\ell}{ m r}  &= \frac{4 \pi}{m^{3+\alpha-2\beta} }  \int \frac{d^3 q}{(2\pi)^3} \frac{q^\alpha}{(q^2+m^2)^\beta} Y_\ell(\hat{q}) \, e^{i \mathbf{q} \cdot \mathbf{r}  },
+\end{align}
+which implies that
+\begin{align}\label{eq:wDef}
+\w{\alpha}{\beta}{\ell}{z} =  \frac{2}{\pi} \int dk \, k^2 \, \frac{k^\alpha}{(1+k^2)^\beta} j_\ell(k z)
+\end{align}
+with $\vec{z} \equiv m \vec{r}$ and $k$ both dimensionless. In Table~\ref{table:wTable} we give the integrated results for selected values of $\alpha, \beta, \ell$. The first function we recover, for the case of $(\alpha, \beta, \ell ) = (0,1,0)$, is nothing but a Yukawa potential.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| c c c | c |}
+\hline
+$\alpha$ & $\beta$ & $\ell$ & $ \w{\alpha}{\beta}{\ell}{z}$ \\
+\hline
+0 & 0 & 0 & $ 4\pi \delta^{(3)}(\vec{z}) $ \\
+0 & 1 & 0 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} $ \\
+2 & 1 & 0 & $ -\frac{\displaystyle e^{-z}}{\displaystyle z} + 4\pi \delta^{(3)}(\vec{z}) $ \\
+1 & 1 & 1 &  $\frac{\displaystyle e^{-z}}{\displaystyle z} (1 + \tfrac{1}{z})  $ \\
+2 & 1 & 2 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} (1+ \tfrac{3}{z} + \tfrac{3}{z^2} )$ \\
+0 & 2 & 0 & $ \frac{\displaystyle e^{-z}}{2} $ \\
+2 & 2 & 0 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} (-\tfrac{z}{2} + 1 ) $ \\
+2 & 2 & 2 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} (\tfrac{z}{2} + \tfrac{1}{2} ) $ \\
+4 & 2 & 0 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} (\tfrac{z}{2} - 2 ) + 4 \pi \delta^3( \vec{z} )  $ \\
+4 & 2 & 2 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} ( - \tfrac{z}{2} + \tfrac{1}{2} + \tfrac{3}{z} + \tfrac{3}{z^2} ) $ \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{table:wTable} Table of selected values for $\w{\alpha}{\beta}{\ell}{z}$ found by integrating equation \eqref{eq:wDef}.}
+\end{table}
+
+To further demonstrate the use of this integral, we now derive the familiar tensor force resulting from one pion exchange. This amplitude is related to the integral
+\begin{equation} 
+V_\pi( \mathbf{r}) =  -\frac{g_A^2 }{4 F_\pi^2} \:\taudot \int \frac{d^3 q } {(2 \pi)^3 } \frac{(\sigma^{(1)} \cdot \mathbf{q} ) (\sigma^{(2)} \cdot \mathbf{q} ) } {q^2+m_\pi^2} e^{i \mathbf{q} \cdot \mathbf{r} }. 
+\end{equation}
+We can rewrite the numerator in the integral as
+\begin{equation} (\sigma^{(1)} \cdot \mathbf{q}) ( \sigma^{(2)} \cdot \mathbf{q} )= q^2 \left(\sqrt{\frac{8\pi}{15}} [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot Y_2(\hat{q}) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)}  Y_0(\hat{q}) \right),\end{equation}
+which then gives
+\begin{equation} 
+V_\pi( \mathbf{r}) = - \frac{g_A^2 }{4 F_\pi^2} \taudot \left(\frac{m_\pi^3}{4 \pi}\right) \left\{ - \sqrt{\frac{8\pi}{15}} [\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) \w{2}{1}{2}{m_\pi r} + \frac{1}{3} \sigma_1 \cdot \sigma_2 \w{2}{1}{0}{m_\pi r } \right\},  \end{equation}
+or, plugging in explicit values for the $w$'s from Table \ref{table:wTable} and recalling that the tensor operator $S_{12}$ is conventionally defined
+\begin{equation}
+S_{12} \equiv   3\vec{\sigma}_1\cdot \hat{r}\vec{\sigma}_2\cdot \hat{r} -\sigmadot = 3\:\sqrt{\frac{8\pi}{15}} \:[\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) , 
+\end{equation}
+we have
+\begin{equation} V_\pi( \mathbf{r})= \frac{g_A^2 }{4 F_\pi^2}  \left(\frac{m_\pi^3}{12 \pi}\right) \left\{ \frac{e^{-m_\pi r}}{m_\pi r} \left[ S_{12}\left(1+\frac{3}{m_\pi r}+ \frac{3}{m_\pi^2 r^2} \right) +  \sigma_1 \cdot \sigma_2 \right] - 4\pi  \sigma_1 \cdot \sigma_2 \delta^3(m_\pi \mathbf{r}) \right\}, 
+\end{equation}
+which is the familiar result.
+
+Representations in terms of these functions are not unique. When $\alpha=2\beta$, one may rewrite the numerator in \eqref{eq:wDef} using only powers of $q$ less than $\alpha$. As a concrete example, consider the case for $\w{2}{1}{0}{z}$. Because
+\begin{equation}
+\frac{q^2}{q^2+m^2}=1-\frac{m^2}{q^2+m^2}
+\end{equation}
+we immediately see that $\w{2}{1}{0}{z}=\w{0}{0}{0}{z}-\w{0}{1}{0}{z}$, a result which can be confirmed by inspection from Table~\ref{table:wTable}. This rewriting also makes clear the origin of the short-range delta function terms in the Fourier transforms of the form $\w{2\beta}{\beta}{0}{z}$. Other relationships include,
+\begin{align}
+\w{4}{2}{0}{z}&=\w{0}{0}{0}{z}-2 \w{2}{2}{0}{z}-\w{0}{2}{0}{z} \\
+\w{4}{2}{2}{z}&=\w{2}{1}{2}{z}-\w{2}{2}{2}{z}
+\end{align}
+When $\alpha < 2\beta$ similar relationships exist, but require introducing terms with higher powers of $q$ than occur in the original Fourier transform. The transform does not exist when $\alpha>2\beta$. In general, we have attempted to minimize the number of $w$ functions which appear in the expressions throughout this paper rather than expand them in this way.
