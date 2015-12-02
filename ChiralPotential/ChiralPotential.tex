@@ -199,8 +199,8 @@ V^{D}_{12,\text{eff}}(\rot)=
 \end{multline}
 and a nonlocal potential arising from the exchange terms 
 \begin{multline}\label{eq:1PENonlocal}
-V^{D}_{12,\text{eff}}(\rot,\rotp)=\frac{-c_D g_A }{8 F_\pi^4 \Lambda_\chi} \frac{m_\pi^6}{32\pi^2}\:  \left[ \w{0}{0}{0}{m_\pi r_{12}} \left\{\fracphantom \rhohat{0}{r_{12}}\left(\taudot W^{\text{LR}}_{1PE}(\rotp)+3\:\w{0}{1}{0}{m_\pi \rotpr}\right) \right.\right. \\
-\left.\left.+\hat{\rho}_{I=1}(r'_{12}) \tauplusthree \left( W^{\text{LR}}_{1PE}(\rotp)-\w{0}{1}{0}{m_\pi \rotpr}\right) \right\} + \rot \leftrightarrow \rotp \vphantom{\left(\yukawa{r}^2\right)} \right]
+V^{D}_{12,\text{eff}}(\rot,\rotp)=\frac{-c_D g_A }{8 F_\pi^4 \Lambda_\chi} \frac{m_\pi^9}{32\pi^2}\:  \left[ \w{0}{0}{0}{m_\pi r_{12}} \left\{\fracphantom \rhohat{0}{r_{12}}\left(\taudot W^{\text{LR}}_{1PE}(\rotp)+3\:\w{0}{1}{0}{m_\pi \rotpr}\right) \right.\right. \\
+\left.\left.+\hat{\rho}_{I=1}(r'_{12}) \tauplusthree \left( W^{\text{LR}}_{1PE}(\rotp)-\w{0}{1}{0}{m_\pi \rotpr}\right) \right\} + \rot \leftrightarrow \rotp \vphantom{\left(\yukawa{r}^2\right)} \right].
 \end{multline}
 In order to highlight the physical meaning of this expression, we have written part of this result using a dimensionless scalar function proportional to the long range terms in the two-body one pion exchange potential, defined as
 \begin{equation}\begin{split}
@@ -209,19 +209,21 @@ W^{\text{LR}}_{1PE}(\vec{r})&=\frac{e^{-m_\pi r}}{m_\pi r}\left[\left(\vec{\sigm
 &=\left[\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo\w{2}{1}{2}{m_\pi r}+\frac{\sigmadot}{3}\w{0}{1}{0}{m_\pi r}\right]
 \end{split}
 \end{equation}
-
 The density dependence is now also mixed with spatial dependence, which we define in analogy with \eqref{eq:densities} as 
 \begin{equation}\label{eq:hatdensities}
 \hat{\rho}_{I=0,1}(r)=%\frac{\rho_P}{m_\pi^3}\:\frac{3 j_1(k^P_F r)}{k_F^P r}\pm\frac{\rho_N}{m_\pi^3}\:\frac{3 j_1(k^N_F r)}{k_F^N r}=
 \frac{1}{m_\pi^3}\left[ \left(\frac{3 \rho_P}{\pi}\right)^{2/3} \frac{ j_1( [3\pi^2 \rho_P]^{1/3}  r)}{ r} \pm \left(\frac{3 \rho_N}{\pi}\right)^{2/3} \frac{ j_1( [3\pi^2 \rho_N]^{1/3}  r)}{ r} \right].
 \end{equation}
+More details on this nonlocal density dependence are given in Appendix~\ref{app:rhohat}.
 
-For all pieces of the N$^2$LO 3N interaction besides the purely short range contact $V_E$, nonlocal effective interactions like \eqref{eq:1PENonlocal} are generated from summing over terms which are not diagonal in the spectator particle. Coordinate space potentials are generally nonlocal when there is a momentum dependence of the interaction. In this case, the $\Gamma$ terms with complicated momentum dependence in Section \ref{sec:momentum} are the source.
+For all pieces of the N$^2$LO 3N interaction besides the purely short range contact $V_E$, nonlocal effective interactions like \eqref{eq:1PENonlocal} are generated from summation over three-body terms where the spectator particle interacts non-diagonally. These are the diagrams ???? SHOW SOME DIAGRAMS. Nonlocal potentials are relatively common in nuclear physics and occur normally in chiral 2NF and 3NF due to dependences on  $k+k'$ in various contact and higher-order terms. Similarly, they arise here for the terms which depend on $\vec{k}$ or $\vec{k}'$ (possibly in addition to the local $\vec{q}$ dependence).
 
-From the 2PE term, a large number of unique terms are generated for the effective interaction. The $V_1$ piece again produces both a local part 
+% Historically, they are known to arise when approximating many-body interactions by 2N forces which leads to so-called {\em off-shell} effects. Interestingly, several phenomenological potentials use non-locality to improve three-body observables such as the triton binding energy \cite{PhysRevC.53.R1483}.
+
+From the 2PE term, a large number of unique terms are generated for the effective two-body interaction. The $V_1$ piece again produces both a local part 
 \begin{multline}
 V^{1}_{12,\text{eff}}(\rot)=-\frac{c_1 m_\pi^6}{8\pi}\left(\frac{g_A}{F_\pi^2}\right)^2 \rho_{I=0}\taudot\:\\
- \times\left(\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo \w{2}{2}{2}{m_\pi r} -\frac{\sigmadot}{3}  \w{2}{2}{0}{m_\pi r} \right)
+ \times\left(\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo \, \w{2}{2}{2}{m_\pi r} -\frac{\sigmadot}{3}  \w{2}{2}{0}{m_\pi r} \right)
 \end{multline}
 and a nonlocal part 
 
@@ -244,7 +246,7 @@ V^{1}_{12,\text{eff}}(\rot,\rotp)=-\frac{c_1 m_\pi^9}{48\pi} \left(\frac{g_A}{F_
 %
 +\left[3\rhohat{0}{|\rot-\rotp|}-\tau_1^3\rhohat{1}{|\rot-\rotp|}\right]\w{1}{1}{1}{ m_\pi r_{12}}\w{1}{1}{1}{m_\pi \rotpr} \\
 \times\left.\left(i\vec{\sigma}_1 \cdot (Y_1 (\hat{r}_{12}) \times Y_1(\rotphat)) + Y_1 (\hat{r}_{12}) \cdot Y_1(\rotphat) \fracphantom \right)
-\right\}
+\right\}.
 \end{multline}
 
 % 
@@ -260,26 +262,26 @@ as well as a nonlocal part,
 \begin{multline}
 V^{3}_{12,\text{eff}}(\rot,\rotp)=\frac{c_3 }{4}\frac{m_\pi^9}{32\pi^2}\left(\frac{g_A}{F_\pi^2}\right)^2 \left\{\fracphantom\left[\taudot \:\rhohat{0}{|\rot-\rotp|} +\tauplusthree \rhohat{1}{|\rot-\rotp|} \right]\right. \\
 %
-\times\left(\sqrt{\frac{7}{12}}\frac{8\pi}{15}\sigmatwo\cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_2 \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} 
+\times\left(\sqrt{\frac{7}{12}}\frac{8\pi}{15}\sigmatwo\cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_2\, \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} 
 \right.\\ 
 %
-+\frac{1}{3}\frac{8\pi}{15}\sigmadot Y_2(\hat{r}_{12})\cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
++\frac{1}{3}\frac{8\pi}{15}\sigmadot \, Y_2(\hat{r}_{12})\cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)  \,\w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
 %
--\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2(\hat{r}_{12}) \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |\rot-\rotp|} \\
--\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
-\left.+\frac{1}{9}\sigmadot  \w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |\rot-\rotp|}+\; \rot \leftrightarrow \rotp \fracphantom\right) \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2(\hat{r}_{12}) \,\w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |\rot-\rotp|} \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \,\w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
+\left.+\frac{1}{9}\sigmadot \, \w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |\rot-\rotp|}+\; \rot \leftrightarrow \rotp \fracphantom\right) \\
 %
 %
 +\tau_1^3 \rhohat{1}{|\rot-\rotp|} \\
-\times\frac{\sqrt{5}}{2}\left(\fracphantom  \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot - \rotp|} + \; \rot \leftrightarrow \rotp \fracphantom\right)\\
+\times\frac{\sqrt{5}}{2}\left(\fracphantom  \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \,\w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot - \rotp|} + \; \rot \leftrightarrow \rotp \fracphantom\right)\\
 %
 -i\taucrossthree \rhohat{1}{|\rot-\rotp|} \\
-\times\frac{\sqrt{5}}{2}\left(\fracphantom \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} - \; \rot \leftrightarrow \rotp \fracphantom\right) \\
+\times\frac{\sqrt{5}}{2}\left(\fracphantom \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \,\w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} - \; \rot \leftrightarrow \rotp \fracphantom\right) \\
 %
 %
 +\left[3\rhohat{0}{|\rot-\rotp|}-\tau_1^3 \rhohat{1}{|\rot-\rotp|}\right]\left( \fracphantom\right. \\
-\sqrt{\frac{5}{2}}\frac{8\pi}{15}  \vec{\sigma}_1 \cdot [Y_2 (\hat{r}_{12}) \otimes Y_2(\rotphat)]_1 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi\rotpr}  \\
--\frac{8\pi}{15}\;Y_2 (\hat{r}_{12}) \cdot Y_2(\rotphat) \;\w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi\rotpr} \\
+\sqrt{\frac{5}{2}}\frac{8\pi}{15}  \vec{\sigma}_1 \cdot [Y_2 (\hat{r}_{12}) \otimes Y_2(\rotphat)]_1 \,\w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi\rotpr}  \\
+-\frac{8\pi}{15}\;Y_2 (\hat{r}_{12}) \cdot Y_2(\rotphat) \,\w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi\rotpr} \\
 %
 -\frac{1}{3} \w{2}{1}{0}{m_\pi r_{12}} \w{2}{1}{0}{m_\pi\rotpr} \left. \left.\fracphantom\right)\right\}
 \end{multline}
@@ -296,7 +298,7 @@ V^{4}_{12,\text{eff}}(\rot,\rotp) = \frac{c_4}{4}\frac{g_A^2}{F_\pi^2}\frac{m_\p
 -\frac{1}{3}\frac{8\pi}{15}\sigmadot \; Y_2(\rotphat)\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
 -\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)\w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
 \left.+\; \rot \leftrightarrow \rotp \fracphantom\right) \\
-+\left(\rhohat{0}{|\rot-\rotp|}\taudot-\rhohat{1}{|\rot-\rotp|}\tauplusthree\right) \\
++\left(\rhohat{0}{|\rot-\rotp|}\taudot-\rhohat{1}{|\rot-\rotp|}\tauplusthree\right) \\*
 \times \left( 
 -\frac{\sqrt{21}}{3}\frac{8\pi}{15}\sigmatwo \cdot \left[Y_2(\hat{r}_{12})\otimes Y_2(\rotphat)\right]_2 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \right. \\
 -\frac{1}{3}\frac{8\pi}{15}\sigmadot\; Y_2(\hat{r}_{12}) \cdot Y_2(\rotphat)\w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \\
@@ -305,7 +307,7 @@ V^{4}_{12,\text{eff}}(\rot,\rotp) = \frac{c_4}{4}\frac{g_A^2}{F_\pi^2}\frac{m_\p
 +\frac{1}{3}\sqrt{\frac{8\pi}{15}} \sigmatwo \cdot Y_2(\rotphat) \w{2}{1}{0}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \left.\fracphantom\right) \\
 %
 -\left(\rhohat{0}{|\rot-\rotp|}\taudot-\rhohat{1}{|\rot-\rotp|}\tau_1^3 \right) \\
-\times\sqrt{\frac{5}{2}} \frac{8\pi}{15} \vec{\sigma}_1\cdot\left[Y_2(\hat{r}_{12})\otimes Y_2(\rotphat)\right]_1 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \left.\fracphantom\right\}
+\times\sqrt{\frac{5}{2}} \frac{8\pi}{15} \vec{\sigma}_1\cdot\left[Y_2(\hat{r}_{12})\otimes Y_2(\rotphat)\right]_1 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \left.\fracphantom\right\}.
 \end{multline}
 
 
