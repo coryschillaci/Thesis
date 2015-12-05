@@ -92,13 +92,29 @@ Compared to the spin sums, the isospin operators are never coupled to other oper
 &= \bra{\alpha_1,\alpha_2 } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1, \beta_2} \left(\delta_{m_{\tau_\gamma},\nicefrac{1}{2}}+\delta_{m_{\tau_\gamma},\nicefrac{-1}{2}} \right) 
 \end{split}
 \end{equation}
-The other diagonal terms do not contribute due to the spin sums \eqref{eq:2sigma22summed} and \label{eq:3sigma32summed} and need not be calculated. For the remaining terms, we make use of \eqref{eq:tauProjections}. 
+The other diagonal terms do not contribute due to the spin sums \eqref{eq:2sigma22summed} and \label{eq:3sigma32summed} and need not be calculated. For the remaining terms, we make use of \eqref{eq:tauProjections}. First,
 \begin{equation}\begin{split}
 \bra{\alpha_1, \alpha_2, \gamma } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1,\gamma,  \beta_2} 
-&= \bra{\alpha_1,\alpha_2 } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1, \beta_2} \braket{\gamma|\gamma} \\
-&= \bra{\alpha_1,\alpha_2 } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1, \beta_2} \left(\delta_{m_{\tau_\gamma},\nicefrac{1}{2}}+\delta_{m_{\tau_\gamma},\nicefrac{-1}{2}} \right) 
+&= \bra{\alpha_1}\tau^i\ket{\beta_1}\braket{\alpha_2 | \tau^i | \gamma} \braket{\gamma | \beta_2} \\
+&= \bra{\alpha_1}\tau^i\ket{\beta_1}\braket{\alpha_2 | \tau^i  \left(\delta_{m_{\tau_\gamma},\nicefrac{1}{2}}\dfrac{1+\tau^3}{2}+\delta_{m_{\tau_\gamma},\nicefrac{-1}{2}}\frac{1-\tau^3}{2}\right) | \beta_2} \\
+&=\frac{1}{2} \bra{\alpha_1}\tau^i\ket{\beta_1}\bra{\alpha_2} \tau^i  \Delta_+ +\tau^i \tau^3 \Delta_-\ket{\beta_2}\\
+&=\bra{\alpha_1,\alpha_2} \frac{\taudot\Delta_+ + \big(\tau_1^3-i\taucrossthree\big)\Delta_-}{2}\ket{\beta_1,\beta_2}
 \end{split}
 \end{equation}
+where we define the isovector and isocalar projects $\Delta_\pm=\left(\delta_{m_{\tau_\gamma},\nicefrac{1}{2}}\pm\delta_{m_{\tau_\gamma},\nicefrac{-1}{2}} \right)$ for convenience. The other remaining projection of $\taudot$ is
+\begin{equation}\begin{split}
+\bra{\gamma, \alpha_1, \alpha_2 } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1,\gamma,  \beta_2} 
+&= \bra{\alpha_1}\tau^i\ket{\gamma}\bra{\gamma}\tau^i\ket{\beta_1}\braket{\alpha_2|\beta_2} \\
+&= \bra{\alpha_1}\tau^i\left(\frac{\Delta_+ + \tau^3\Delta_-}{2}\right)\tau^i\ket{\beta_1}\braket{\alpha_2|\beta_2} \\
+&= \bra{\alpha_1,\alpha_2}\frac{3\Delta_+-\tau_1^3\Delta_-}{2}\ket{\beta_1,\beta_2}.
+\end{split}
+\end{equation}
+For the $V_4$ term with the three coupled isospin operators, we know that the diagonal terms all vanish from the spin sums. The other terms are easy to evaluate from particle permutations of one example, which involves some tedious algebra to obtain:
+\begin{equation}
+\bra{ \alpha_1, \alpha_2, \gamma }\epsilon^{ijk}\tau_1^i\tau_2^j\tau_3^k \ket{\beta_1, \gamma, \beta_2}  
+= \bra{\alpha_1 \alpha_2} i \left(\taudot\Delta_+-\tau_1^3\Delta_- \right) \ket{\beta_1 \beta_2}
+\end{equation}
+
 
 \section{\label{app:momSums}Momentum space}
 
