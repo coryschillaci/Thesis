@@ -1,4 +1,104 @@
-\chapter{Summation over spectator momentum}
+\chapter{Spectator sums}
+
+In the derivation of a two-body effective potential for the 3N interaction, we encounter sums over the spin, isospin, and momentum quantum numbers for the Fermi gas of spectator particles. In this appendix, we show how to perform these sums.
+
+\section{Spin sums}
+Recall that the Fermi gas is assumed to be spin symmetric. The spin operators occur either in the form $\sigma_1^i\sigma_2^j$ or $\sigma_1^i\sigma_2^j\sigma_3^k$. We begin with the two-operator product. Altogether there are thirty-six antisymmetrized diagrams. Of these, permutation of $\alpha_1\leftrightarrow \alpha_2$ and $\beta_1\leftrightarrow \beta_2$ reduces the number of unique calculations by a factor of four. Using Cartesian indices, we need to perform five unique sums over Pauli matrix products
+\begin{align}
+&\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1,\alpha_2, \gamma } \sigma_1^i\sigma_2^j \ket{\beta_1, \beta_2, \gamma} \label{eq:2sigma33}\\
+&\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1,\alpha_2, \gamma } \sigma_1^i\sigma_2^j \ket{\beta_1,  \gamma, \beta_2 } \label{eq:2sigma32}\\
+ %&\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1, \gamma, \alpha_2 } \sigma_1^i\sigma_2^j \ket{\beta_1, \beta_2, \gamma } \\
+ &\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1, \gamma, \alpha_2 } \sigma_1^i\sigma_2^j \ket{\gamma, \beta_1, \beta_2 } \label{eq:2sigma21}\\
+ &\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1, \gamma, \alpha_2 } \sigma_1^i\sigma_2^j \ket{\beta_1, \gamma, \beta_2 }. \label{eq:2sigma22}
+\end{align}
+All other permutations of initial and final indices may be found by using permutations of the operator indices, 
+\begin{equation}
+\sum_{m_{s_\gamma}=\pm1/2} \bra{ \gamma, \alpha_1, \alpha_2 } \sigma_1^i\sigma_2^j \ket{\beta_1, \gamma, \beta_2 } = \sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1, \gamma, \alpha_2 } \sigma_1^j\sigma_2^i \ket{\gamma, \beta_1, \beta_2 },
+\end{equation}
+which generates four  of the remaining five summations; and by requiring hermiticity,
+\begin{equation}
+\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1, \gamma,\alpha_2, } \sigma_1^i\sigma_2^j \ket{\beta_1,  \beta_2, \gamma }=
+\bigg(\sum_{m_{s_\gamma}=\pm1/2} \bra{\beta_1, \beta_2, \gamma } \sigma_1^i\sigma_2^j \ket{\alpha_1, \gamma, \alpha_2 }\bigg)^*
+\end{equation}
+which generates the final unique term.
+
+The diagonal terms are the simplest. When the spin operator does not act on the Fermi gas state the summation produces a factor of two,
+\begin{equation}\label{eq:2sigma33summed}
+\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1,\alpha_2, \gamma } \sigma_1^i\sigma_2^j \ket{\beta_1, \beta_2, \gamma} = \bra{\alpha_1,\alpha_2 } 2 \sigma_1^i\sigma_2^j \ket{\beta_1, \beta_2}.
+\end{equation}
+Because the Pauli matrices are traceless, $\sum_\gamma\braket{\gamma| \sigma^i |\gamma}=0$ which implies that the sum \eqref{eq:2sigma22} vanishes,
+\begin{equation}\label{eq:2sigma22summed}
+\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1, \gamma, \alpha_2 } \sigma_1^i\sigma_2^j \ket{\beta_1, \gamma, \beta_2 }=0.
+\end{equation}
+
+In evaluating \eqref{eq:2sigma32} we see that, since no spin operator acts on particle three, we generate a Kronecker delta which selects one term out of the sum,
+\begin{equation}
+\begin{split}
+\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1,\alpha_2, \gamma } \sigma_1^i\sigma_2^j \ket{\beta_1,  \gamma, \beta_2 }
+& = \sum_{m_{s_\gamma}=\pm1/2}  \delta_{m_{s_\gamma},m_{s_{\beta_1}}} \bra{\alpha_1,\alpha_2 } \sigma_1^i\sigma_2^j \ket{\beta_1,  \gamma } \\
+& =  \bra{\alpha_1,\alpha_2 } \sigma_1^i\sigma_2^j \ket{\beta_1,  \beta_2 }.
+\end{split}
+\end{equation}
+
+The final term  \eqref{eq:2sigma21} will generate a two body interaction with spin operators acting only on a single particle. 
+\begin{equation}\begin{split}
+\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1, \gamma, \alpha_2 } \sigma_1^i\sigma_2^j \ket{\gamma, \beta_1, \beta_2 }
+&= \sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1} \sigma^i \ket{\gamma}\bra{\gamma}\sigma^j\ket{\beta_1}\braket{\alpha_2 | \beta_2} \\
+&=\bra{\alpha_1, \alpha_2} \sigma_1^i \sigma_1^j\ket{\beta_1,\beta_2} \\
+&=\bra{\alpha_1, \alpha_2} \delta^{ij}+i \epsilon^{ijk}\sigma_1^k \ket{\beta_1,\beta_2}
+\end{split}
+\end{equation}
+
+We also evaluate the analogs of these sums for case of three spin operators which arises in the $V_4$ term. We can reduce our evaluation to two forms, as the spin operator structure is invariant under permutations of any two particles. First, the traceless property implies that all terms with diagonal spectator quantum numbers are zero, 
+\begin{align}\label{eq:3sigma33summed}
+&\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1,\alpha_2, \gamma } \sigma_1^i\sigma_2^j\sigma_3^k \ket{\beta_1, \beta_2, \gamma} =0
+\end{align}
+in analogy to \eqref{eq:2sigma22summed}. The only remaining unique term is
+\begin{equation}\begin{split}\label{eq:3sigma32summed}
+\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1, \alpha_2,  \gamma } \sigma_1^i\sigma_2^j\sigma_3^k \ket{ \beta_1, \gamma, \beta_2 }
+&= \sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1} \sigma^i \ket{\beta_1}\bra{\alpha_2}\sigma^j\ket{\gamma}\bra{\gamma}\sigma^k\ket{ \beta_2} \\
+&=\bra{\alpha_1, \alpha_2} \sigma_1^i \sigma_2^j\sigma_2^k \ket{\beta_1,\beta_2} \\
+&=\bra{\alpha_1, \alpha_2} \sigma_1^i(\delta^{jk}+i \epsilon^{jkl}\sigma_2^l) \ket{\beta_1,\beta_2}
+\end{split}
+\end{equation}
+This arises only for one diagram in the two-pion exchange. Using the results of \eqref{eq:3sigma32summed} and standard identities for the permutation symbol $\epsilon$, we can simplify the resulting expression further,
+\begin{multline}
+\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1, \alpha_2,  \gamma }\vec{\sigma}_1\cdot \vec{q}_1\,\vec{\sigma}_2\cdot \vec{q}_2 \,\vec{\sigma}_3\cdot(\vec{q}_1\times\vec{q}_2) \ket{ \beta_1, \gamma, \beta_2 } = \\
+ \bra{\alpha_1, \alpha_2 }i\Big[\vec{\sigma}_1\cdot \vec{q}_1\,\vec{\sigma}_2\cdot \vec{q}_1 \,(\vec{k}'-\vec{k}_\gamma)^2-\vec{\sigma}_1\cdot \vec{q}_1\,\vec{\sigma}_2\cdot (\vec{k}'-\vec{k}_\gamma) \,\vec{q}_1\cdot(\vec{k}'-\vec{k}_\gamma) \Big] \ket{ \beta_1, \beta_2 } .
+\end{multline}
+Once coupled to the momentum operators, we also find a somewhat different looking expression for
+\begin{multline}
+\sum_{m_{s_\gamma}=\pm1/2} \bra{\gamma, \alpha_1, \alpha_2 }\vec{\sigma}_1\cdot \vec{q}_1\,\vec{\sigma}_2\cdot \vec{q}_2 \,\vec{\sigma}_3\cdot(\vec{q}_1\times\vec{q}_2) \ket{ \beta_1, \gamma, \beta_2 } = \\
+ \bra{\alpha_1, \alpha_2 } \Big(
+\vec{\sigma}_2\cdot \left[(\vec{k}_\gamma-\vec{k})\times(\vec{k}'-\vec{k}_\gamma)\right] \,(\vec{k}_\gamma-\vec{k})\cdot(\vec{k}'-\vec{k}_\gamma) \hspace{2cm}\\
+-i \vec{\sigma}_1\cdot \left[(\vec{k}_\gamma-\vec{k})\times(\vec{k}'-\vec{k}_\gamma)\right] \vec{\sigma}_2\cdot \left[(\vec{k}_\gamma-\vec{k})\times(\vec{k}'-\vec{k}_\gamma)\right]
+\Big) \ket{ \beta_1, \beta_2 }.
+\end{multline}
+
+\section{Isospin projection}
+We allow the Fermi gas to be asymmetric in isospin via the inclusion of different momentum-dependent density of states. In practice, this means that we project different linear combinations of the momentum integrals described in Section~\ref{app:momSums} according to \eqref{eq:fullSum}. These projections are dependent on the two-body isospin quantum numbers, and we derive these dependences here by expanding the spectator state as 
+\begin{equation}
+\ket{\gamma}=\delta_{m_{\tau_\gamma},\nicefrac{1}{2}}\ket{\tfrac{1}{2}}+\delta_{m_{\tau_\gamma},\nicefrac{-1}{2}}\ket{-\tfrac{1}{2}}.
+\end{equation}
+This implies that we can write the outer product in terms of projection operators as,
+\begin{equation}\label{eq:tauProjections}
+\ket{\gamma}\bra{\gamma} = \delta_{m_{\tau_\gamma},\nicefrac{1}{2}}\dfrac{1+\tau^3}{2}+\delta_{m_{\tau_\gamma},\nicefrac{-1}{2}}\frac{1-\tau^3}{2}.
+\end{equation}
+
+Compared to the spin sums, the isospin operators are never coupled to other operators and in fact take only two forms, $\vec{\tau}_1\cdot\vec{\tau}_2$ and $\vec{\tau_3}\cdot[\vec{\tau}_1\times\vec{\tau}_2]$. For the first form, the case where the spectator momentum is diagonal in the third particle mirrors \eqref{eq:2sigma33summed}:
+\begin{equation}\begin{split}
+\bra{\alpha_1,\alpha_2, \gamma } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1, \beta_2, \gamma} 
+&= \bra{\alpha_1,\alpha_2 } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1, \beta_2} \braket{\gamma|\gamma} \\
+&= \bra{\alpha_1,\alpha_2 } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1, \beta_2} \left(\delta_{m_{\tau_\gamma},\nicefrac{1}{2}}+\delta_{m_{\tau_\gamma},\nicefrac{-1}{2}} \right) 
+\end{split}
+\end{equation}
+The other diagonal terms do not contribute due to the spin sums \eqref{eq:2sigma22summed} and \label{eq:3sigma32summed} and need not be calculated. For the remaining terms, we make use of \eqref{eq:tauProjections}. 
+\begin{equation}\begin{split}
+\bra{\alpha_1, \alpha_2, \gamma } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1,\gamma,  \beta_2} 
+&= \bra{\alpha_1,\alpha_2 } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1, \beta_2} \braket{\gamma|\gamma} \\
+&= \bra{\alpha_1,\alpha_2 } \vec{\tau}_1\cdot \vec{\tau}_2 \ket{\beta_1, \beta_2} \left(\delta_{m_{\tau_\gamma},\nicefrac{1}{2}}+\delta_{m_{\tau_\gamma},\nicefrac{-1}{2}} \right) 
+\end{split}
+\end{equation}
 
 \section{\label{app:momSums}Momentum space}
 

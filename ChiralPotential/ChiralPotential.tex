@@ -35,7 +35,7 @@ We can then sum over interactions with one core nucleon to generate an effective
 \frac{1}{2} \bra{\alpha_1\:\alpha_2}_{\text{assym}}  V_{12,\text{eff}}\ket{\beta_1 \:\beta_2 }_{\text{assym}}=\frac{1}{6} \sum_{\gamma} \bra{\alpha_1\:\alpha_2 \: \gamma}_{\text{assym}} V_{123}  \ket{\beta_1 \:\beta_2 \gamma}_{\text{assym}}
 \end{equation}
 where the the Fermi gas is assumed to be spin symmetric but not necessarily isospin symmetric, so that the sum can be expanded as
-\begin{equation}
+\begin{equation}\label{eq:fullSum}
 \sum_\gamma=\sum_{m_{s_\gamma}=\pm 1/2}\int \frac{d^3k_\gamma}{(2\pi)^3} \Big[\delta_{m_{t_\gamma},+1/2} n_p(k_\gamma) +\delta_{m_{t_\gamma,-1/2}} n_n(k_\gamma) \Big]
 \end{equation}
 with $n_p(k)$ and $n_n(k)$ the density of states for the protons and neutrons in the Fermi gas, respectively. We will derive specific results for the $T=0$ Fermi-Dirac distribution, $n_p(k)=\theta(k_{F}^{p}-k)$ and $n_n(k)=\theta(k_{F}^{n}-k)$, however any density of states may be substituted at the cost of increasing the complexity when performing the spectator momentum sums.
@@ -72,7 +72,7 @@ where
 \begin{equation}
 F_{ijk}^{\alpha\beta}=\delta^{\alpha \beta}\left[-\frac{4c_1m_\pi^2}{F_\pi^2}+\frac{2c_3}{F_\pi^2}\vec{q}_i\cdot\vec{q}_j\right]+\sum_\gamma\frac{c_4}{F_\pi^2}\epsilon^{\alpha\beta\gamma}\tau^\gamma_k\vec{\sigma}_k\cdot\left(\vec{q}_i\times\vec{q}_j\right)
 \end{equation}
-and $\vec{q}_i=\vec{k}_i' - \vec{k}$ is the difference in the final and initial state momenta for particle $i \in \{1,2,3\}$ and the greek indices refer to Cartesian vector components.
+and $\vec{q}_i=\vec{k}_i' - \vec{k}_i$ is the difference in the final and initial state momenta for particle $i \in \{1,2,3\}$ and the greek indices refer to Cartesian vector components.
 
 These represent a three-body contact potential, a one-pion exchange plus contact interaction (1PE), and a two-pion exchange (2PE) interaction as shown in Figure \ref{fig:3NF}. Note that the 2PE term can be split into parts proportional to $c_1, c_3$ and $c_4$ as $V_C=V_1+V_2+V_4$. Analytically summing over the Fermi gas particles to find an effective potential corresponds to the summations shown in Figure \ref{fig:eff-diagram}. Note that $c_D$ and $c_E$ are unitless, while $c_1, c_3$ and $c_4$ have units of inverse energy. 
 
