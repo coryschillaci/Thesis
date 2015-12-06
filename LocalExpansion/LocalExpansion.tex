@@ -9,11 +9,11 @@ I investigate the validity of expanding a nonlocal scalar potential $V(\vecrp,\v
 
 \begin{section}{Expanding the nonlocal potential}
 A two-body nonlocal potential takes the form $V(\vecrp,\vec{r})$ and the coordinate dependent part may be evaluated as
-\begin{equation}\label{eqn:nonlocaldef}
+\begin{equation}\label{eq:nonlocaldef}
 \braket{n' l' m'| V | n l m}=\int d^3r\:d^3r'\:R^*_{n',l'}(r') Y^*_{l',m'}(\hat{r}') V(\vecrp,\vec{r}) R_{n,l}(r) Y_{l,m}(\hat{r}).
 \end{equation}
-Throughout, we will assume that the potential is a scalar operator. Because nonlocal potentials require greater computational resources, it would be desirable to find a suitable local approximation. Intuitively, we can imagine that the potential $V(r,r')$ is nearly local. We take this to mean that it the contribution to the matrix element is small when $\vec{r}-\vecrp$ is large. We thus make a coordinate change with unit Jacobian to \eqref{eqn:nonlocaldef}. A suitable choice of coordinates is the linear combination
-\begin{equation}\label{eqn:coords}
+Throughout, we will assume that the potential is a scalar operator. Because nonlocal potentials require greater computational resources, it would be desirable to find a suitable local approximation. Intuitively, we can imagine that the potential $V(r,r')$ is nearly local. We take this to mean that it the contribution to the matrix element is small when $\vec{r}-\vecrp$ is large. We thus make a coordinate change with unit Jacobian to \eqref{eq:nonlocaldef}. A suitable choice of coordinates is the linear combination
+\begin{equation}\label{eq:coords}
 \vec{r}_1=\frac{\vec{r}+\vecrp}{2},\vec{r}_2=\vec{r}-\vecrp
 \end{equation}
 for which our nonlocality condition reduces to the requirement that the potential falls off rapidly in $r_2$. In the interest of generating clear, compact expressions we will also use the convenient definitions
@@ -32,8 +32,8 @@ F\left(\vec{r}_1-\frac{\vec{r}_2}{2}\right)&=F(\vec{r}_1)-\frac{1}{2}\vec{r}_2\c
 \\
 G\left(\vec{r}_1+\frac{\vec{r}_2}{2}\right)&=G(\vec{r}_1)+\frac{1}{2}\vec{r}_2\cdot\vec{\nabla}_1 G(\vec{r}_1)+\frac{1}{2}\left(\frac{1}{2}\vec{r}_2\cdot\vec{\nabla}_1\right)\left(\frac{1}{2}\vec{r}_2\cdot\vec{\nabla}_1\right)G(\vec{r}_1)+\dots
 \end{align}
-Note that the asymmetric choice of coordinates made in \eqref{eqn:coords} has the desirable effect of allowing one to expand the wave functions around $\vec{r}_1$ without any additional constants. Compare this expansion also with that of \cite{0954-3899-26-3-310}, where only the function $G(\vec{r})$ is expanded around $\vec{r}=\vecrp$. Plugging this expansion in up to second order 
-\begin{equation}\label{eqn:expansionCartesian}
+Note that the asymmetric choice of coordinates made in \eqref{eq:coords} has the desirable effect of allowing one to expand the wave functions around $\vec{r}_1$ without any additional constants. Compare this expansion also with that of \cite{0954-3899-26-3-310}, where only the function $G(\vec{r})$ is expanded around $\vec{r}=\vecrp$. Plugging this expansion in up to second order 
+\begin{equation}\label{eq:expansionCartesian}
 \begin{split}
 \braket{n' l' m'| V | n l m} &= \int d^3r_1\: F(\vec{r}_1)\left[\int d^3r_2\:\left\{V\left(\vec{r}_1-\frac{\vec{r}_2}{2},\vec{r}_1+\frac{\vec{r}_2}{2}\right) \right.\right. \\
 &-\frac{1}{2} \left(\lvec{\nabla}_1\cdot\vec{r}_2\: V\left(\vec{r}_1-\frac{\vec{r}_2}{2},\vec{r}_1+\frac{\vec{r}_2}{2}\right) -
@@ -54,8 +54,8 @@ F(\vec{r}_1)&-\frac{1}{2}\sqrt{\frac{4\pi}{3}}\sum_{m}(-1)^m r_2 Y_{1,m}(\hat{r}
 +\dots 
 \end{split}
 \end{align}
-Inserting this expansion of the wave functions, the matrix elements \eqref{eqn:nonlocaldef} are given by,
-\begin{equation}\label{eqn:expansionSpherical}
+Inserting this expansion of the wave functions, the matrix elements \eqref{eq:nonlocaldef} are given by,
+\begin{equation}\label{eq:expansionSpherical}
 \begin{split}
 \braket{n' l' m'| V | n l m} &= \int d^3r_1\: F(\vec{r}_1)\left[\int d^3r_2\:\left\{V\left(\vec{r}_1-\frac{\vec{r}_2}{2},\vec{r}_1+\frac{\vec{r}_2}{2}\right) \right.\right. \\
 &-\frac{1}{2}\sqrt{\frac{4\pi}{3}}\sum_m (-1)^m \lvec{\nabla}_{1,-m} r_2Y_{1,m}(\hat{r}_2)V\left(\vec{r}_1-\frac{\vec{r}_2}{2},\vec{r}_1+\frac{\vec{r}_2}{2}\right)\\
@@ -74,7 +74,7 @@ A potential which can be factored as
 \begin{equation}
 V(\vecrp,\vec{r})=f(|\vec{r}+\vecrp|)g(|\vec{r}-\vecrp|)
 \end{equation}
-for some scalar functions $f$ and $g$ is particularly easy to evaluate in the form \eqref{eqn:expansionSpherical}. Any operator of this form is guaranteed to be hermitian, as the magnitudes $|\vec{r}+\vecrp|$ and $|\vec{r}-\vecrp|$ are necessarily invariant under exchanging $\vec{r} \leftrightarrow \vecrp$. Although the in-medium effective chiral potential does not contain a term of this form, it will be used as a toy potential in Section~\ref{sec:toyModel}. There are three different combinations of spherical harmonics and the nonlocal potential to consider when evaluating the $\vec{r}_2$ integral to this order. First is the average of the potential over $\vec{r}_2$ which I will denote as $V^1(\vec{r}_1)$:
+for some scalar functions $f$ and $g$ is particularly easy to evaluate in the form \eqref{eq:expansionSpherical}. Any operator of this form is guaranteed to be hermitian, as the magnitudes $|\vec{r}+\vecrp|$ and $|\vec{r}-\vecrp|$ are necessarily invariant under exchanging $\vec{r} \leftrightarrow \vecrp$. Although the in-medium effective chiral potential does not contain a term of this form, it will be used as a toy potential in Section~\ref{sec:toyModel}. There are three different combinations of spherical harmonics and the nonlocal potential to consider when evaluating the $\vec{r}_2$ integral to this order. First is the average of the potential over $\vec{r}_2$ which I will denote as $V^1(\vec{r}_1)$:
 \begin{equation}\label{eq:V0}
 \begin{split}
 V^0(\vec{r}_1)=&\int d^3r_2\: V\left(\vec{r}_1-\frac{\vec{r}_2}{2},\vec{r}_1+\frac{\vec{r}_2}{2}\right) \\
@@ -95,28 +95,44 @@ V^2_{m,m'}(\vec{r}_1)&=\int d^3r_2\: r_2^2Y_{1,m}(\hat{r}_2)Y_{1,m'}(\hat{r}_2)V
 \end{equation}
 For further simplicity, we can rewrite $V^2_{m,m'}(\vec{r}_1)=\delta_{m,-m'}V^2(\vec{r}_1)$.
 
-With these definitions, we can rewrite \eqref{eqn:expansionSpherical} more compactly as,
-\begin{equation}\label{eqn:expansion2}
+With these definitions, we can rewrite \eqref{eq:expansionSpherical} more compactly as,
+\begin{equation}\label{eq:expansion2}
 \begin{split}
 \braket{n' l' m'| V | n l m} =  \int d^3r\: F(\vec{r})\left( \vphantom{\frac{1}{2}}V_1(\vec{r})\right.&-\frac{1}{4}\frac{4\pi}{3}\sum_m(-1)^m \lvec{\nabla}_{m}  V_2(\vec{r}) \vec{\nabla}_{-m} \\
 &\left.+\frac{1}{8}\frac{4\pi}{3}\lvec{\nabla}\cdot\lvec{\nabla} V_2(\vec{r})+\frac{1}{8}\frac{4\pi}{3}V_2(\vec{r})\vec{\nabla}\cdot\vec{\nabla}+\dots\right) G(\vec{r}_1).
 \end{split}
 \end{equation}
-Note that the integrals in eqns. (\ref{eq:V0},\ref{eq:V1},\ref{eq:V2})  are equivalent to calculating moments of the potential with respect to $\vec{r}_2$. These matrix elements may be evaluated using the formulas presented in Section~\ref{sec:HObasis}.
+Note that the integrals in eqns. (\ref{eq:V0},\ref{eq:V1},\ref{eq:V2})  are equivalent to calculating moments of the potential with respect to $\vec{r}_2$. These matrix elements may be evaluated using the formulas presented in Appendix~\ref{app:HObasis}.
 
 \end{subsection}
 
 \begin{subsection}{Terms from the chiral effective potential}
 
-The easiest term in the density-dependent two-body effective potential to expand is $\veff^D$, due to the delta functions $\w{0}{0}{0}(\rot)$. We apply the Cartesian form of the expansion \eqref{eq:expansionCartesian}.
+The easiest term in the density-dependent two-body effective potential to expand is $\veff^D$, due to the delta functions $\w{0}{0}{0}{\rot}$. We apply the spherical tensor form of the expansion \eqref{eq:expansionSpherical} and integrate over $\vec{r}_2$ using the delta function to obtain
 
-A majority of the nonlocal terms seen in Section~\ref{sec:coord} are of the form
+\begin{align}
+&\hspace{-.4cm}V^{1PE,\text{Nonlocal}}_{12,\text{eff}}= \frac{-c_D g_A}{8F_\pi^4 \Lambda_\chi}\frac{m_\pi^6}{8\pi} \left\{\phantom{\frac{-c_D g_Am_\pi^6}{8 F_\pi^4 \Lambda_\chi}}\right.\\
+&\left[\left(\lvec{\nabla}^2r_{12}^2+\frac{8\pi}{15}\left[\lvec{\nabla}\otimes \lvec{\nabla}\right]_2\cdot \vec{Y}_2(\Omega_{12})r_{12}^2 \right) \rhohat{0}{2 r_{12}}\left(\taudot W^{\text{LR}}_{1PE}(2\rot)+\frac{3}{4\pi}\yukawadimless{r_{12}} \right)\right. \\
+%
+&\hspace{.7cm}+\lvec{\nabla}\cdot\vec{r}_{12} \,\rhohat{0}{2 r_{12}} \left(\taudot W^{\text{LR}}_{1PE}(2\rot)+\frac{3}{4\pi}\yukawadimless{r_{12}} \right)\vec{r}_{12}\cdot\vec{\nabla} \\
+%
+&\hspace{.7cm}+\left.\rhohat{0}{2 r_{12}} \left(\taudot W^{\text{LR}}_{1PE}(2\rot)+\frac{3}{4\pi}\yukawadimless{r_{12}} \right)\left(r_{12}^2 \vec{\nabla}^2+\frac{8\pi}{15}r_{12}^2\vec{Y}_2(\Omega_{12})\cdot\left[\vec{\nabla}\otimes \vec{\nabla}\right]_2 \right)\right] \\
+%
+%
++&\left[\left(\lvec{\nabla}^2r_{12}^2+\frac{8\pi}{15}\left[\lvec{\nabla}\otimes \lvec{\nabla}\right]_2\cdot \vec{Y}_2(\Omega_{12})r_{12}^2 \right) \rhohat{1}{2 r_{12}} \left(\taudot W^{\text{LR}}_{1PE}(2\rot)-\frac{1}{4\pi}\yukawadimless{r_{12}} \right)\right. \\
+%
+&\hspace{.7cm}+\lvec{\nabla}\cdot\vec{r}_{12}\, \rhohat{1}{2 r_{12}} \left(\taudot W^{\text{LR}}_{1PE}(2\rot)-\frac{1}{4\pi}\yukawadimless{r_{12}} \right)\vec{r}_{12}\cdot\vec{\nabla} \\
+%
+&\left.\hspace{.7cm}+\left.\rhohat{1}{2 r_{12}}\left(\taudot W^{\text{LR}}_{1PE}(2\rot)-\frac{1}{4\pi}\yukawadimless{r_{12}} \right)\left(r_{12}^2 \vec{\nabla}^2+\frac{8\pi}{15}r_{12}^2\vec{Y}_2(\Omega_{12})\cdot\left[\vec{\nabla}\otimes \vec{\nabla}\right]_2 \right)\right]\right\}.
+\end{align}
+
+Unfortunately, the remaining terms are more difficult to integrate. We show here how the scalar functions in the expressions from Section~\ref{sec:coord} remain dependent on the magnitudes of linear combinations of coordinates and therefore complicate the angular integrals. A majority of the remaining nonlocal terms seen in Section~\ref{sec:coord} are of the form
 %
 \begin{equation}
 V(\rot,\rotp)=f(r_{12})g(|\rot-\rotp |) \left[Y_{l}(\hat{r})\otimes Y_{l'}\left(\frac{\rot-\rotp}{|\rot-\rotp |}\right)\right]_{L M}\pm \rot\leftrightarrow \rotp.
 \end{equation}
 %
-After substituting the new variables \eqref{eqn:nonlocaldef}, this becomes
+After substituting the new variables \eqref{eq:nonlocaldef}, this becomes
 %
 \begin{equation}\label{eq:r1r2Form1}
 V(\vec{r}_1,\vec{r}_2)=f(|\vec{r}_1+\vec{r}_2/2|)g(r_2) \left[Y_{l}\left(\frac{\vec{r}_1+\vec{r}_2/2}{|\vec{r}_1+\vec{r}_2/2|}\right)\otimes Y_{l'}\left(\hat{r}_2\right)\right]_{L M} \pm \vec{r}_2\rightarrow -\vec{r}_2
@@ -168,70 +184,7 @@ V(\vec{r}_1,\vec{r}_2)=\frac{f(|\vec{r}_1+\vec{r}_2/2|)}{|\vec{r}_1+\vec{r}_2/2|
 \end{subsection}
 
 \end{section}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{section}{Evaluation of the approximate local matrix elements in a harmonic oscillator basis \label{sec:HObasis}}
 
-Eigenstates of the isotropic harmonic oscillator are commonly used in e.g. the shell model. Because of their analytic simplicity, I present here formulas which are helpful when evaluating the effective local matrix elements in this basis. In bra-ket notation, the two body center-of-mass basis will be denoted by states of total angular momentum $J$ as
-\begin{equation}
-\ket{n(l s) J M_J}
-\end{equation}
-where $n\geq0$ is the principal quantum number, $l$ is the total angular momentum, and the total two-body spin is denoted by $s=0,1$.
-
-Matrix elements of the gradient ($\vec{\nabla}$) and position ($\vec{r}$) in this basis take a ladder-operator form, with only a small number of nonzero matrix elements. For our purposes I will present the reduced matrix elements, which can then be re-coupled to form the necessary operators.
-
-\begin{equation}\label{eq:gradRME}
-\begin{split}
-\braket{n'l' || \vec{\nabla} || nl}=\frac{-1}{b}&\left\{\sqrt{l+1}\left(\sqrt{n}\delta_{n',n-1}+\sqrt{n+l+3/2}\delta_{n',n}\right)\delta_{l',l+1}\right.\\
-&\left.\quad\quad+\sqrt{l}\left(\sqrt{n+1}\delta_{n',n+1}+\sqrt{n+l+1/2}\delta_{n',n}\right)\delta_{l',l+1}\right\}
-\end{split}
-\end{equation}
-
-\begin{equation}\label{eq:rRME}
-\begin{split}
-\braket{n'l' || \vec{r} || nl}=b&\left\{\sqrt{l+1}\left(\sqrt{n+l+3/2}\delta_{n',n}-\sqrt{n}\delta_{n',n-1}\right)\delta_{l',l+1}\right.\\
-&\left.\quad\quad+\sqrt{l}\left(\sqrt{n+1}\delta_{n',n+1}-\sqrt{n+l+1/2}\delta_{n',n}\right)\delta_{l',l+1}\right\}
-\end{split}
-\end{equation}
-
-The generic expression for the reduced matrix element a compound spherical tensor $X_K=\left[A_{k_1}\otimes B_{k_2}\right]_K$  where both $A$ and $B$ act on the same quantum number $l$ is given by 
-\begin{equation}\label{eq:coupling}
-\braket{n' l' || X_K || nl}=\sqrt{2K+1}(-1)^{K+l+l'}\sum_{n'',l''}\sixj{k_1}{k_2}{K}{l}{l'}{l''}\braket{n' l' || A_{k_1} || n'' l''}\braket{n'' l'' || B_{k_2} || n l}
-\end{equation}
-(see \cite{Edmonds} for conventions and details). For the special case of a dot product\footnote{Note that the dot product $A\cdot B=\sum_m (-1)^m A_m B_{-m}$ differs by a constant factor from the scalar tensor product $[A\otimes B]_0$.} coupling, this simplifies to
-\begin{equation}\label{eq:dot}
-\braket{n' l' || A_{k}\cdot B_k || nl}=\delta_{l',l}\frac{(-1)^l}{\sqrt{2l+1}}\sum_{n'',l''}(-1)^{l''}\braket{n' l' || A_{k_1} || n'' l''}\braket{n'' l'' || B_{k_2} || n l}
-\end{equation}
-
-With \ref{eq:gradRME,eq:rRME,eq:coupling,eq:dot} we can derive some formulas necessary to evaluate the matrix elements of our local approximation. Some relevant matrix elements include
-
-\begin{multline}
-\braket{n'l' || \vec{r}\cdot\vec{\nabla} || nl } = \sqrt{2l+1}\delta_{l,l'}\left\{\sqrt{(n+1)(n+l+3/2)}\delta_{n',n+1}\vphantom{\frac{1}{2}} \right.\\
-\left.-\frac{3}{2}\delta_{n,n'}-\sqrt{n(n+l+1/2)}\delta_{n',n-1}\right\}
-\end{multline}
-
-\begin{multline}
-\braket{n'l' || r^2  || nl } =  -b^2 \sqrt{2l+1}\delta_{l,l'}\left\{\sqrt{(n+1)(n+l+3/2)}\delta_{n',n+1} \vphantom{\frac{1}{1}} \right.\\
-\left.-(2n+l+3/2)\delta_{n',n}+\sqrt{n(n+l+1/2)}\delta_{n',n-1}\vphantom{\frac{1}{1}} \right\}
-\end{multline}
-
-\begin{multline}
-\braket{n'l' || \nabla^2 || nl } =  - \frac{1}{b^2} \sqrt{2l+1}\delta_{l,l'}\left\{\sqrt{(n+1)(n+l+3/2)}\delta_{n',n+1} \vphantom{\frac{1}{1}} \right.\\
-\left.+(2n+l+3/2)\delta_{n',n}+\sqrt{n(n+l+1/2)}\delta_{n',n-1}\vphantom{\frac{1}{1}} \right\}
-\end{multline}
-Matrix elements combining four operators can change the principal quantum number by up to two:
-\begin{multline}
-\braket{n'l' || r^2 \nabla^2 || nl } =  \\
-\end{multline}
-\begin{multline}
-\braket{n'l' || \left[\vec{r}\otimes\vec{r}\hspace{.5mm}\right]_2\cdot [\vec{\nabla}\otimes\vec{\nabla}]_2 || nl } = \\
-\frac{\delta_{l,l'}}{3}\sqrt{2l+1}
-\left\{2\sqrt{(n+1)(n+2)(n+l+3/2)(n+l+5/2)}\delta_{n',n+2}\right.\\
-+\delta_{n',n+1}10\sqrt{(n+1)(n+l+3/2)}+\delta_{n',n}\left[l(l-1)-4n(n+l+3/2)+15/2\right]\\
-\left.+\delta_{n',n-1}10\sqrt{n(n+l+1/2)}+\delta_{n',n-2}2\sqrt{n(n-1)(n+l-1/2)(n+l+1/2)}\right\}
-\end{multline}
-
-
-\end{section}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{section}{Exploration of validity using model potentials \label{sec:toyModel}}
 
@@ -257,9 +210,9 @@ Evaluating the full nonlocal matrix elements requires a six-dimensional integrat
 \label{fig:gaussToy1}}
 \end{figure}
 
-Matrix elements of the potential \eqref{eq:gaussToy} compare qualitatively as expected. First, we see that the exact values and the Taylor approximation converge for $\lambda_2\rightarrow 0$ in Figure \ref{fig:gaussToy1} but that the error increases as the range parameter $\lambda_2$ becomes non-perturbatively large. Figure \ref{fig:gaussToy2} demonstrates that the convergence is essentially independent of $\lambda_1$. Higher angular momenta are more difficult to integrate numerically, 
+Matrix elements of the potential \eqref{eq:gaussToy} compare qualitatively as expected. First, we see that the exact values and the Taylor approximation converge for $\lambda_2\rightarrow 0$ in \Cref{fig:gaussToy1} but that the error increases as the range parameter $\lambda_2$ becomes non-perturbatively large. \Cref{fig:gaussToy2} demonstrates that the convergence is essentially independent of $\lambda_1$. Higher angular momenta are more difficult to integrate numerically, 
 
-One interesting observation in the second order approximation is that the second derivative in $\lambda_2$ of the matrix elements is strictly negative for all of the channels tested, although this is not true for the exact results. Does the addition of fourth order terms (the third order terms are zero) introduce contributions which change this situation?
+%One interesting observation in the second order approximation is that the second derivative in $\lambda_2$ of the matrix elements is strictly negative for all of the channels tested, although this is not true for the exact results. Does the addition of fourth order terms (the third order terms are zero) introduce contributions which change this situation?
 
 \begin{figure}[htb]
 \centering \includegraphics[width=0.6\textwidth]{LocalExpansion/Figures/ToyPotential000000l1} 

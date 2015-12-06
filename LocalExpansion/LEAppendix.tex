@@ -1,0 +1,61 @@
+
+\chapter{\label{app:HObasis}Evaluation of the approximate local matrix elements in a harmonic oscillator basis}
+
+Eigenstates of the isotropic harmonic oscillator are commonly used in e.g. the shell model. Because of their analytic simplicity, I present here formulas which are helpful when evaluating the effective local matrix elements in this basis. In bra-ket notation, the two body center-of-mass basis will be denoted by states of total angular momentum $J$ as
+\begin{equation}
+\ket{n(l s) J M_J}
+\end{equation}
+where $n\geq0$ is the principal quantum number, $l$ is the total angular momentum, and the total two-body spin is denoted by $s=0,1$.
+
+Matrix elements of the gradient ($\vec{\nabla}$) and position ($\vec{r}$) in this basis take a ladder-operator form, with only a small number of nonzero matrix elements. For our purposes I will present the reduced matrix elements, which can then be re-coupled to form the necessary operators.
+
+\begin{equation}\label{eq:gradRME}
+\begin{split}
+\braket{n'l' || \vec{\nabla} || nl}=\frac{-1}{b}&\left\{\sqrt{l+1}\left(\sqrt{n}\delta_{n',n-1}+\sqrt{n+l+3/2}\delta_{n',n}\right)\delta_{l',l+1}\right.\\
+&\left.\quad\quad+\sqrt{l}\left(\sqrt{n+1}\delta_{n',n+1}+\sqrt{n+l+1/2}\delta_{n',n}\right)\delta_{l',l+1}\right\}
+\end{split}
+\end{equation}
+
+\begin{equation}\label{eq:rRME}
+\begin{split}
+\braket{n'l' || \vec{r} || nl}=b&\left\{\sqrt{l+1}\left(\sqrt{n+l+3/2}\delta_{n',n}-\sqrt{n}\delta_{n',n-1}\right)\delta_{l',l+1}\right.\\
+&\left.\quad\quad+\sqrt{l}\left(\sqrt{n+1}\delta_{n',n+1}-\sqrt{n+l+1/2}\delta_{n',n}\right)\delta_{l',l+1}\right\}
+\end{split}
+\end{equation}
+
+The generic expression for the reduced matrix element a compound spherical tensor $X_K=\left[A_{k_1}\otimes B_{k_2}\right]_K$  where both $A$ and $B$ act on the same quantum number $l$ is given by 
+\begin{equation}\label{eq:coupling}
+\braket{n' l' || X_K || nl}=\sqrt{2K+1}(-1)^{K+l+l'}\sum_{n'',l''}\sixj{k_1}{k_2}{K}{l}{l'}{l''}\braket{n' l' || A_{k_1} || n'' l''}\braket{n'' l'' || B_{k_2} || n l}
+\end{equation}
+(see \cite{Edmonds} for conventions and details). For the special case of a dot product\footnote{Note that the dot product $A\cdot B=\sum_m (-1)^m A_m B_{-m}$ differs by a constant factor from the scalar tensor product $[A\otimes B]_0$.} coupling, this simplifies to
+\begin{equation}\label{eq:dot}
+\braket{n' l' || A_{k}\cdot B_k || nl}=\delta_{l',l}\frac{(-1)^l}{\sqrt{2l+1}}\sum_{n'',l''}(-1)^{l''}\braket{n' l' || A_{k_1} || n'' l''}\braket{n'' l'' || B_{k_2} || n l}
+\end{equation}
+
+With \cref{eq:gradRME,eq:rRME,eq:coupling,eq:dot} we can derive some formulas necessary to evaluate the matrix elements of our local approximation. Some relevant matrix elements include
+
+\begin{multline}
+\braket{n'l' || \vec{r}\cdot\vec{\nabla} || nl } = \sqrt{2l+1}\delta_{l,l'}\left\{\sqrt{(n+1)(n+l+3/2)}\delta_{n',n+1}\vphantom{\frac{1}{2}} \right.\\
+\left.-\frac{3}{2}\delta_{n,n'}-\sqrt{n(n+l+1/2)}\delta_{n',n-1}\right\}
+\end{multline}
+
+\begin{multline}
+\braket{n'l' || r^2  || nl } =  -b^2 \sqrt{2l+1}\delta_{l,l'}\left\{\sqrt{(n+1)(n+l+3/2)}\delta_{n',n+1} \vphantom{\frac{1}{1}} \right.\\
+\left.-(2n+l+3/2)\delta_{n',n}+\sqrt{n(n+l+1/2)}\delta_{n',n-1}\vphantom{\frac{1}{1}} \right\}
+\end{multline}
+
+\begin{multline}
+\braket{n'l' || \nabla^2 || nl } =  - \frac{1}{b^2} \sqrt{2l+1}\delta_{l,l'}\left\{\sqrt{(n+1)(n+l+3/2)}\delta_{n',n+1} \vphantom{\frac{1}{1}} \right.\\
+\left.+(2n+l+3/2)\delta_{n',n}+\sqrt{n(n+l+1/2)}\delta_{n',n-1}\vphantom{\frac{1}{1}} \right\}
+\end{multline}
+Matrix elements combining four operators can change the principal quantum number by up to two:
+\begin{multline}
+\braket{n'l' || r^2 \nabla^2 || nl } =  \\
+\end{multline}
+\begin{multline}
+\braket{n'l' || \left[\vec{r}\otimes\vec{r}\hspace{.5mm}\right]_2\cdot [\vec{\nabla}\otimes\vec{\nabla}]_2 || nl } = \\
+\frac{\delta_{l,l'}}{3}\sqrt{2l+1}
+\left\{2\sqrt{(n+1)(n+2)(n+l+3/2)(n+l+5/2)}\delta_{n',n+2}\right.\\
++\delta_{n',n+1}10\sqrt{(n+1)(n+l+3/2)}+\delta_{n',n}\left[l(l-1)-4n(n+l+3/2)+15/2\right]\\
+\left.+\delta_{n',n-1}10\sqrt{n(n+l+1/2)}+\delta_{n',n-2}2\sqrt{n(n-1)(n+l-1/2)(n+l+1/2)}\right\}
+\end{multline}
