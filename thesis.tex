@@ -12,6 +12,10 @@
 \usepackage{braket} % Allows for Dirac notation'
 \usepackage{nicefrac} % Allows for slanted fractions with sfrac
 
+% Multiple references cleanly formatted
+\usepackage{cleveref}
+\crefname{equation}{equation}{equations}
+
 \allowdisplaybreaks[2]% Allow long equations to split pages
 
 % New commands for ChiralPotential
@@ -93,7 +97,7 @@
 % be indented (like the others), then include this line:
 % \usepackage{indentfirst}
 
-\newtheorem{theorem}{Jibberish}
+%\newtheorem{theorem}{Jibberish}
 
 \bibliography{Introduction/Introduction.bib,ChiralPotential/ChiralPotential.bib,LocalExpansion/LocalExpansion.bib,SOC/SOCoupling.bib}
 
@@ -132,8 +136,6 @@
 % Delete (or comment out) the \approvalpage line for the final version.
 \approvalpage
 \copyrightpage
-
-\include{abstract}
 
 \begin{frontmatter}
 
@@ -179,6 +181,8 @@ Satoru
 \appendix
 
 \include{ChiralPotential/CPAppendix}
+
+\include{LocalExpansion/LEAppendix}
 
 \include{SOC/SOCAppendix}
 
