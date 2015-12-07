@@ -14,7 +14,67 @@ Weinberg's approach, referred to as chiral perturbation theory (ChPT), has enjoy
 \caption[Test]{\label{fig:NuclearPotential} NEED TO MAKE MY OWN FIGURE.} 
 \end{figure}
 
-One generic feature of effective theories for composite particles such as hadrons is the generation of interactions between three or more particles, even when the underlying potential is purely two-body. For a long time it has been seen that the 2-body terms in the nuclear potential are relatively more important than 3-body interactions, which are in turn stronger than the 4-body terms and so on. One great advantage of the ChPT is that it puts this observation on solid theoretical ground. The power counting shows that the three-body nuclear force (3NF) first appears\footnote{Actually, the naive power counting suggests that three-body diagrams appear at NLO, but these are known to be shifted to higher orders by approximate cancellation with two-nucleon diagrams\cite{PhysRevC.49.2932}.} at $\mathcal{O}(Q/\Lambda_{QCD})^3$, known as next-to-next-to-leading order (N$^2$LO). Likewise the 4NF appears first at N$^3$LO, and we therefore establish a hierarchy of the N-body forces. This situation is shown in \cref{fig:chiralPotentialDiagrams}.
+One generic feature of effective theories for composite particles such as hadrons is the generation of interactions between three or more particles, even when the underlying potential is purely two-body. For a long time it has been seen that the 2-body terms in the nuclear potential are relatively more important than 3-body interactions, which are in turn stronger than the 4-body terms and so on. One great advantage of the ChPT is that it puts this observation on solid theoretical ground. The power counting shows that the three-body nuclear force (3NF) first appears\footnote{Actually, the naive power counting suggests that three-body diagrams appear at NLO, but these are known to be shifted to higher orders by approximate cancellation with two-nucleon diagrams\cite{PhysRevC.49.2932}.} at $\mathcal{O}(Q/\Lambda_{QCD})^3$, known as next-to-next-to-leading order (N$^2$LO). Likewise the 4NF appears first at N$^3$LO, and we therefore establish a hierarchy of the N-body forces. This situation is shown in \Cref{fig:chiralPotentialDiagrams}.
+
+\begin{sidewaystable}\centering
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{ c | c | c | c }
+& 2NF & 3NF & 4NF\\ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline 
+\begin{minipage}[c][2cm][c]{2cm}\centering LO \\ \vspace{.3cm}$\mathcal{O}\left(\frac{Q}{\Lambda}\right)^0$   \end{minipage} &  \parbox[c][][c]{5.8cm}{\centering
+\includegraphics[scale=0.5,page=1]{Introduction/Figures/LO} 
+\includegraphics[scale=0.5,page=2]{Introduction/Figures/LO}
+} & &  \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+\begin{minipage}[c][2cm][c]{2cm}\centering NLO \\ \vspace{.3cm}$\mathcal{O}\left(\frac{Q}{\Lambda}\right)^2$   \end{minipage} &  \parbox[c][][c]{5.8cm}{\centering
+\includegraphics[scale=0.5,page=1]{Introduction/Figures/NLO}
+\includegraphics[scale=0.5,page=2]{Introduction/Figures/NLO}
+\includegraphics[scale=0.5,page=3]{Introduction/Figures/NLO}
+\includegraphics[scale=0.5,page=4]{Introduction/Figures/NLO}
+\includegraphics[scale=0.5,page=5]{Introduction/Figures/NLO}
+} & &  \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+\begin{minipage}[c][2cm][c]{2cm}\centering N$^2$LO \\ \vspace{.3cm}$\mathcal{O}\left(\frac{Q}{\Lambda}\right)^3$   \end{minipage} &  \parbox[c][][c]{5.8cm}{\centering
+\includegraphics[scale=0.5,page=2]{Introduction/Figures/N2LO}
+\includegraphics[scale=0.5,page=3]{Introduction/Figures/N2LO} 
+\includegraphics[scale=0.5,page=1]{Introduction/Figures/ellipsis} 
+%$+\dots$
+}  &  
+\parbox[c][][c]{5.8cm}{\centering
+\includegraphics[scale=0.5,page=4]{ChiralPotential/Figures/3NFDiagrams}
+\includegraphics[scale=0.5,page=3]{ChiralPotential/Figures/3NFDiagrams}
+\includegraphics[scale=0.5,page=2]{ChiralPotential/Figures/3NFDiagrams}
+} & \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hline
+\begin{minipage}[c][2cm][c]{2cm}\centering N$^3$LO \\ \vspace{.3cm}$\mathcal{O}\left(\frac{Q}{\Lambda}\right)^4$   \end{minipage} &  \parbox[c][][c]{5.8cm}{\centering
+\includegraphics[scale=0.5,page=1]{Introduction/Figures/N3LO}
+\includegraphics[scale=0.5,page=2]{Introduction/Figures/N3LO}
+\includegraphics[scale=0.5,page=3]{Introduction/Figures/N3LO}
+\includegraphics[scale=0.5,page=4]{Introduction/Figures/N3LO}
+\includegraphics[scale=0.5,page=1]{Introduction/Figures/ellipsis} 
+%$+\dots$
+}  &  
+\parbox[c][][c]{5.8cm}{\centering
+\includegraphics[scale=0.5,page=5]{Introduction/Figures/N3LO}
+\includegraphics[scale=0.5,page=6]{Introduction/Figures/N3LO}
+\includegraphics[scale=0.5,page=7]{Introduction/Figures/N3LO}
+\includegraphics[scale=0.5,page=1]{Introduction/Figures/ellipsis} 
+%$+\dots$
+} &
+\parbox[c][][c]{5.8cm}{\centering
+\includegraphics[scale=0.5,page=8]{Introduction/Figures/N3LO}\hspace{.2cm}
+\includegraphics[scale=0.5,page=9]{Introduction/Figures/N3LO}\hspace{.2cm}
+\includegraphics[scale=0.5,page=10]{Introduction/Figures/N3LO}
+\includegraphics[scale=0.5,page=1]{Introduction/Figures/ellipsis} 
+%$+\dots$
+} \\
+\end{tabular}
+\caption[Selected Feynman diagrams for the chiral potential to N$^3$LO.]{\label{fig:chiralPotentialDiagrams} Selected Feynman diagrams for the chiral potential to N$^3$LO. Note especially the hierarchy of forces as the 3NF and 4NF first enter at N$^2$LO and N$^3$LO, respectively. Small dot vertices, large dot vertices, square vertices, and diamond have vertex indices of $\Delta_i = 0,1,2,3$ respectively. The vertex index is defined as $\Delta_i=d+\tfrac{n}{2}-2$, where $d$ is the number of derivatives or pion mass insertions and $n$ the number of nucleon field operators.}
+\end{sidewaystable}
 
 Although they are not the leading terms in the expansion, the 3NF is known to be crucial to explaining observed properties of light nuclei and nuclear matter (REFS,EXAMPLES?). Inclusion of few-body forces beyond the two-nucleon case is, however, computationally quite demanding. As an approximation, 
 Chapters \ref{chap:3to2} describes a procedure for generating two-body density-dependent potentials which approximate the three-body interactions of the chiral potential at next-to-next-to-leading order (N$^2$LO). Unfortunately, this procedure generates non-locality in the coordinate space potentials which again increases the complexity of the computational problem. In Chapter~\ref{chap:localExpansion} we describe initial efforts towards a possible solution of this problem by performing an expansion of the density-dependent potentials in purely local operators.
