@@ -50,8 +50,13 @@ With \cref{eq:gradRME,eq:rRME,eq:coupling,eq:dot} we can derive some formulas ne
 \end{multline}
 Matrix elements combining four operators can change the principal quantum number by up to two:
 \begin{multline}
-\braket{n'l' || r^2 \nabla^2 || nl } =  \\
+\braket{n'l' || r^2 \nabla^2 || nl } = \delta_{l,l'}\sqrt{2l+1}
+\left\{\sqrt{(n+1)(n+2)(n+l+3/2)(n+l+5/2)}\delta_{n',n+2}\right.\\
++\delta_{n',n+1}\sqrt{2(n+1)(n+l+3/2)}+\delta_{n',n}\left[n(n+l+1/2)+n(n+l+3/2)\right]\\
+\left.+\delta_{n',n-1}\sqrt{2n(n+l+1/2)}+\delta_{n',n-2}\sqrt{n(n-1)(n+l-1/2)(n+l+1/2)}\right\}
 \end{multline}
+Test
+
 \begin{multline}
 \braket{n'l' || \left[\vec{r}\otimes\vec{r}\hspace{.5mm}\right]_2\cdot [\vec{\nabla}\otimes\vec{\nabla}]_2 || nl } = \\
 \frac{\delta_{l,l'}}{3}\sqrt{2l+1}
