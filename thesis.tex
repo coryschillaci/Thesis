@@ -9,12 +9,14 @@
 \usepackage{biblatex}
 \usepackage{graphicx}% Include figure files
 \usepackage{bm} % bold math
-\usepackage{braket} % Allows for Dirac notation'
+\usepackage{braket} % Allows for Dirac notation
 \usepackage{nicefrac} % Allows for slanted fractions with sfrac
+\usepackage{rotating}
 
 % Multiple references cleanly formatted
 \usepackage{cleveref}
 \crefname{equation}{equation}{equations}
+\crefname{figure}{figure}{figures}
 
 \allowdisplaybreaks[2]% Allow long equations to split pages
 
@@ -116,15 +118,7 @@
 \othermembers{Professor Joel Moore \\
   Professor Karl van Bibber}
 \numberofmembers{3}
-% Previous degrees are no longer to be listed on the title page.
-% \prevdegrees{B.A. (University of Northern South Dakota at Hoople) 1978 \\
-%   M.S. (Ed's School of Quantum Mechanics and Muffler Repair) 1989}
 \field{Physics}
-% Designated Emphasis -- this is optional, and rare
-% \emphasis{Colloidal Telemetry}
-% This is optional, and rare
-% \jointinstitution{University of Western Maryland}
-% This is optional
 \campus{Berkeley}
 
 % For a masters thesis, replace the above \documentclass line with
@@ -136,6 +130,11 @@
 % Delete (or comment out) the \approvalpage line for the final version.
 \approvalpage
 \copyrightpage
+
+\begin{abstract}
+Abstract goes here.
+\end{abstract}
+
 
 \begin{frontmatter}
 
@@ -158,9 +157,10 @@
 \listoftables
 
 \begin{acknowledgements}
-Tom Luu
-Wick Haxton
-Satoru
+Acknowledgments go here.
+%Tom Luu
+%Wick Haxton
+%Satoru
 
 \end{acknowledgements}
 

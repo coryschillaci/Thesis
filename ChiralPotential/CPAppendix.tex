@@ -1,8 +1,8 @@
-\chapter{Spectator sums}
+\chapter{Spectator Sums}
 
 In the derivation of a two-body effective potential for the 3N interaction, we encounter sums over the spin, isospin, and momentum quantum numbers for the Fermi gas of spectator particles. In this appendix, we show how to perform these sums.
 
-\section{Spin sums}
+\section{Spin Sums}
 Recall that the Fermi gas is assumed to be spin symmetric. The spin operators occur either in the form $\sigma_1^i\sigma_2^j$ or $\sigma_1^i\sigma_2^j\sigma_3^k$. We begin with the two-operator product. Altogether there are thirty-six antisymmetrized diagrams. Of these, permutation of $\alpha_1\leftrightarrow \alpha_2$ and $\beta_1\leftrightarrow \beta_2$ reduces the number of unique calculations by a factor of four. Using Cartesian indices, we need to perform five unique sums over Pauli matrix products
 \begin{align}
 &\sum_{m_{s_\gamma}=\pm1/2} \bra{\alpha_1,\alpha_2, \gamma } \sigma_1^i\sigma_2^j \ket{\beta_1, \beta_2, \gamma} \label{eq:2sigma33}\\
@@ -75,7 +75,7 @@ Once coupled to the momentum operators, we also find a somewhat different lookin
 \Big) \ket{ \beta_1, \beta_2 }.
 \end{multline}
 
-\section{Isospin projection}
+\section{Isospin Projections}
 We allow the Fermi gas to be asymmetric in isospin via the inclusion of different momentum-dependent density of states. In practice, this means that we project different linear combinations of the momentum integrals described in Section~\ref{app:momSums} according to \eqref{eq:fullSum}. These projections are dependent on the two-body isospin quantum numbers, and we derive these dependences here by expanding the spectator state as 
 \begin{equation}
 \ket{\gamma}=\delta_{m_{\tau_\gamma},\nicefrac{1}{2}}\ket{\tfrac{1}{2}}+\delta_{m_{\tau_\gamma},\nicefrac{-1}{2}}\ket{-\tfrac{1}{2}}.
@@ -116,7 +116,7 @@ For the $V_4$ term with the three coupled isospin operators, we know that the di
 \end{equation}
 
 
-\section{\label{app:momSums}Momentum space}
+\section{\label{app:momSums}Momentum Space}
 
 In this section we give explicit expressions for the sum over spectator momentum $\vec{k}_\gamma$ in the momentum space expressions of Section~\ref{sec:momentum} assuming the zero-temperature Fermi-Dirac density of states. For terms where only a single pion's momentum transfer depends on $\vec{k}_\gamma$ we have three distinct integrals of the form 
 \begin{equation}
@@ -146,7 +146,7 @@ The results of analytically integrating over the Fermi sphere are
   \end{align}
 All variables appear in the dimensionless combinations $\tilde{m}_\pi=m_\pi/k_F^{n,p}$ and $\tilde{k}=k/k_F^{n,p}$. For actual calculations, one can replace $k_F$ with the observable densities using \eqref{eq:kF}.
 
-\section{\label{app:rhohat}Coordinate space}
+\section{\label{app:rhohat}Coordinate Space}
 
 Dealing with the Fermi gas momentum is much simpler in coordinate space. After Fourier transforming the summed diagrams back into a configuration space potential, in all cases the dependence on the spectator momentum appears through the integral
 \begin{equation}
@@ -169,12 +169,12 @@ Note that the factor of $1/2$ is not included in \eqref{eq:hatdensities} which m
 \int \frac{d^3k_\gamma}{(2\pi)^3}\big[ n(k_\gamma)\pm n(k_\gamma)\big]e^{i\vec{k}_\gamma \cdot(\rot-\rotp)} =m_\pi^3 \frac{ \rhohat{0,1}{|\rot-\rotp)|}}{2}.
 \end{equation}
 
-\chapter{\label{app:wNotation} Fourier integrals}
+\chapter{\label{app:wNotation} Fourier Integrals}
 
 In an attempt at organizing the terms in the coordinate space effective potential, we introduce the following notation for the dimensionless radial functions $\w{\alpha}{\beta}{\ell}{ m r }$:
 
 \begin{align}
-i^\ell \, Y_\ell(\hat{r}) \, \w{\alpha}{\beta}{\ell}{ m r}  &= \frac{4 \pi}{m^{3+\alpha-2\beta} }  \int \frac{d^3 q}{(2\pi)^3} \frac{q^\alpha}{(q^2+m^2)^\beta} Y_\ell(\hat{q}) \, e^{i \mathbf{q} \cdot \mathbf{r}  },
+i^\ell \, Y_\ell(\hat{r}) \, \w{\alpha}{\beta}{\ell}{ m r}  &= \frac{4 \pi}{m^{3+\alpha-2\beta} }  \int \frac{d^3 q}{(2\pi)^3} \frac{q^\alpha}{(q^2+m^2)^\beta} Y_\ell(\hat{q}) \, e^{i \vec{q} \cdot \vec{r}  },
 \end{align}
 which implies that
 \begin{align}\label{eq:wDef}
@@ -184,6 +184,7 @@ with $\vec{z} \equiv m \vec{r}$ and $k$ both dimensionless. In Table~\ref{table:
 
 \begin{table}
 \begin{center}
+\renewcommand*{\arraystretch}{1.5}
 \begin{tabular}{| c c c | c |}
 \hline
 $\alpha$ & $\beta$ & $\ell$ & $ \w{\alpha}{\beta}{\ell}{z}$ \\
@@ -201,24 +202,24 @@ $\alpha$ & $\beta$ & $\ell$ & $ \w{\alpha}{\beta}{\ell}{z}$ \\
 \hline
 \end{tabular}
 \end{center}
-\caption{\label{table:wTable} Table of selected values for $\w{\alpha}{\beta}{\ell}{z}$ found by integrating equation \eqref{eq:wDef}.}
+\caption[Selected expressions for the scalar functions $\w{\alpha}{\beta}{l}{z}$]{\label{table:wTable}Table of selected values for $\w{\alpha}{\beta}{\ell}{z}$ found by integrating equation \eqref{eq:wDef}.}
 \end{table}
 
 To further demonstrate the use of this integral, we now derive the familiar tensor force resulting from one pion exchange. This amplitude is related to the integral
 \begin{equation} 
-V_\pi( \mathbf{r}) =  -\frac{g_A^2 }{4 F_\pi^2} \:\taudot \int \frac{d^3 q } {(2 \pi)^3 } \frac{(\sigma^{(1)} \cdot \mathbf{q} ) (\sigma^{(2)} \cdot \mathbf{q} ) } {q^2+m_\pi^2} e^{i \mathbf{q} \cdot \mathbf{r} }. 
+V_\pi( \vec{r}) =  -\frac{g_A^2 }{4 F_\pi^2} \:\taudot \int \frac{d^3 q } {(2 \pi)^3 } \frac{(\vec{\sigma}_1 \cdot \vec{q} ) (\vec{\sigma}_2 \cdot \vec{q} ) } {q^2+m_\pi^2} e^{i \vec{q} \cdot \vec{r} }. 
 \end{equation}
 We can rewrite the numerator in the integral as
-\begin{equation} (\sigma^{(1)} \cdot \mathbf{q}) ( \sigma^{(2)} \cdot \mathbf{q} )= q^2 \left(\sqrt{\frac{8\pi}{15}} [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot Y_2(\hat{q}) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)}  Y_0(\hat{q}) \right),\end{equation}
+\begin{equation} (\vec{\sigma}_1 \cdot \vec{q}) ( \vec{\sigma}_2 \cdot \vec{q} )= q^2 \left(\sqrt{\frac{8\pi}{15}} [\vec{\sigma}_1 \otimes \vec{\sigma}_2]_2 \cdot Y_2(\hat{q}) + \tfrac{1}{3} \vec{\sigma}_1 \cdot \vec{\sigma}_2  Y_0(\hat{q}) \right),\end{equation}
 which then gives
 \begin{equation} 
-V_\pi( \mathbf{r}) = - \frac{g_A^2 }{4 F_\pi^2} \taudot \left(\frac{m_\pi^3}{4 \pi}\right) \left\{ - \sqrt{\frac{8\pi}{15}} [\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) \w{2}{1}{2}{m_\pi r} + \frac{1}{3} \sigma_1 \cdot \sigma_2 \w{2}{1}{0}{m_\pi r } \right\},  \end{equation}
+V_\pi( \vec{r}) = - \frac{g_A^2 }{4 F_\pi^2} \taudot \left(\frac{m_\pi^3}{4 \pi}\right) \left\{ - \sqrt{\frac{8\pi}{15}} [\vec{\sigma}_1 \otimes \vec{\sigma}_2]_2 \cdot Y_2(\hat{r}) \w{2}{1}{2}{m_\pi r} + \frac{1}{3} \sigma_1 \cdot \sigma_2 \w{2}{1}{0}{m_\pi r } \right\},  \end{equation}
 or, plugging in explicit values for the $w$'s from Table \ref{table:wTable} and recalling that the tensor operator $S_{12}$ is conventionally defined
 \begin{equation}
 S_{12} \equiv   3\vec{\sigma}_1\cdot \hat{r}\vec{\sigma}_2\cdot \hat{r} -\sigmadot = 3\:\sqrt{\frac{8\pi}{15}} \:[\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) , 
 \end{equation}
 we have
-\begin{equation} V_\pi( \mathbf{r})= \frac{g_A^2 }{4 F_\pi^2}  \left(\frac{m_\pi^3}{12 \pi}\right) \left\{ \frac{e^{-m_\pi r}}{m_\pi r} \left[ S_{12}\left(1+\frac{3}{m_\pi r}+ \frac{3}{m_\pi^2 r^2} \right) +  \sigma_1 \cdot \sigma_2 \right] - 4\pi  \sigma_1 \cdot \sigma_2 \delta^3(m_\pi \mathbf{r}) \right\}, 
+\begin{equation} V_\pi( \vec{r})= \frac{g_A^2 }{4 F_\pi^2}  \left(\frac{m_\pi^3}{12 \pi}\right) \left\{ \frac{e^{-m_\pi r}}{m_\pi r} \left[ S_{12}\left(1+\frac{3}{m_\pi r}+ \frac{3}{m_\pi^2 r^2} \right) +  \sigma_1 \cdot \sigma_2 \right] - 4\pi  \sigma_1 \cdot \sigma_2 \delta^3(m_\pi \vec{r}) \right\}, 
 \end{equation}
 which is the familiar result.
 

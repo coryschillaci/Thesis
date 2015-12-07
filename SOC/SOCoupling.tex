@@ -1,4 +1,4 @@
-\chapter{\label{chap:SOC}Energy spectra of two interacting fermions with spin-orbit coupling in a harmonic trap}
+\chapter{\label{chap:SOC}Energy Spectra of Two Interacting Fermions with Spin-Orbit Coupling in a Harmonic Trap}
 
 %\begin{abstract}
 %We explore the two-body spectra of spin-$1/2$ fermions in isotropic harmonic traps with external spin-orbit potentials and short range two-body interactions. Using a truncated basis of total angular momentum eigenstates, nonperturbative results are presented for experimentally realistic forms of the spin-orbit coupling: a pure Rashba coupling, Rashba and Dresselhaus couplings in equal parts, and a Weyl-type coupling. The technique is easily adapted to bosonic systems and other forms of spin-orbit coupling.
@@ -47,7 +47,7 @@ We assume that the range of interaction between particles is small compared to t
 \end{equation}
 Here the argument $\Lambda$ refers to some cutoff scale and $a(\Lambda)$ is some function of the cutoff and physical scattering length $a_{\text{phys}}$.  The exact form of this function depends on the type of regulator used and is not relevant for this work; the only constraint is that $a(\Lambda)$ reproduce the physical scattering length given by the scattering $T$ matrix at threshold, $T(E=0)=4\pi\hbar^2 a_{\text{phys}}/m$ \cite{taylor2000}. In the limit $\Lambda\rightarrow \infty$ the spectrum of two particles in an oscillator well (without external spin-orbit interaction) was solved by Busch \textit{et al.} \cite{Busch} using the method of pseudopotentials.  In Ref.  \cite{Luu:2006xv} the solution for general $\Lambda$ was given using a Gaussian regulator, which in the limit $\Lambda\rightarrow\infty$ recovered the Busch \textit{et al.} solution.  For our work below we use the eigenstates and eigenvalues of this two-particle system given in Ref. \cite{Busch}.
 
-\section{\label{sec:Weyl}Weyl coupling}
+\section{\label{sec:Weyl}Weyl Coupling}
 We tackle the Weyl form first because of its mathematical and numerical simplicity. In the absence of the two-body interaction, this problem was treated in Ref. \cite{anderson2013}. Our approach is to determine the matrix elements of the SOC in an appropriate basis. The eigenvalue is then solved numerically at the desired precision by choosing an appropriately large truncated basis of harmonic oscillator (HO) eigenstates.
 
 As usual, the two-body problem is best approached in the dimensionless Jacobi coordinates
@@ -69,8 +69,8 @@ where $h_{0,\text{rel}}=r^2/2$ and $h_{0,\text{c.m.}}=R^2/2$. Notably, the spin-
 
 \begin{figure}
 \centering
-\includegraphics{SOC/Figures/BuschSpectrum}
-\caption{\label{fig:BuschSpectrum} Spectrum of the two-body contact interaction Hamiltonian as a function of $\tilde a$. The horizontal lines indicate the dimensionless energy eigenvalues in the unitary limit $|\tilde{a}|\rightarrow\infty$.} 
+\includegraphics[scale=1.2]{SOC/Figures/BuschSpectrum}
+\caption[Spectrum of the two-body contact interaction Hamiltonian as a function of $\tilde a$]{\label{fig:BuschSpectrum} Spectrum of the two-body contact interaction Hamiltonian as a function of $\tilde a$. The horizontal lines indicate the dimensionless energy eigenvalues in the unitary limit $|\tilde{a}|\rightarrow\infty$.} 
 \end{figure}
 
 Eigenstates of two particles with a short-range interaction in a harmonic oscillator trapping potential form a convenient basis for these calculations. These basis functions were first derived in \cite{Busch} for the isotropic case considered here, and the more general case of an anisotropic trap has been explored in \cite{PhysRevA.74.022712}. The dependence of the energy spectrum on the scattering length $a$ is shown in Fig.~\ref{fig:BuschSpectrum} for reference. Qualitatively, the effect of the short-range interaction is to shift the harmonic oscillator energies by $\pm \hbar\omega$ as the scattering length goes to $\pm \infty$. For positive scattering length, there is also an additional negative-energy dimer state.
@@ -136,15 +136,15 @@ Again, the reduced matrix element of the center-of-mass momentum changes the par
 \begin{figure}
 \centering
 \includegraphics{SOC/Figures/MatrixElts}
-\caption{\label{fig:matrixElts}  Absolute value of the matrix elements $|\bra{n'(11)0;00;(00)0}\vec{\sigma}\cdot\vec{q}\ket{n(00)0;00;(00)0}|$ between the ground state and $l=1$ excited states. The horizontal axis is the principal quantum number of the ground state obtained by solving~\eqref{eq:eigenvalueEqn}. From left to right, the vertical lines on the negative axis indicate the values obtained for $\tilde{a}=1/4$, $\tilde{a}=1$, $\tilde{a}=\pm\infty$, and $\tilde{a}=-1$, respectively.} 
+\caption[Coupling of ground state to $l=1$ states for the Weyl spin-orbit Hamiltonian]{\label{fig:matrixElts}Absolute value of the matrix elements $|\bra{n'(11)0;00;(00)0}\vec{\sigma}\cdot\vec{q}\ket{n(00)0;00;(00)0}|$ between the ground state and $l=1$ excited states. The horizontal axis is the principal quantum number of the ground state obtained by solving~\eqref{eq:eigenvalueEqn}. From left to right, the vertical lines on the negative axis indicate the values obtained for $\tilde{a}=1/4$, $\tilde{a}=1$, $\tilde{a}=\pm\infty$, and $\tilde{a}=-1$, respectively.} 
 \end{figure}
 
-Using these matrix elements, we calculated the spectrum of the two interacting particles with Weyl spin-orbit coupling. Our calculations are performed by numerically diagonalizing in a truncated basis of the harmonic oscillator states~\eqref{eq:basisStates}, where a cutoff $2N+L+2n+l+3\leq E_{\text{max}}$ is set high enough that the eigenvalues of the matrix have converged to the desired accuracy.  
+Using these matrix elements, we calculated the spectrum of the two interacting particles with Weyl spin-orbit coupling. Our calculations are performed by numerically diagonalizing in a truncated basis of the harmonic oscillator states~\eqref{eq:basisStates}, where a cutoff $2N+L+\nobreak 2n+\nobreak l+ \nobreak3\leq\nobreak E_{\text{max}}$ is set high enough that the eigenvalues of the matrix have converged to the desired accuracy.  
 
 \begin{figure}
 \centering
 \includegraphics{SOC/Figures/WeylConvergence}
-\caption{\label{fig:WeylConvergence}  A convergence plot giving the change in energy eigenvalue, $\Delta E$, for the lowest eight energy levels when a shell is added as a function of $E_{\text{max}}$.  The left figure shows convergence for $\tilde{a}=-1$ and $\tilde{\alpha}_W=0.5$. In the right panel  we show $\tilde{a}=1$ and $\tilde{\alpha}_W=0.5$, demonstrating that convergence of the states with large negative $n$ is poor.} 
+\caption[Convergence of the energy eigenvalues for the Weyl spin-orbit coupling]{\label{fig:WeylConvergence}  A convergence plot giving the change in energy eigenvalue, $\Delta E$, for the lowest eight energy levels when a shell is added as a function of $E_{\text{max}}$.  The left figure shows convergence for $\tilde{a}=-1$ and $\tilde{\alpha}_W=0.5$. In the right panel  we show $\tilde{a}=1$ and $\tilde{\alpha}_W=0.5$, demonstrating that convergence of the states with large negative $n$ is poor.} 
 \end{figure}
 
 This approach converges well only when the ground-state energy is not too low. In particular, for $a$ positive but very small the principal quantum number of the ground state is increasing from negative infinity as seen in Fig.~\ref{fig:BuschSpectrum}. From Fig.~\ref{fig:matrixElts}, we can see that as $n$ becomes more negative, the principal quantum number of the dominant matrix element is also increasing. Because convergence of any energy level requires a cutoff much larger than the energy of the most strongly coupled states, a sufficiently high $E_{\text{max}}$ to ensure an accurate ground-state energy becomes infeasible for small positive $a$. For excited states, $n$ is always positive and matrix elements with similar $n$ always dominate. The strength of the matrix elements follows a similar qualitative behavior for the spin-orbit couplings treated in the following sections where the same issues recur. 
@@ -152,7 +152,7 @@ This approach converges well only when the ground-state energy is not too low. I
 \begin{figure}
 \centering
 \includegraphics{SOC/Figures/WeylSpectrum}
-\caption{\label{fig:WeylSpectrum}  Spectrum of states with total angular momentum $J=0$ for the dimensionless Hamiltonian~\eqref{eq:WeylHamiltonian}. The bottom left figure shows the ground-state energy for $\tilde{a}=-1$ as a function of $\tilde{\alpha}_W$; above are the first few excitation energies. The right figure shows the results in the unitary limit of the two-body interaction, $|\tilde{a}|\rightarrow\infty$. The spectrum is symmetric about $\tilde{\alpha}_W=0$.} 
+\caption[Spectrum of states with $J=0$ for Weyl spin-orbit coupling]{\label{fig:WeylSpectrum}  Spectrum of states with total angular momentum $J=0$ for the dimensionless Hamiltonian~\eqref{eq:WeylHamiltonian}. The bottom left figure shows the ground-state energy for $\tilde{a}=-1$ as a function of $\tilde{\alpha}_W$; above are the first few excitation energies. The right figure shows the results in the unitary limit of the two-body interaction, $|\tilde{a}|\rightarrow\infty$. The spectrum is symmetric about $\tilde{\alpha}_W=0$.} 
 \end{figure}
 
 As a result, convergence of the ground state is actually slower than that for nearby excited states. Furthermore, our approach gives the fastest convergence when $a$ is not small and positive. We compare the rate of convergence of the $\tilde{a}=-1$ and $\tilde{a}=1$ spectra in Fig.~\ref{fig:WeylConvergence} to demonstrate the dependence of convergence on the matrix truncation. The actual energy spectrum is shown in Fig.~\ref{fig:WeylSpectrum}. 
@@ -160,7 +160,7 @@ As a result, convergence of the ground state is actually slower than that for ne
 \begin{figure}
 \centering
 \includegraphics{SOC/Figures/Projections}
-\caption{\label{fig:Projections} For different values of the two-body coupling strength $\tilde{a}$, we show the magnitude of the ground state projected onto even parity basis states as a function of the SOC strength. This is given by $\big|  P_+\ket{\psi_{\text{GS}}}\big|^2=\big| (1- P_-)\ket{\psi_{\text{GS}}}\big|^2$, where $P_+$ ($P_-$) is the projection operator onto the positive\nobreak- (negative\nobreak-) parity basis states. The left figure shows negative $\tilde{a}$, while the right shows positive $\tilde{a}$. Note that the limits $\tilde{a}\rightarrow\pm\infty$ are physically identical.}
+\caption[Parity projection of the Weyl spin-orbit coupling ground state]{\label{fig:Projections} For different values of the two-body coupling strength $\tilde{a}$, we show the magnitude of the ground state projected onto even parity basis states as a function of the SOC strength. This is given by $\big|  P_+\ket{\psi_{\text{GS}}}\big|^2=\big| (1- P_-)\ket{\psi_{\text{GS}}}\big|^2$, where $P_+$ ($P_-$) is the projection operator onto the positive\nobreak- (negative\nobreak-) parity basis states. The left figure shows negative $\tilde{a}$, while the right shows positive $\tilde{a}$. Note that the limits $\tilde{a}\rightarrow\pm\infty$ are physically identical.}
 \end{figure}
 
 One consequence of parity violation in this system is that the eigenstates are mixtures of the even- and odd-parity basis states described by Eq.~\eqref{eq:basisStates}. In Fig.~\ref{fig:Projections} we visualize how these subspaces are mixed in the ground state as the SOC strength increases. For the noninteracting system, $\tilde{a}=0$, more than half of the ground state projects onto negative-parity states even at fairly small values of $\tilde{\alpha}_W$. However, we see that the short-range interaction reduces this effect. With negative $\tilde{a}$, the mixing of the negative-parity states is suppressed as the strength of the two-body interaction increases. When $\tilde{a}$ is positive the effect is more striking. Mixing with negative-parity states is most strongly suppressed for small positive values of $\tilde{a}$, while the projection onto these states increases for larger positive values. The admixture is qualitatively the same when considering other forms of SOC as described in the following sections.
@@ -197,7 +197,7 @@ For the center-of-mass part of the Hamiltonian we again expand the basis states 
 \begin{figure}
 \centering
 \includegraphics{SOC/Figures/RashbaSpectrum}
-\caption{\label{fig:RashbaSpectrum}  Spectrum of states with total angular momentum quantum number $J_z=0$ for the Hamiltonian~\eqref{eq:RashbaHamiltonian}. The left figure shows the energies with negative scattering length $\tilde{a}=-1$. The right figure shows the results in the unitary limit $|\tilde{a}|\rightarrow\infty$. The spectrum is symmetric about $\tilde{\alpha}_R=0$.} 
+\caption[Spectrum of the Rashba spin-orbit coupling for $J_z=0$]{\label{fig:RashbaSpectrum}  Spectrum of states with total angular momentum quantum number $J_z=0$ for the Hamiltonian~\eqref{eq:RashbaHamiltonian}. The left figure shows the energies with negative scattering length $\tilde{a}=-1$. The right figure shows the results in the unitary limit $|\tilde{a}|\rightarrow\infty$. The spectrum is symmetric about $\tilde{\alpha}_R=0$.} 
 \end{figure}
 
 
@@ -205,14 +205,14 @@ Our results for the Rashba SOC are shown in Fig.~\ref{fig:RashbaSpectrum}. Becau
 
 \begin{figure}
 \centering
-\includegraphics{SOC/Figures/PerturbativeComparison}
-\caption{\label{fig:ComparisonSpectrum}  Comparison of selected spectral lines (dashed black) with the perturbative predictions from \cite{PhysRevA.89.033606} (solid red) when $\tilde{a}=\infty$. }
+\includegraphics[scale=1.2]{SOC/Figures/PerturbativeComparison}
+\caption[Comparison of the Rashba spectrum with perturbative predictions]{\label{fig:ComparisonSpectrum}Comparison of selected spectral lines (dashed black) with the perturbative predictions from \cite{PhysRevA.89.033606} (solid red) when $\tilde{a}=\infty$. }
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{SOC/Figures/ComparisonNoCM}
-\caption{\label{fig:ComparisonSpectrum2}  A comparison of the energy levels with (dashed black) and without (solid red) the inclusion of excitations in the c.m. coordinate for $\tilde{a}=-1$. The approximation of ignoring c.m. excitations provides very accurate results for the ground state, but not for excited states.} 
+\includegraphics[scale=1.2]{SOC/Figures/ComparisonNoCM}
+\caption[Effect of neglecting center of mass excitations for Rashba spin-orbit coupling]{\label{fig:ComparisonSpectrum2}  A comparison of the energy levels with (dashed black) and without (solid red) the inclusion of excitations in the c.m. coordinate for $\tilde{a}=-1$. The approximation of ignoring c.m. excitations provides very accurate results for the ground state, but not for excited states.} 
 \end{figure}
 
 
@@ -221,7 +221,7 @@ This interaction was also studied perturbatively for small $\alpha_R$ in \cite{P
 By setting all matrix elements with $N,L>0$ in the bra or ket to zero, we also explored the approximation of ignoring center-of-mass excitations. Fig.~\ref{fig:ComparisonSpectrum2} shows that this is very accurate for the ground state, but less accurate for excited states. Suppression of the c.m. coordinate has a similar effect for the SOCs considered in Secs.~\ref{sec:Weyl} and~\ref{sec:R=D}. We also note that in the case of small positive $a$, the landscape of low-lying excited states is dominated by center-of-mass excitations. When $a\rightarrow0^+$ in the absence of spin-orbit coupling, there are an infinite number of states with nonzero c.m. quantum numbers whose energies lie between the ground state and the first relative-coordinate excitation.
 
 
-\section{\label{sec:R=D} Equal-weight Rashba-Dresselhaus spin-orbit coupling}
+\section{\label{sec:R=D}Equal-Weight Rashba-Dresselhaus Spin-Orbit Coupling}
 
 Experiments have thus far realized only the effective Hamiltonian with equal strength Rashba and Dresselhaus couplings in the form~\eqref{eq:R=D}. Energy levels of the two-body system in the one-dimensional equivalent of this Hamiltonian with the additional magnetic field couplings present in experimental realizations have been calculated in \cite{guan2014energy}. Here we treat the problem in three dimensions.
 
@@ -259,7 +259,7 @@ The richly structured excitation spectrum of low-lying states is shown in Fig.~\
 
 \begin{figure}
 \includegraphics{SOC/Figures/RashbaDresselhausSpectrum}
-\caption{\label{fig:R=DExcitationSpectrum} 
+\caption[Spectrum of states with even total angular momentum magnetic quantum number $J_z=0,2,\dots$ for the equal-weight Rashba-Dresselhaus coupling]{\label{fig:R=DExcitationSpectrum} 
 Spectrum of states with even total angular momentum magnetic quantum number $J_z=0,2,\dots$ for the equal-weight Rashba-Dresselhaus SOC~\eqref{eq:R=D}. The left figure shows the energies with negative scattering length $\tilde{a}=-1$. The right figure shows the results in the unitary limit $|\tilde{a}|\rightarrow\infty$. The spectrum is symmetric about $\tilde{\alpha}_{R=D}=0$.} 
 \end{figure}
 
