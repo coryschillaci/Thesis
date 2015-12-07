@@ -68,13 +68,28 @@ Inserting this expansion of the wave functions, the matrix elements \eqref{eq:no
 
 Eliminating the dependence on either $\vec{r}_1$ or $\vec{r}_2$ makes an effective local approximation to the original matrix elements. In the following subsections, I discuss approaches to evaluate the $\vec{r}_2$ integral for three different possible factorizations of the dependence of $V$ on $\vec{r}_1$ and  $\vec{r}_1$.
 
-\begin{subsection}{Potential separable in $\vec{r}_1$, $\vec{r}_2$.\label{subsec:form1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Exploration of validity using model potentials \label{sec:toyModel}}
+
+In order to explore the convergence of the local Taylor approximation, we evaluate the matrix elements of simple potentials in a harmonic oscillator basis and compare them with the full nonlocal matrix elements.  We expect the convergence to be best for potentials which are nearly diagonal in $|\vec{r}-\vecrp|$. To test this hypothesis, we consider potentials of the form described in Section \ref{subsec:form1}. In particular, we want the function $g(|\vec{r}-\vecrp|)$ to have a tunable parameter controlling the nonlocality, with a local potential in some limit. As an example, consider the Gaussian potential
+\begin{equation}\label{eq:gaussToy}
+V(\vec{r},\vecrp)=\left(\frac{2}{\pi\lambda_1^2}\right)^{3/2}e^{-(\vec{r}+\vecrp)^2/2\lambda_1^2} \left(\frac{1}{2\pi\lambda_2^2}\right)^{3/2}e^{-(\vec{r}-\vecrp)^2/2\lambda_2^2}.
+\end{equation}
+We can see that in the limit $\lambda_2\rightarrow 0$ the potential becomes local, i.e.
+\begin{equation}
+\lim_{\lambda_2\rightarrow0}V(\vec{r},\vecrp)=\left(\frac{2}{\pi\lambda_1^2}\right)^{3/2}e^{-(\vec{r}+\vecrp)^2/2\lambda_1^2}\delta^{(3)}(\vec{r}-\vecrp)
+\end{equation}
+
+Another simple potential of this form is
+\begin{equation}
+V(\vec{r},\vecrp)=\frac{e^{-|\vec{r}+\vecrp|/\lambda_1}}{\pi\lambda_1^3}\frac{e^{-|\vec{r}-\vecrp|/\lambda_2}}{8\pi\lambda_2^3}.
+\end{equation}
 
 A potential which can be factored as 
 \begin{equation}
 V(\vecrp,\vec{r})=f(|\vec{r}+\vecrp|)g(|\vec{r}-\vecrp|)
 \end{equation}
-for some scalar functions $f$ and $g$ is particularly easy to evaluate in the form \eqref{eq:expansionSpherical}. Any operator of this form is guaranteed to be hermitian, as the magnitudes $|\vec{r}+\vecrp|$ and $|\vec{r}-\vecrp|$ are necessarily invariant under exchanging $\vec{r} \leftrightarrow \vecrp$. Although the in-medium effective chiral potential does not contain a term of this form, it will be used as a toy potential in Section~\ref{sec:toyModel}. There are three different combinations of spherical harmonics and the nonlocal potential to consider when evaluating the $\vec{r}_2$ integral to this order. First is the average of the potential over $\vec{r}_2$ which I will denote as $V^1(\vec{r}_1)$:
+for some scalar functions $f$ and $g$ is particularly easy to evaluate in the form \eqref{eq:expansionSpherical}. Any operator of this form is guaranteed to be Hermitian, as the magnitudes $|\vec{r}+\vecrp|$ and $|\vec{r}-\vecrp|$ are necessarily invariant under exchanging $\vec{r} \leftrightarrow \vecrp$. Although the in-medium effective chiral potential does not contain a term of this form, it will be used as a toy potential in Section~\ref{sec:toyModel}. There are three different combinations of spherical harmonics and the nonlocal potential to consider when evaluating the $\vec{r}_2$ integral to this order. First is the average of the potential over $\vec{r}_2$ which I will denote as $V^1(\vec{r}_1)$:
 \begin{equation}\label{eq:V0}
 \begin{split}
 V^0(\vec{r}_1)=&\int d^3r_2\: V\left(\vec{r}_1-\frac{\vec{r}_2}{2},\vec{r}_1+\frac{\vec{r}_2}{2}\right) \\
@@ -104,11 +119,29 @@ With these definitions, we can rewrite \eqref{eq:expansionSpherical} more compac
 \end{equation}
 Note that the integrals in eqns. (\ref{eq:V0},\ref{eq:V1},\ref{eq:V2})  are equivalent to calculating moments of the potential with respect to $\vec{r}_2$. These matrix elements may be evaluated using the formulas presented in Appendix~\ref{app:HObasis}.
 
-\end{subsection}
+Evaluating the full nonlocal matrix elements requires a six-dimensional integration (including oscillatory behavior when the matrix elements are taken between states with $l$ nonzero). Monte Carlo (MC) integration strategies are considered state of the art for high-dimensional integration. I have evaluated the matrix elements using the {\ttfamily{Cuba}} library~\cite{Hahn200578}. The importance sampling strategies in the four MC integration techniques lead to convergence more reliably and with fewer samples than Mathematica's native implementations for the integrals at hand. In the following figures I used the {\ttfamily Vegas} algorithm.
 
-\begin{subsection}{Terms from the chiral effective potential}
+\begin{figure}[htb]
+\centering \includegraphics[width=0.6\textwidth]{LocalExpansion/Figures/ToyPotential000000} 
+\caption{Matrix elements of $\braket{n'=0,\: l'=0,\: m_l'=0 | V | n=0,\: l=0,\: m_l=0}$ for $b=\lambda_1=1$ as a function of $\lambda_2$. The blue line shows the exact numerically evaluated matrix elements, while the orange line shows the second order Taylor approximation.
+\label{fig:gaussToy1}}
+\end{figure}
 
-The easiest term in the density-dependent two-body effective potential to expand is $\veff^D$, due to the delta functions $\w{0}{0}{0}{\rot}$. We apply the spherical tensor form of the expansion \eqref{eq:expansionSpherical} and integrate over $\vec{r}_2$ using the delta function to obtain
+Matrix elements of the potential \eqref{eq:gaussToy} compare qualitatively as expected. First, we see that the exact values and the Taylor approximation converge for $\lambda_2\rightarrow 0$ in \Cref{fig:gaussToy1} but that the error increases as the range parameter $\lambda_2$ becomes non-perturbatively large. \Cref{fig:gaussToy2} demonstrates that the convergence is essentially independent of $\lambda_1$. Higher angular momenta are more difficult to integrate numerically, 
+
+%One interesting observation in the second order approximation is that the second derivative in $\lambda_2$ of the matrix elements is strictly negative for all of the channels tested, although this is not true for the exact results. Does the addition of fourth order terms (the third order terms are zero) introduce contributions which change this situation?
+
+\begin{figure}[htb]
+\centering \includegraphics[width=0.6\textwidth]{LocalExpansion/Figures/ToyPotential000000l1} 
+\caption{Matrix elements of $\braket{n'=0,\: l'=0,\: m_l'=0 | V | n=0,\: l=0,\: m_l=0}$ for $b=1$, $\lambda_2=0.05$ as a function of $\lambda_1$. The blue line shows the exact numerically evaluated matrix elements, while the orange line shows the second order Taylor approximation.
+\label{fig:gaussToy2}}
+\end{figure}
+
+\end{section}
+
+\begin{section}{Second order local expansion of the two-body effective chiral potential}
+
+In this section we consider the problem of finding the second order expansion of the density-dependent two-body effective potential. The easiest term in the density-dependent two-body effective potential to expand is $\veff^D$, due to the delta functions $\w{0}{0}{0}{\rot}$. We apply the spherical tensor form of the expansion \eqref{eq:expansionSpherical} and integrate over $\vec{r}_2$ using the delta function to obtain
 
 \begin{align}
 &\hspace{-.4cm}V^{1PE,\text{Nonlocal}}_{12,\text{eff}}= \frac{-c_D g_A}{8F_\pi^4 \Lambda_\chi}\frac{m_\pi^6}{8\pi} \left\{\phantom{\frac{-c_D g_Am_\pi^6}{8 F_\pi^4 \Lambda_\chi}}\right.\\
@@ -125,6 +158,7 @@ The easiest term in the density-dependent two-body effective potential to expand
 %
 &\left.\hspace{.7cm}+\left.\rhohat{1}{2 r_{12}}\left(\taudot W^{\text{LR}}_{1PE}(2\rot)-\frac{1}{4\pi}\yukawadimless{r_{12}} \right)\left(r_{12}^2 \vec{\nabla}^2+\frac{8\pi}{15}r_{12}^2\vec{Y}_2(\Omega_{12})\cdot\left[\vec{\nabla}\otimes \vec{\nabla}\right]_2 \right)\right]\right\}.
 \end{align}
+To make the notation consistent with standard two-body potentials, the coordinate $\vec{r}_1$ has been renamed to $\vec{r}_{12}$ after performing the integration. It should be interpreted as the usual relative Jacobi coordinate of the two particle system and the potential is now fully local.
 
 Unfortunately, the remaining terms are more difficult to integrate. We show here how the scalar functions in the expressions from Section~\ref{sec:coord} remain dependent on the magnitudes of linear combinations of coordinates and therefore complicate the angular integrals. A majority of the remaining nonlocal terms seen in Section~\ref{sec:coord} are of the form
 %
@@ -158,10 +192,10 @@ V(\vec{r}_1,\vec{r}_2)=f(|\vec{r}_1+\vec{r}_2/2|)g(r_2)
 \pm \vec{r}_2 \rightarrow -\vec{r}_2
 \end{multline}
 where the sum over $l'''$ includes all values for which the 6-$j$ symbol is nonzero. Finally we combine the coupled $r_2$ spherical harmonics\footnote{$\sqrt{4\pi(2l+1)}[Y_{l_1}(\hat{r})\otimes Y_{l_2}(\hat{r})]_{lm}=\sqrt{(2l_1+1)(2l_2+1)}\braket{l_1\,0,l_2\,0|l_1\,l_2\,l\,0}Y_{lm}(\hat{r})$} and use the parity of the spherical harmonics to simplify the expression 
-\begin{multline}
+\begin{multline}\label{eq:fgRecoupled)
 V(\vec{r}_1,\vec{r}_2)=(-1)^{l+l'+L}\sqrt{2l'+1}\;g(r_2) \sum_{l''=0}^{l} \sqrt{(2l''+1)}(2l-2l''+1)  \\
   r_1^{l''} \left(\frac{r_2}{2}\right)^{l-l''} \left(\frac{f(|\vec{r}_1+\vec{r}_2/2|)}{|\vec{r}_1+\vec{r}_2/2|^{l} } \pm (-1)^{l+l'-l''} \frac{f(|\vec{r}_1-\vec{r}_2/2|)}{|\vec{r}_1-\vec{r}_2/2|^{l} }\right) \\
-\sum_{l'''} \braket{l'\,0,\,l-l''\,0 | l'\,l-l''\,l'''\,0} \sixj{l''}{l-l''}{l}{l'}{L}{l'''} \Big[Y_{l''}\left(\hat{r}_1\right) \otimes Y_{l'''}(\hat{r}_2) \Big]_{L M} 
+\sum_{l'''} \braket{l'\,0,\,l-l''\,0 | l'\,l-l''\,l'''\,0} \sixj{l''}{l-l''}{l}{l'}{L}{l'''} \Big[Y_{l''}\left(\hat{r}_1\right) \otimes Y_{l'''}(\hat{r}_2) \Big]_{L M} .
 \end{multline}
 
 The remaining nonlocal terms in the effective potential take the general form
@@ -173,57 +207,13 @@ This makes both terms functions of $\vec{r}_1\pm\vec{r}_2/2$:
 V(\vec{r}_1,\vec{r}_2)=f(|\vec{r}_1+\vec{r}_2/2|)f(|\vec{r}_1-\vec{r}_2/2|) \left[Y_{l}\left(\frac{\vec{r}_1+\vec{r}_2/2}{|\vec{r}_1+\vec{r}_2/2|}\right)\otimes Y_{l}\left(\frac{\vec{r}_1-\vec{r}_2/2}{|\vec{r}_1+\vec{r}_2/2|}\right) \right]_{L M}.
 \end{equation} 
 Following the same procedure as for the previous form, we arrive at a final answer involving the 9-$j$ symbol
-\begin{multline}
+\begin{multline}\label{eq:ffRecoupled)
 V(\vec{r}_1,\vec{r}_2)=\frac{f(|\vec{r}_1+\vec{r}_2/2|)}{|\vec{r}_1+\vec{r}_2/2|}\frac{f(|\vec{r}_1-\vec{r}_2/2|)}{|\vec{r}_1-\vec{r}_2/2|} \\
 (-1)^{l} \sum_{l_1,l'_1=0}^{l} (-1)^{l'_1}(2l_1+1)(2l'_1+1)(2l-2l_1+1)(2l-2l'_1+1) r_1^{l+l'_1} \left(\frac{r_2}{2}\right)^{l_1+l'_1}  \\
 \sum_{l_2,l'_2} \braket{l_1\,0,\,l'_1\,0 | l_1\,l'_1\,l_2\,0}\braket{(l-l_1)\,0,\,(l-l'_1)\,0 | (l-l_1)\,(l-l'_1)\,l'_2\,0} \\
 \times\ninej{l_1}{l-l_1}{l}{l'_1}{l-l'_1}{l}{l_2}{l'_2}{L} \Big[Y_{l''}\left(\hat{r}_1\right) \otimes Y_{l'''}(\hat{r}_2) \Big]_{L M} 
 \end{multline}
 
-
-\end{subsection}
-
-\end{section}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{section}{Exploration of validity using model potentials \label{sec:toyModel}}
-
-In order to explore the convergence of the local Taylor approximation, we evaluate the matrix elements of simple potentials in a harmonic oscillator basis and compare them with the full nonlocal matrix elements.  We expect the convergence to be best for potentials which are nearly diagonal in $|\vec{r}-\vecrp|$. To test this hypothesis, we consider potentials of the form described in Section \ref{subsec:form1}. In particular, we want the function $g(|\vec{r}-\vecrp|)$ to have a tunable parameter controlling the nonlocality, with a local potential in some limit. As an example, consider the Gaussian potential
-\begin{equation}\label{eq:gaussToy}
-V(\vec{r},\vecrp)=\left(\frac{2}{\pi\lambda_1^2}\right)^{3/2}e^{-(\vec{r}+\vecrp)^2/2\lambda_1^2} \left(\frac{1}{2\pi\lambda_2^2}\right)^{3/2}e^{-(\vec{r}-\vecrp)^2/2\lambda_2^2}.
-\end{equation}
-We can see that in the limit $\lambda_2\rightarrow 0$ the potential becomes local, i.e.
-\begin{equation}
-\lim_{\lambda_2\rightarrow0}V(\vec{r},\vecrp)=\left(\frac{2}{\pi\lambda_1^2}\right)^{3/2}e^{-(\vec{r}+\vecrp)^2/2\lambda_1^2}\delta^{(3)}(\vec{r}-\vecrp)
-\end{equation}
-
-Another simple potential of this form is
-\begin{equation}
-V(\vec{r},\vecrp)=\frac{e^{-|\vec{r}+\vecrp|/\lambda_1}}{\pi\lambda_1^3}\frac{e^{-|\vec{r}-\vecrp|/\lambda_2}}{8\pi\lambda_2^3}.
-\end{equation}
-
-Evaluating the full nonlocal matrix elements requires a six-dimensional integration (including oscillatory behavior when the matrix elements are taken between states with $l$ nonzero). Monte Carlo (MC) integration strategies are considered state of the art for high-dimensional integration. I have evaluated the matrix elements using the {\ttfamily{Cuba}} library~\cite{Hahn200578}. The importance sampling strategies in the four MC integration techniques lead to convergence more reliably and with fewer samples than Mathematica's native implementations for the integrals at hand. In the following figures I used the {\ttfamily Vegas} algorithm.
-
-\begin{figure}[htb]
-\centering \includegraphics[width=0.6\textwidth]{LocalExpansion/Figures/ToyPotential000000} 
-\caption{Matrix elements of $\braket{n'=0,\: l'=0,\: m_l'=0 | V | n=0,\: l=0,\: m_l=0}$ for $b=\lambda_1=1$ as a function of $\lambda_2$. The blue line shows the exact numerically evaluated matrix elements, while the orange line shows the second order Taylor approximation.
-\label{fig:gaussToy1}}
-\end{figure}
-
-Matrix elements of the potential \eqref{eq:gaussToy} compare qualitatively as expected. First, we see that the exact values and the Taylor approximation converge for $\lambda_2\rightarrow 0$ in \Cref{fig:gaussToy1} but that the error increases as the range parameter $\lambda_2$ becomes non-perturbatively large. \Cref{fig:gaussToy2} demonstrates that the convergence is essentially independent of $\lambda_1$. Higher angular momenta are more difficult to integrate numerically, 
-
-%One interesting observation in the second order approximation is that the second derivative in $\lambda_2$ of the matrix elements is strictly negative for all of the channels tested, although this is not true for the exact results. Does the addition of fourth order terms (the third order terms are zero) introduce contributions which change this situation?
-
-\begin{figure}[htb]
-\centering \includegraphics[width=0.6\textwidth]{LocalExpansion/Figures/ToyPotential000000l1} 
-\caption{Matrix elements of $\braket{n'=0,\: l'=0,\: m_l'=0 | V | n=0,\: l=0,\: m_l=0}$ for $b=1$, $\lambda_2=0.05$ as a function of $\lambda_1$. The blue line shows the exact numerically evaluated matrix elements, while the orange line shows the second order Taylor approximation.
-\label{fig:gaussToy2}}
-\end{figure}
-
-
-
-\end{section}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{section}{Comparison of nonlocal and local approximations to the in-medium effective term $V_D$ }
+In order to obtain local expressions, we need to integrate over the coordinate $\vec{r}_2$ in \cref{eq:fgRecoupled,ffRecoupled}. Although the functions $f$ are scalar, they depend on the angle between $\vec{r}_1$ and $\vec{r}_2$. To make the angular dependence on the individual coordinates fully explicit in terms of spherical harmonics, we need to also expand the scalar functions in the same way as the initial and final state wavefunctions using \eqref{eq:TaylorExpansion}. To a given order, one can straightforwardly perform the angular $\hat{r}_2$ integration. This work, and the validation that the local expansion faithfully approximates the matrix elements of the full nonlocal potential, is still ongoing.
 
 \end{section}
