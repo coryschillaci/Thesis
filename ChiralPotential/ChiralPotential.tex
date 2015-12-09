@@ -38,7 +38,7 @@ where the the Fermi gas is assumed to be spin symmetric but not necessarily isos
 \begin{equation}\label{eq:fullSum}
 \sum_\gamma=\sum_{m_{s_\gamma}=\pm 1/2}\int \frac{d^3k_\gamma}{(2\pi)^3} \Big[\delta_{m_{t_\gamma},+1/2} n_p(k_\gamma) +\delta_{m_{t_\gamma,-1/2}} n_n(k_\gamma) \Big]
 \end{equation}
-with $n_p(k)$ and $n_n(k)$ the density of states for the protons and neutrons in the Fermi gas. We will derive specific results for the $T=0$ Fermi-Dirac distribution, $n_p(k)=\theta(k_{F}^{p}-k)$ and $n_n(k)=\theta(k_{F}^{n}-k)$, however any density of states may be substituted at the cost of increasing the complexity when performing the spectator momentum sums.
+with $n_p(k)$ and $n_n(k)$ the density of states for the protons and neutrons in the Fermi gas. Details of the summation over the various quantum numbers are given in \Cref{app:sums}. We will derive specific results for the $T=0$ Fermi-Dirac distribution, $n_p(k)=\theta(k_{F}^{p}-k)$ and $n_n(k)=\theta(k_{F}^{n}-k)$, however any density of states may be substituted at the cost of increasing the complexity when performing the spectator momentum sums.
 
 Density dependence arises from the momentum integral in \eqref{eq:fullSum}. The standard relationship for a homogeneous Fermi gas with two internal spin degrees of freedom is 
 \begin{equation}\label{eq:kF}
@@ -72,10 +72,9 @@ where
 \begin{equation}
 F_{ijk}^{\alpha\beta}=\delta^{\alpha \beta}\left[-\frac{4c_1m_\pi^2}{F_\pi^2}+\frac{2c_3}{F_\pi^2}\vec{q}_i\cdot\vec{q}_j\right]+\sum_\gamma\frac{c_4}{F_\pi^2}\epsilon^{\alpha\beta\gamma}\tau^\gamma_k\vec{\sigma}_k\cdot\left(\vec{q}_i\times\vec{q}_j\right)
 \end{equation}
-and $\vec{q}_i=\vec{k}_i' - \vec{k}_i$ is the difference in the final and initial state momenta for particle $i \in \{1,2,3\}$ and the greek indices refer to Cartesian vector components.
+and $\vec{q}_i=\vec{k}_i' - \vec{k}_i$ is the difference in the final and initial state momenta for particle $i \in \{1,2,3\}$ and the greek indices refer to Cartesian vector components. The pion decay constant $F_\pi=92.4$ MeV\footnote{Some references include additional factors of $\sqrt{2}$ in the definition of $F_\pi$}  and the dimensionless axial-vector coupling constant $g_A=1.276$. The chiral symmetry breaking scale $\Lambda_\chi$ is a cutoff parameter, and the LECs will depend on the value chosen. It is usually taken to be around the order of the $\rho$ mass, $m_\rho\approx700$ MeV.
 
 These represent a three-body contact potential, a one-pion exchange plus contact interaction (1PE), and a two-pion exchange (2PE) interaction as shown in Figure \ref{fig:3NF}. Note that the 2PE term can be split into parts proportional to $c_1, c_3$ and $c_4$ as $V_C=V_1+V_2+V_4$. Analytically summing over the Fermi gas particles to find an effective potential corresponds to the summations shown in Figure \ref{fig:eff-diagram}. Note that $c_D$ and $c_E$ are unitless, while $c_1, c_3$ and $c_4$ have units of inverse energy. 
-
 \begin{figure}\centering
 \includegraphics[scale=0.75]{ChiralPotential/Figures/InMediumDiagrams2}
 \caption[Diagrammatic representation of $V_{12,\text{eff}}$]{\label{fig:eff-diagram} Diagrammatic representation of $V_{12,\text{eff}}$. The double slashes indicate summation over the Fermi sea. Diagrams on the first line correspond to local potentials, while those on the second line are nonlocal in configuration space.}
@@ -94,8 +93,8 @@ For a standard two-body interaction, the matrix elements may depend only on the 
  \vec{\pi}_1=\frac{1}{\sqrt{2}}\left(\vec{k}_1-\vec{k}_2\right), \quad  \vec{\pi}_2=\frac{1}{\sqrt{6}}\left(\vec{k}_1+\vec{k}_2-2\vec{k}_3\right).
  \end{equation}
  
-We will make the approximation that the net momentum of the two valence particles is zero, and therefore so is the net momentum of the Fermi gas particles. Although this makes sense in the context of a nucleus with an inert core, for full many-body calculations it cannot be true that all pairs of particles have zero total momentum in a given reference frame. For a Fermi gas, the average net momentum of two particles scales as 
-$\overline{|k_1+k_2|} \sim V^2 k_F^7 
+We will make the simplification that the net momentum of the two valence particles is zero, and therefore so is the net momentum of the Fermi gas particles. Although this makes sense in the context of a nucleus with an inert core, for full many-body calculations it cannot be true that all pairs of particles have zero total momentum in a given reference frame. For a Fermi gas, the average net momentum of two particles is zero but the average magnitude scales as 
+$\overline{|\vec{k}_1+\vec{k}_2|} \sim V^2 k_F^7 
 %\sim N^2 k_F 
 \sim N^2 \rho^{1/3}$. 
 We therefore expect that the $P=0$ approximation is valid for many-body calculations when the density is low. This density-dependence is confirmed for nuclear matter by \cite{Drischler:2015eba}, where the authors also note that it seems to be a better approximation when the system is very isospin asymmetric. 

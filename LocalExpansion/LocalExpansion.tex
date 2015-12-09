@@ -125,17 +125,17 @@ Evaluating the full nonlocal matrix elements requires a six-dimensional integrat
 
 \begin{figure}[htb]
 \centering \includegraphics[width=0.6\textwidth]{LocalExpansion/Figures/ToyPotential000000} 
-\caption[Matrix elements of the toy potential with varying $\lambda_2$]{Matrix elements of $\braket{n'=0,\: l'=0,\: m_l'=0 | V | n=0,\: l=0,\: m_l=0}$ for $b=\lambda_1=1$ as a function of $\lambda_2$. The blue line shows the exact numerically evaluated matrix elements, while the orange line shows the second order Taylor approximation.
+\caption[Matrix elements of the toy potential with varying $\lambda_2$]{Matrix elements of $\braket{n'=0,\: l'=0,\: m_l'=0 |\, V/\hbar\omega \, | n=0,\: l=0,\: m_l=0}$ for $r=b=\lambda_1$ as a function of $\lambda_2/b$. The blue line shows the exact numerically evaluated matrix elements, while the orange line shows the second order Taylor approximation. As expected, the second order local approximation is very good when the non-locality measure $\lambda_2/b$ is small.
 \label{fig:gaussToy1}}
 \end{figure}
 
-Matrix elements of the potential \eqref{eq:gaussToy} compare qualitatively as expected. First, we see that the exact values and the Taylor approximation converge for $\lambda_2\rightarrow 0$ in \Cref{fig:gaussToy1} but that the error increases as the range parameter $\lambda_2$ becomes non-perturbatively large. \Cref{fig:gaussToy2} demonstrates that the convergence is essentially independent of $\lambda_1$. 
+Matrix elements of the potential \eqref{eq:gaussToy} compare qualitatively as expected. First, we see that the exact values and the Taylor approximation converge for $\lambda_2\rightarrow 0$ in \Cref{fig:gaussToy1} but that the error increases as the range parameter $\lambda_2/b$ becomes non-perturbatively large. \Cref{fig:gaussToy2} demonstrates that the convergence is essentially independent of $\lambda_1$. 
 
 %One interesting observation in the second order approximation is that the second derivative in $\lambda_2$ of the matrix elements is strictly negative for all of the channels tested, although this is not true for the exact results. Does the addition of fourth order terms (the third order terms are zero) introduce contributions which change this situation?
 
 \begin{figure}[htb]
 \centering \includegraphics[width=0.6\textwidth]{LocalExpansion/Figures/ToyPotential000000l1} 
-\caption[Matrix elements of the toy potential with varying $\lambda_1$]{Matrix elements of $\braket{n'=0,\: l'=0,\: m_l'=0 | V | n=0,\: l=0,\: m_l=0}$ for $b=1$, $\lambda_2=0.05$ as a function of $\lambda_1$. The blue line shows the exact numerically evaluated matrix elements, while the orange line shows the second order Taylor approximation.
+\caption[Matrix elements of the toy potential with varying $\lambda_1$]{Matrix elements of $\braket{n'=0,\: l'=0,\: m_l'=0 |\, V/\hbar\omega \,| n=0,\: l=0,\: m_l=0}$ for $r/b=1$, $\lambda_2/b=0.05$ as a function of $\lambda_1/b$. The blue line shows the exact numerically evaluated matrix elements, while the orange line shows the second order Taylor approximation. This plot demonstrates that the strength of the local term does not effect the convergence.
 \label{fig:gaussToy2}}
 \end{figure}
 
