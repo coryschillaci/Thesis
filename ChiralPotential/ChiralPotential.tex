@@ -3,7 +3,7 @@
 
 %Three-nucleon (3N) interactions first appear in the chiral lagrangian at order N$^2$LO. Numerous studies have shown that inclusion of the 3N forces is essential for correctly modeling nuclear physics in all regimes, from light and medium nuclei \cite{PhysRevLett.99.042501,0954-3899-39-8-085111} to nuclear matter \cite{PhysRevC.82.014314,PhysRevC.83.031301}.
 
-As mentioned in previous chapter, the inclusion of three-nucleon forces is essential to modelling a variety of nuclear phenomena. However, in modern numerical approaches such as the ab initio no core shell model, including 3N forces exactly in calculations requires the use of basis spaces which are orders of magnitude larger than the two-nucleon (2N) case. The increased demands on memory and computing hours rapidly become prohibitive even for light nuclei \cite{Barrett2013131}. 
+As mentioned in previous chapter, the inclusion of three-nucleon forces is essential to modelling a variety of nuclear phenomena. However, in modern numerical approaches such as the ab initio no core shell model, including 3N forces exactly in calculations requires the use of basis spaces which are orders of magnitude larger than the two-nucleon (2N) case. The increased demands on memory and computing hours rapidly become prohibitive even for light nuclei \cite{ABNCSM}. 
 
 Here, we analytically reduce the chiral three-body interaction to an average two-body interaction which depends on the local nucleon density. Early efforts to develop a two-body effective interaction for the 3N part of the chiral potential focussed  on cases with specific isospin constraints. Explicit expressions for  the effective potential in momentum space have been derived for pure neutron matter \cite{PhysRevC.82.014314} and for isospin symmetric nuclei \cite{PhysRevC.81.024002}. These results have been applied succesfully in calculations of nuclear pairing energies using nuclear energy density functionals \cite{0954-3899-39-1-015108}. The momentum space potential for arbitrary isospins was recently derived using \texttt{MATHEMATICA} for asymmetric isospins, although no explicit expressions were given \cite{Drischler:2015eba}. This idea has also been successfuly applied in the reduction of two-body interactions to single particle potentials \cite{PhysRev.133.B329,AdelbergerHaxton}.  An alternate approach to deriving density-dependent effective potential using correlated basis functions was also proposed in \cite{PhysRevC.83.054003}. 
 
@@ -18,21 +18,21 @@ The Fermi gas states are momentum eigenstates of the form
 \ket{\alpha}=\ket{\vec{k}_\alpha;m_{s_\alpha},m_{t_\alpha}},
 \end{equation}
 where $m_s$ and $m_t$ are the spin and isospin projections, respectively. %We normalize the momentum eigenstates such that $\braket{\vec{k} | \vec{k}'}=(2\pi)^3\delta^{(3)}(\vec{k}-\vec{k}')$. 
-Because nucleons obey Fermi statistics, the nuclear Hamiltonian must commute with the antisymmetrization operator $\mathcal{A}_{123}$. Alternately, we can instead obtain the same matrix elements by evaluating the potential between antisymmetric states, e.g.
-\begin{equation}
-\begin{split}
-\ket{\alpha_1\:\alpha_2\:\alpha_3}_{\text{assym}} = \left( \ket{\alpha_1\:\alpha_2\:\alpha_3}\right. & - \ket{\alpha_1\:\alpha_3\:\alpha_2} - \ket{\alpha_2\:\alpha_1\:\alpha_3}   \\
-&\hspace{.5cm}\left. +\ket{\alpha_2\:\alpha_3\:\alpha_1} - \ket{\alpha_3\:\alpha_2\:\alpha_1} + \ket{\alpha_3\:\alpha_1\:\alpha_2} \right).
-\end{split}
-\end{equation}
-Throughout this paper we will, for brevity, generally write the potential in a form which is not fully antisymmetrized\footnote{In practice, we choose $i=1,j=2,k=3$ in equations \eqref{eq:V_E}-\eqref{eq:V_C}. This also requires multiplication by a symmetry prefactor of 3 to reproduce the correct matrix elements in the antisymmetric basis. } but which is equivalent to the correct potential when evaluated between antisymmetric states.
+Because nucleons obey Fermi statistics, the nuclear Hamiltonian must commute with the antisymmetrization operator $\mathcal{A}_{123}$. Alternately, we can instead obtain the same matrix elements by evaluating the potential between normalized antisymmetric states, i.e.
+\begin{align}
+\ket{\alpha_1\:\alpha_2\:\alpha_3}_{\text{assym}} &= \begin{aligned}[t]\frac{1}{\sqrt{6}} \left( \ket{\alpha_1\:\alpha_2\:\alpha_3}\right. & - \ket{\alpha_1\:\alpha_3\:\alpha_2} - \ket{\alpha_2\:\alpha_1\:\alpha_3}   \\
+&\hspace{.5cm}\left. +\ket{\alpha_2\:\alpha_3\:\alpha_1} - \ket{\alpha_3\:\alpha_2\:\alpha_1} + \ket{\alpha_3\:\alpha_1\:\alpha_2} \right)
+\end{aligned} \\
+\ket{\alpha_1\:\alpha_2}_{\text{assym}} &= \frac{1}{\sqrt{2}} \left( \ket{\alpha_1\:\alpha_2}-\ket{\alpha_2\:\alpha_1}\right).
+\end{align}
+Throughout this chapter we will, for brevity, generally write the potential in a form which is not fully antisymmetrized\footnote{In practice, we choose $i=1,j=2,k=3$ in equations \eqref{eq:V_E}-\eqref{eq:V_C}. This also requires multiplication by a symmetry prefactor of 3 to reproduce the correct matrix elements in the antisymmetric basis. } but which is equivalent to the correct potential when evaluated between antisymmetric states.
 
 We can then sum over interactions with one core nucleon to generate an effective two-body potential $V_{12,\text{eff}}$ such that
 %\begin{equation}
 %\bra{\alpha_1,\alpha_2}\overline{V}_{3N}\ket{\beta_1,\beta_2}=\sum_{\gamma}\braket{\alpha_1,\alpha_2,\gamma | V_{3N} | \beta_1,\beta_2,\gamma}
 %\end{equation}
 \begin{equation}
-\frac{1}{2} \bra{\alpha_1\:\alpha_2}_{\text{assym}}  V_{12,\text{eff}}\ket{\beta_1 \:\beta_2 }_{\text{assym}}=\frac{1}{6} \sum_{\gamma} \bra{\alpha_1\:\alpha_2 \: \gamma}_{\text{assym}} V_{123}  \ket{\beta_1 \:\beta_2 \gamma}_{\text{assym}}
+\bra{\alpha_1\:\alpha_2}_{\text{assym}}  V_{12,\text{eff}}\ket{\beta_1 \:\beta_2 }_{\text{assym}}= \sum_{\gamma} \bra{\alpha_1\:\alpha_2 \: \gamma}_{\text{assym}} V_{123}  \ket{\beta_1 \:\beta_2 \gamma}_{\text{assym}}
 \end{equation}
 where the the Fermi gas is assumed to be spin symmetric but not necessarily isospin symmetric, so that the sum can be expanded as
 \begin{equation}\label{eq:fullSum}
@@ -90,14 +90,15 @@ For a standard two-body interaction, the matrix elements may depend only on the 
  \end{equation}
  through the relative Jacobi momenta 
  \begin{equation}
- \vec{\pi}_1=\frac{1}{\sqrt{2}}\left(\vec{k}_1-\vec{k}_2\right), \quad  \vec{\pi}_2=\frac{1}{\sqrt{6}}\left(\vec{k}_1+\vec{k}_2-2\vec{k}_3\right).
+ \vec{\pi}_1=\frac{1}{\sqrt{2}}\left(\vec{k}_1-\vec{k}_2\right), \quad  \vec{\pi}_2=\frac{1}{\sqrt{6}}\left(\vec{k}_1+\vec{k}_2-2\vec{k}_3\right).\vphantom{\Bigg(_2}
  \end{equation}
- 
-We will make the simplification that the net momentum of the two valence particles is zero, and therefore so is the net momentum of the Fermi gas particles. Although this makes sense in the context of a nucleus with an inert core, for full many-body calculations it cannot be true that all pairs of particles have zero total momentum in a given reference frame. For a Fermi gas, the average net momentum of two particles is zero but the average magnitude scales as 
-$\overline{|\vec{k}_1+\vec{k}_2|} \sim V^2 k_F^7 
-%\sim N^2 k_F 
-\sim N^2 \rho^{1/3}$. 
-We therefore expect that the $P=0$ approximation is valid for many-body calculations when the density is low. This density-dependence is confirmed for nuclear matter by \cite{Drischler:2015eba}, where the authors also note that it seems to be a better approximation when the system is very isospin asymmetric. 
+%We will make the simplification that the net momentum of the two valence particles is zero, and therefore so is the net momentum of the Fermi gas particles. Although this makes sense in the context of a nucleus with an inert core, for full many-body calculations it cannot be true that all pairs of particles have zero total momentum in a given reference frame. For a Fermi gas, the average net momentum of two particles is zero but the average magnitude scales as 
+%$\overline{|\vec{k}_1+\vec{k}_2|} \sim V^2 k_F^7 
+%%\sim N^2 k_F 
+%\sim N^2 \rho^{1/3}$. 
+%We therefore expect that the $P=0$ approximation is valid for many-body calculations when the density is low. This density-dependence is confirmed for nuclear matter by \cite{Drischler:2015eba}, where the authors also note that it seems to be a better approximation when the system is very isospin asymmetric. 
+\nopagebreak[4]
+\par We will make the simplification that the net momentum of the two valence particles 	is zero, and therefore so is the net momentum of the Fermi gas particles. Although this makes sense in the context of a nucleus with an inert core, when performing many-body calculations it cannot be true that all pairs of particles have zero total momentum the true many-body center-of-mass frame. If we instead transform to a two-body center of mass frame, the Fermi gas will generally become asymmetric and the density of states will will become $\vec{P}$-dependent. Simplifying the integrals to have spherically symmetric limits introduces errors for spectator states lying near the surface of the Fermi sea in momentum space. Explicit calculations comparing the effective two-body potential with and without the total-momentum dependence are discussed in \cite{Drischler:2015eba}.
  
  The effective interactions for \eqref{eq:V_E} and \eqref{eq:V_D} are given in momentum space by
  \begin{align}
